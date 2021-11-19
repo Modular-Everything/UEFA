@@ -1,6 +1,8 @@
 {
-  "name": "uefa",
+  "name": "@uefa/web",
   "private": true,
+  "version": "0.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
