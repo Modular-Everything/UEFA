@@ -1,6 +1,4 @@
 [build]
   base = "packages/web/"
   publish = "packages/web/.next"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  command = "next build"
