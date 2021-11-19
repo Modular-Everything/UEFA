@@ -4,9 +4,20 @@ export default {
   type: "document",
   fields: [
     {
-      name: "clientId",
-      title: "Client Identifier",
+      name: "clientName",
+      title: "Client Name",
       type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "slug",
+      title: "Client Identifier",
+      type: "slug",
+      validation: (Rule) => Rule.required(),
+      description: "Must be unique (use the generate button).",
+      options: {
+        source: "clientName",
+      },
     },
     {
       name: "slides",

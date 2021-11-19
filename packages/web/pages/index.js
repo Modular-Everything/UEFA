@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Link from "next/link";
+
 import { indexQuery } from "../lib/queries";
 import { getClient, overlayDrafts } from "../lib/sanity.server";
 
@@ -17,7 +19,12 @@ const Home = ({ allClients }) => {
 
       <ul>
         {allClients.map((client) => (
-          <li>Client name: {client.clientId}</li>
+          <li>
+            Client name:{" "}
+            <Link href={`/clients/${client.slug}`}>
+              <a>{client.clientName}</a>
+            </Link>
+          </li>
         ))}
       </ul>
     </div>

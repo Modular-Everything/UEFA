@@ -4,7 +4,8 @@
 
 const clientFields = `
   _id,
-  clientId,
+  clientName,
+  "slug": slug.current,
   slides,
 `;
 
@@ -12,3 +13,14 @@ export const indexQuery = `
 *[_type == "clients"] | order(date desc, _updatedAt desc) {
   ${clientFields}
 }`;
+
+export const clientQuery = `
+{
+  "client": *[_type == "clients" && slug.current == $slug][0] {
+    ${clientFields}
+  },
+}`;
+
+export const clientSlugsQuery = `
+  *[_type == "clients" && defined(slug.current)][].slug.current
+`;
