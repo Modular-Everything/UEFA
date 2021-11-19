@@ -1,25 +1,36 @@
 import {
-  groq,
   createClient,
+  createPortableTextComponent,
   createImageUrlBuilder,
   createPreviewSubscriptionHook,
 } from "next-sanity";
 
-const config = {
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  useCdn: process.env.NODE_ENV === "production",
-};
+import { config } from "./config";
+
+if (!config.projectId) {
+  throw new Error(
+    "The Project ID is not set. Check your environment variables."
+  );
+}
+
+export const urlFor = (source) => createImageUrlBuilder(config).image(source);
 
 export const imageBuilder = (source) =>
   createImageUrlBuilder(config).image(source);
+
 export const usePreviewSubscription = createPreviewSubscriptionHook(config);
+
+// Set up Portable Text serialization
+export const PortableText = createPortableTextComponent({
+  ...config,
+  serializers: {},
+});
+
 export const client = createClient(config);
+
 export const previewClient = createClient({
   ...config,
   useCdn: false,
-  token: process.env.SANITY_API_TOKEN,
 });
 
 export const getClient = (usePreview) => (usePreview ? previewClient : client);
-export default client;
