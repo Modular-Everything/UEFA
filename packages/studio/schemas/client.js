@@ -1,33 +1,36 @@
 export default {
-  name: "clients",
-  title: "Clients",
+  name: "client",
+  title: "Client",
   type: "document",
   fields: [
     {
-      name: "clientName",
-      title: "Client Name",
+      name: "title",
+      title: "Client Title",
       type: "string",
       validation: (Rule) => Rule.required(),
+      description: "The title of the client.",
     },
     {
       name: "slug",
-      title: "Client Identifier",
+      title: "Client Identity",
       type: "slug",
       validation: (Rule) => Rule.required(),
       description: "Must be unique (use the generate button).",
       options: {
-        source: "clientName",
+        source: "title",
+        maxLength: 200,
       },
     },
     {
-      name: "slides",
-      title: "Slides",
+      name: "decks",
+      title: "Client Decks",
       type: "array",
       of: [
         {
-          name: "colorBlock",
-          title: "Color Block",
-          type: "string",
+          name: "deck",
+          title: "Select a Deck",
+          type: "reference",
+          to: [{ type: "deck" }],
         },
       ],
     },
