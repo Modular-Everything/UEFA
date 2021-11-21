@@ -4,23 +4,44 @@
 
 const clientFields = `
   _id,
-  clientName,
+  title,
   "slug": slug.current,
-  slides,
+  "decks": decks[]->
 `;
 
 export const indexQuery = `
-*[_type == "clients"] | order(date desc, _updatedAt desc) {
+*[_type == "client"] | order(date desc, _updatedAt desc) {
   ${clientFields}
 }`;
 
 export const clientQuery = `
 {
-  "client": *[_type == "clients" && slug.current == $slug][0] {
+  "client": *[_type == "client" && slug.current == $client][0] {
     ${clientFields}
   },
 }`;
 
 export const clientSlugsQuery = `
-  *[_type == "clients" && defined(slug.current)][].slug.current
+*[_type == "client" && defined(slug.current)][].slug.current
+`;
+
+const deckFields = `
+  _id,
+  title,
+  "slug": slug.current,
+  slides,
+`;
+
+export const deckQuery = `
+{
+  "deck": *[_type == "deck" && slug.current == $deck][0] {
+    ${deckFields}
+  },
+  "client": *[_type == "client" && slug.current == $client][0] {
+    ${clientFields}
+  },
+}`;
+
+export const deckSlugsQuery = `
+  *[_type == "deck" && defined(slug.current)][].slug.current
 `;
