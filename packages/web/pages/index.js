@@ -6,7 +6,7 @@ import { getClient, overlayDrafts } from "../lib/sanity.server";
 
 // ---
 
-const Home = ({ allClients }) => {
+function Home({ allClients }) {
   console.log(allClients);
 
   return (
@@ -19,17 +19,17 @@ const Home = ({ allClients }) => {
 
       <ul>
         {allClients.map((client) => (
-          <li>
+          <li key={client._id}>
             Client name:{" "}
             <Link href={`/clients/${client.slug}`}>
-              <a>{client.clientName}</a>
+              <a>{client.title}</a>
             </Link>
           </li>
         ))}
       </ul>
     </div>
   );
-};
+}
 
 export default Home;
 

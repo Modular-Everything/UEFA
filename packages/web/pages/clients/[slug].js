@@ -5,7 +5,7 @@ import { sanityClient, getClient } from "../../lib/sanity.server";
 
 // ---
 
-const Client = ({ data }) => {
+function Client({ data }) {
   console.log(data);
 
   const client = {
@@ -21,7 +21,7 @@ const Client = ({ data }) => {
       <h1>{client.name}</h1>
     </div>
   );
-};
+}
 
 export default Client;
 
