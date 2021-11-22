@@ -7,7 +7,7 @@ import { sanityClient, getClient } from "../../../lib/sanity.server";
 // ---
 
 function Client({ data }) {
-  console.info(data);
+  // console.info(data);
 
   const client = {
     title: data?.client?.title,
@@ -24,7 +24,7 @@ function Client({ data }) {
       <h1>{client.title}</h1>
 
       <ul>
-        {client.decks.map((deck) => (
+        {client?.decks?.map((deck) => (
           <li key={deck._id}>
             <Link href={`/clients/${client.slug}/${deck.slug.current}`}>
               <a>{deck.title}</a>
@@ -39,11 +39,13 @@ function Client({ data }) {
 export default Client;
 
 export async function getStaticProps({ params, preview = false }) {
-  console.log(params);
-
   const { client } = await getClient(preview).fetch(clientQuery, {
     client: params.client,
   });
+
+  if (!client) {
+    return { notFound: true };
+  }
 
   return {
     props: {

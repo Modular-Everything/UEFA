@@ -7,7 +7,7 @@ import { getClient, overlayDrafts } from "../lib/sanity.server";
 // ---
 
 function Home({ allClients }) {
-  console.info(allClients);
+  // console.info(allClients);
 
   return (
     <div>

@@ -35,7 +35,7 @@ function Client({ data }) {
       <h1>{client.title}</h1>
 
       <ul>
-        {deck.slides.map((slide) => (
+        {deck?.slides?.map((slide) => (
           <li key={slide} style={{ color: `#${slide}` }}>
             {slide}
           </li>
@@ -52,6 +52,10 @@ export async function getStaticProps({ params, preview = false }) {
     deck: params.deck,
     client: params.client,
   });
+
+  if (!client || !deck) {
+    return { notFound: true };
+  }
 
   return {
     props: {
