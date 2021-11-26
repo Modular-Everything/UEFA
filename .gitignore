@@ -152,3 +152,7 @@ dist
 !.vscode/*.code-snippets
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,node
+packages/studio/schemas/slides/italy.js
+.gitignore
+
+.DS_Store
