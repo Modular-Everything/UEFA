@@ -1,3 +1,5 @@
+import slides from "./data/slides";
+
 export default {
   name: "deck",
   title: "Deck",
@@ -25,13 +27,7 @@ export default {
       name: "slides",
       title: "Slides",
       type: "array",
-      of: [
-        {
-          name: "colorBlock",
-          title: "Color Block",
-          type: "string",
-        },
-      ],
+      of: slides,
     },
   ],
 };
