@@ -1,3 +1,34 @@
+:root {
+  --uefa-lt-blue: #2767ff;
+  --uefa-blue: #1a34db;
+  --uefa-mdm-blue: #052992;
+  --uefa-drk-blue: #20206a;
+
+  --uefa-lt-green: #35c97e;
+  --uefa-green: #03bb5d;
+  --uefa-mdm-green: #019a51;
+  --uefa-drk-green: #027246;
+
+  --uefa-lt-red: #ff6666;
+  --uefa-red: #fe0000;
+  --uefa-mdm-red: #c80000;
+  --uefa-drk-red: #8c0000;
+
+  --uefa-lt-yellow: #fee166;
+  --uefa-yellow: #ffcb00;
+  --uefa-mdm-yellow: #fbab01;
+  --uefa-drk-yellow: #eb8d00;
+
+  --uefa-lt-black: #34343e;
+  --uefa-black: #1e1e28;
+  --uefa-mdm-black: #000000;
+
+  --uefa-lt-grey: #eff4f8;
+  --uefa-grey: #d4e2eb;
+  --uefa-mdm-grey: #abc8d8;
+  --uefa-drk-grey: #749baa;
+}
+
 html,
 body {
   padding: 0;
