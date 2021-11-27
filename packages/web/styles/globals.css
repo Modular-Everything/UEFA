@@ -27,14 +27,20 @@
   --uefa-grey: #d4e2eb;
   --uefa-mdm-grey: #abc8d8;
   --uefa-drk-grey: #749baa;
+
+  --content-gutter: clamp(2.4rem, 10vw, 9.6rem);
 }
 
-html,
+html {
+  font-size: 10px;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "UEFA Euro Book", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  color: var(--uefa-black);
+  font-size: 2rem;
 }
 
 a {
@@ -44,4 +50,22 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.font--heavy-extended {
+  font-family: "UEFA Euro Heavy Extended";
+  font-weight: 900;
+  font-style: normal;
+}
+
+.font--euro-book {
+  font-family: "UEFA Euro Book";
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font--medium-extended {
+  font-family: "UEFA Euro Medium Extended";
+  font-weight: 500;
+  font-style: normal;
 }

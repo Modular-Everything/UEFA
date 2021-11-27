@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "UEFA Euro Heavy Extended";
+  src: local("UEFA Euro Heavy Extended"), local("UEFAEuro-HeavyExtended"),
+    url("./fonts/UEFAEuro-HeavyExtended.woff2") format("woff2"),
+    url("./fonts/UEFAEuro-HeavyExtended.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UEFA Euro Book";
+  src: local("UEFA Euro Book"), local("UEFAEuro-Book"),
+    url("./fonts/UEFAEuro-Book.woff2") format("woff2"),
+    url("./fonts/UEFAEuro-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UEFA Euro Medium Extended";
+  src: local("UEFA Euro Medium Extended"), local("UEFAEuro-MediumExtended"),
+    url("./fonts/UEFAEuro-MediumExtended.woff2") format("woff2"),
+    url("./fonts/UEFAEuro-MediumExtended.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
