@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Pill = styled.article`
-  --data-color: ${({ dataColor }) => dataColor || "var(--uefa-blue)"};
+  --data-color: ${({ dataColor }) =>
+    dataColor ? `var(--${dataColor})` : "var(--uefa-blue)"};
   --context-color: ${({ contextColor }) =>
-    contextColor || "var(--uefa-lt-blue)"};
+    contextColor ? `var(--${contextColor})` : "var(--uefa-lt-blue)"};
 
   background-color: var(--context-color);
   border-radius: 1000rem;

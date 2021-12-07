@@ -24,7 +24,12 @@ export function Italy({ data }) {
           </SimpleCopy>
         )}
 
-        {data?.pills && <Pills pills={data.pills} />}
+        {data?.pills && (
+          <Pills
+            pills={data.pills}
+            colors={{ data: "uefa-blue", context: "uefa-lt-blue" }}
+          />
+        )}
       </Content>
 
       <div className="image">

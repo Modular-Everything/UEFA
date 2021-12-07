@@ -2,9 +2,13 @@ import PropTypes from "prop-types";
 
 import * as S from "./Pill.styles";
 
-export function Pill({ data, context }) {
+export function Pill({ data, context, colors }) {
   return (
-    <S.Pill className="pill">
+    <S.Pill
+      className="pill"
+      dataColor={colors?.data}
+      contextColor={colors?.context}
+    >
       <span className="data">{data}</span>
       <span className="context">{context}</span>
     </S.Pill>
@@ -14,4 +18,15 @@ export function Pill({ data, context }) {
 Pill.propTypes = {
   data: PropTypes.string.isRequired,
   context: PropTypes.string.isRequired,
+  colors: PropTypes.shape({
+    dataColor: PropTypes.string,
+    contextColor: PropTypes.string,
+  }),
+};
+
+Pill.defaultProps = {
+  colors: {
+    dataColor: null,
+    contextColor: null,
+  },
 };
