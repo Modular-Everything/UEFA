@@ -4,7 +4,7 @@ import * as S from "./Headline.styles";
 
 export function Headline({ data }) {
   return (
-    <S.Headline className="Headline font--heavy-extended">
+    <S.Headline className="headline font--heavy-extended">
       {data?.headline}
     </S.Headline>
   );
