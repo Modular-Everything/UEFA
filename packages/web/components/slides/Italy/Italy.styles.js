@@ -21,7 +21,8 @@ export const Italy = styled.article`
     z-index: 50;
     bottom: 0;
     right: 0;
+    max-width: 96rem;
+    min-width: 42rem;
     display: flex;
-    width: clamp(50rem, 70vw, 100rem);
   }
 `;

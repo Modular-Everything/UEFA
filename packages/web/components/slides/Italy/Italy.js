@@ -17,7 +17,7 @@ export function Italy({ data }) {
       </Content>
 
       <div className="image">
-        <Image {...imageProps} quality={95} />
+        <Image {...imageProps} quality={95} className="Italy__image" />
       </div>
 
       <Pattern />
