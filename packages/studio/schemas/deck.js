@@ -28,6 +28,9 @@ export default {
       title: "Slides",
       type: "array",
       of: slides,
+      options: {
+        editModal: "fullscreen",
+      },
     },
   ],
 };
