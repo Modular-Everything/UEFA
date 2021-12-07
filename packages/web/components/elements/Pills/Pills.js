@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 import { Pill } from "../Pill";
 import * as S from "./Pills.styles";
@@ -18,20 +18,21 @@ export function Pills({ pills, colors }) {
   );
 }
 
-Pills.propTypes = {
-  pills: PropTypes.arrayOf({
-    data: PropTypes.string.isRequired,
-    context: PropTypes.string.isRequired,
-  }),
-  colors: PropTypes.shape({
-    data: PropTypes.string,
-    context: PropTypes.string,
-  }),
-};
+// Pills.propTypes = {
+//   pills: PropTypes.arrayOf({
+//     data: PropTypes.string,
+//     context: PropTypes.string,
+//   }),
+//   colors: PropTypes.shape({
+//     data: PropTypes.string,
+//     context: PropTypes.string,
+//   }),
+// };
 
-Pills.defaultProps = {
-  colors: {
-    data: null,
-    context: null,
-  },
-};
+// Pills.defaultProps = {
+//   pills: null,
+//   colors: {
+//     data: null,
+//     context: null,
+//   },
+// };
