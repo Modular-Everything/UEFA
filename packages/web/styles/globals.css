@@ -52,6 +52,12 @@ a {
   box-sizing: border-box;
 }
 
+/**
+  ******************************************
+  * Custom fonts
+  ******************************************
+*/
+
 .font--heavy-extended {
   font-family: "UEFA Euro Heavy Extended";
   font-weight: 900;
@@ -68,4 +74,18 @@ a {
   font-family: "UEFA Euro Medium Extended";
   font-weight: 500;
   font-style: normal;
+}
+
+/**
+  ******************************************
+  * Supports/'modernizr' overrides
+  ******************************************
+*/
+
+.s--gap .content {
+  gap: clamp(3.2rem, 10%, 6rem);
+}
+
+.dns--gap .content > *:not(:last-child) {
+  margin-bottom: clamp(3.2rem, 10%, 6rem);
 }

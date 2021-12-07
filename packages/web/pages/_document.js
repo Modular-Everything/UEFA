@@ -1,5 +1,7 @@
-import Document from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+
+import { checkFlexGap } from "../helpers/checkFlexGap";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -26,5 +28,17 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body className={checkFlexGap ? "s--gap" : "dns--gap"}>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }
