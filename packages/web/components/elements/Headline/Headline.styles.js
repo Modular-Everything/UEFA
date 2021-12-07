@@ -4,7 +4,7 @@ export const Headline = styled.h2`
   text-transform: uppercase;
   font-size: clamp(4rem, 6vw, 6.4rem);
   line-height: clamp(3rem, 5vw, 5.6rem);
-  color: var(--uefa-lt-blue);
+  color: inherit;
   border-left: 1px solid var(--uefa-yellow);
   padding: 1.6rem 0;
   width: 100%;

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { sanityConfig } from "../../../lib/config";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
+import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Italy.styles";
 import { Pattern } from "./Pattern";
 
@@ -14,6 +15,7 @@ export function Italy({ data }) {
     <S.Italy>
       <Content>
         <Headline data={{ headline: data?.headline }} />
+        <SimpleCopy>Test</SimpleCopy>
       </Content>
 
       <div className="image">

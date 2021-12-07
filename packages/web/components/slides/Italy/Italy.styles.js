@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Italy = styled.article`
   height: 100%;
+  background-color: var(--uefa-lt-grey);
 
   svg {
     position: absolute;
@@ -11,6 +12,10 @@ export const Italy = styled.article`
     right: 0;
     width: 100%;
     z-index: 0;
+  }
+
+  .content {
+    color: var(--uefa-lt-blue);
   }
 
   .image {
