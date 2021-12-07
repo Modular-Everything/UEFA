@@ -33,7 +33,10 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          {/* eslint-disable-next-line @next/next/no-css-tags */}
+          <link href="/fonts/fonts.css" rel="stylesheet" />
+        </Head>
         <body className={checkFlexGap ? "s--gap" : "dns--gap"}>
           <Main />
           <NextScript />
