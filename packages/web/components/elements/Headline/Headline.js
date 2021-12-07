@@ -1,4 +1,7 @@
+import { gsap } from "gsap";
 import PropTypes from "prop-types";
+import { useEffect } from "react";
+
 
 import * as S from "./Headline.styles";
 

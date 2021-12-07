@@ -1,8 +1,9 @@
 import ReactFullpage from "@fullpage/react-fullpage";
+import { gsap } from "gsap";
 import Head from "next/head";
-import React from "react";
+import { useEffect, useState } from "react";
 
-import { Italy } from "../../../components/slides";
+import { getSlide } from "../../../helpers/getSlide";
 import {
   deckQuery,
   deckSlugsQuery,
@@ -27,16 +28,24 @@ function Client({ data }) {
     title: data?.deck?.title,
     slides: data?.deck?.slides,
   };
-
-  function getSlide(slide) {
-    const id = slide._type;
-    const slides = {
-      italy: <Italy />,
-    };
-    return slides[id] && React.createElement(slides[id].type, { data: slide });
-  }
-
   console.log("deck", deck);
+
+  /**
+   * Handle animations
+   * Can this be passed off to another component?
+   */
+  const [tl, setTl] = useState(() =>
+    gsap.timeline({
+      paused: true,
+    })
+  );
+  useEffect(() => {
+    tl.seek(1);
+    console.log(tl);
+  }, []);
+  /**
+   * End animations
+   */
 
   function onLeave(origin, destination, direction) {
     console.log("onLeave", { origin, destination, direction });
@@ -57,7 +66,7 @@ function Client({ data }) {
           <ReactFullpage.Wrapper>
             {deck.slides.map((slide) => (
               <div key={slide._key} className="section">
-                {getSlide(slide)}
+                {getSlide(slide, tl)}
               </div>
             ))}
           </ReactFullpage.Wrapper>
