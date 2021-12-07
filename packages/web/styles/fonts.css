@@ -1,8 +1,12 @@
 @font-face {
   font-family: "UEFA Euro Heavy Extended";
+  src: url("UEFAEuro-HeavyExtended.eot");
   src: local("UEFA Euro Heavy Extended"), local("UEFAEuro-HeavyExtended"),
-    url("./fonts/UEFAEuro-HeavyExtended.woff2") format("woff2"),
-    url("./fonts/UEFAEuro-HeavyExtended.woff") format("woff");
+    url("UEFAEuro-HeavyExtended.eot?#iefix") format("embedded-opentype"),
+    url("UEFAEuro-HeavyExtended.woff2") format("woff2"),
+    url("UEFAEuro-HeavyExtended.woff") format("woff"),
+    url("UEFAEuro-HeavyExtended.ttf") format("truetype"),
+    url("UEFAEuro-HeavyExtended.svg#UEFAEuro-HeavyExtended") format("svg");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -10,9 +14,13 @@
 
 @font-face {
   font-family: "UEFA Euro Book";
+  src: url("UEFAEuro-Book.eot");
   src: local("UEFA Euro Book"), local("UEFAEuro-Book"),
-    url("./fonts/UEFAEuro-Book.woff2") format("woff2"),
-    url("./fonts/UEFAEuro-Book.woff") format("woff");
+    url("UEFAEuro-Book.eot?#iefix") format("embedded-opentype"),
+    url("UEFAEuro-Book.woff2") format("woff2"),
+    url("UEFAEuro-Book.woff") format("woff"),
+    url("UEFAEuro-Book.ttf") format("truetype"),
+    url("UEFAEuro-Book.svg#UEFAEuro-Book") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -20,9 +28,13 @@
 
 @font-face {
   font-family: "UEFA Euro Medium Extended";
+  src: url("UEFAEuro-MediumExtended.eot");
   src: local("UEFA Euro Medium Extended"), local("UEFAEuro-MediumExtended"),
-    url("./fonts/UEFAEuro-MediumExtended.woff2") format("woff2"),
-    url("./fonts/UEFAEuro-MediumExtended.woff") format("woff");
+    url("UEFAEuro-MediumExtended.eot?#iefix") format("embedded-opentype"),
+    url("UEFAEuro-MediumExtended.woff2") format("woff2"),
+    url("UEFAEuro-MediumExtended.woff") format("woff"),
+    url("UEFAEuro-MediumExtended.ttf") format("truetype"),
+    url("UEFAEuro-MediumExtended.svg#UEFAEuro-MediumExtended") format("svg");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
