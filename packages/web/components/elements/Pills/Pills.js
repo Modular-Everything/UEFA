@@ -5,18 +5,15 @@ import * as S from "./Pills.styles";
 
 export function Pills({ pills, colors }) {
   return (
-    <S.Pills>
-      {pills?.map((pill) => {
-        console.log("pill", pill);
-        return (
-          <Pill
-            key={pill?._key}
-            data={pill?.data}
-            context={pill?.context}
-            colors={colors}
-          />
-        );
-      })}
+    <S.Pills className="pills">
+      {pills?.map((pill) => (
+        <Pill
+          key={pill?._key}
+          data={pill?.data}
+          context={pill?.context}
+          colors={colors}
+        />
+      ))}
     </S.Pills>
   );
 }
