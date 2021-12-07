@@ -64,7 +64,7 @@ function Client({ data }) {
         // scrollHorizontally = {true}
         render={(comp) => (
           <ReactFullpage.Wrapper>
-            {deck.slides.map((slide) => (
+            {deck?.slides?.map((slide) => (
               <div key={slide._key} className="section">
                 {getSlide(slide, tl)}
               </div>
