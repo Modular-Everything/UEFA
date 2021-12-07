@@ -8,7 +8,7 @@ export const Pill = styled.article`
 
   background-color: var(--context-color);
   border-radius: 1000rem;
-  padding: 0.8rem;
+  padding: 0.8rem 1.6rem 0.8rem 0.8rem;
   display: flex;
   align-items: center;
 
