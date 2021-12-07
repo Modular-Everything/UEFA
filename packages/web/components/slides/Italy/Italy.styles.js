@@ -3,9 +3,6 @@ import styled from "styled-components";
 export const Italy = styled.article`
   height: 100%;
 
-  h2 {
-  }
-
   svg {
     position: absolute;
     bottom: 0;
