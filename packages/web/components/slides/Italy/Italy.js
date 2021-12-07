@@ -1,3 +1,4 @@
+import BlockContent from "@sanity/block-content-to-react";
 import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
 
@@ -15,7 +16,9 @@ export function Italy({ data }) {
     <S.Italy>
       <Content>
         <Headline data={{ headline: data?.headline }} />
-        <SimpleCopy>Test</SimpleCopy>
+        <SimpleCopy>
+          <BlockContent blocks={data?.copy} />
+        </SimpleCopy>
       </Content>
 
       <div className="image">

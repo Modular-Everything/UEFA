@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import * as S from "./SimpleCopy.styles";
 
 export function SimpleCopy({ children }) {
-  return <S.SimpleCopy>{children}</S.SimpleCopy>;
+  return <S.SimpleCopy className="simpleCopy">{children}</S.SimpleCopy>;
 }
 
 SimpleCopy.propTypes = {

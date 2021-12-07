@@ -16,6 +16,10 @@ export const Italy = styled.article`
 
   .content {
     color: var(--uefa-lt-blue);
+
+    .simpleCopy {
+      max-width: 38rem;
+    }
   }
 
   .image {
