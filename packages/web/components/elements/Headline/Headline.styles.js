@@ -8,6 +8,7 @@ export const Headline = styled.h2`
   border-left: 1px solid var(--uefa-yellow);
   padding: 1.6rem 0;
   width: 100%;
+  margin: 0;
 
   @media (min-width: 375px) {
     width: 50vw;
