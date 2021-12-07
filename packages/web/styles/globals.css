@@ -28,11 +28,14 @@
   --uefa-mdm-grey: #abc8d8;
   --uefa-drk-grey: #749baa;
 
+  --white: #fff;
+  --black: #000;
+
   --content-gutter: clamp(2.4rem, 10vw, 9.6rem);
 
-  --font-uefa-heavy-extended: 'UEFA Euro Heavy Extended';
-  --font-uefa-book: 'UEFA Euro Book',
-  --font-uefa-medium-extended: 'UEFA Euro Medium Extended';
+  --font-uefa-heavy-extended: "UEFA Euro Heavy Extended";
+  --font-uefa-book: "UEFA Euro Book";
+  --font-uefa-medium-extended: "UEFA Euro Medium Extended";
 }
 
 html {
@@ -87,9 +90,9 @@ a {
 */
 
 .s--gap .content {
-  gap: clamp(3.2rem, 10%, 6rem);
+  gap: clamp(2.4rem, 5vh, 6rem);
 }
 
 .dns--gap .content > *:not(:last-child) {
-  margin-bottom: clamp(3.2rem, 10%, 6rem);
+  margin-bottom: clamp(2.4rem, 5vh, 6rem);
 }
