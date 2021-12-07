@@ -43,7 +43,7 @@ function Client({ data }) {
   }
 
   return (
-    <div>
+    <>
       <Head>
         <title>{deck.title} | UEFA Dash</title>
       </Head>
@@ -63,7 +63,7 @@ function Client({ data }) {
           </ReactFullpage.Wrapper>
         )}
       />
-    </div>
+    </>
   );
 }
 
