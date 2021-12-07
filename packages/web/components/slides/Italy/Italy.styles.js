@@ -20,6 +20,10 @@ export const Italy = styled.article`
     .simpleCopy {
       max-width: 38rem;
     }
+
+    .pills {
+      justify-items: start;
+    }
   }
 
   .image {
