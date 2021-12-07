@@ -29,6 +29,10 @@
   --uefa-drk-grey: #749baa;
 
   --content-gutter: clamp(2.4rem, 10vw, 9.6rem);
+
+  --font-uefa-heavy-extended: 'UEFA Euro Heavy Extended';
+  --font-uefa-book: 'UEFA Euro Book',
+  --font-uefa-medium-extended: 'UEFA Euro Medium Extended';
 }
 
 html {
@@ -59,19 +63,19 @@ a {
 */
 
 .font--heavy-extended {
-  font-family: "UEFA Euro Heavy Extended";
+  font-family: var(--font-uefa-heavy-extended);
   font-weight: 900;
   font-style: normal;
 }
 
 .font--euro-book {
-  font-family: "UEFA Euro Book";
+  font-family: var(--font-uefa-book);
   font-weight: normal;
   font-style: normal;
 }
 
 .font--medium-extended {
-  font-family: "UEFA Euro Medium Extended";
+  font-family: var(--font-uefa-medium-extended);
   font-weight: 500;
   font-style: normal;
 }
