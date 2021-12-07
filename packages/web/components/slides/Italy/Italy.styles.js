@@ -16,17 +16,6 @@ export const Italy = styled.article`
     z-index: 0;
   }
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    padding: var(--content-gutter);
-    position: relative;
-    z-index: 500;
-    height: 100%;
-    width: 100%;
-    z-index: 100;
-  }
-
   .image {
     position: absolute;
     z-index: 50;
