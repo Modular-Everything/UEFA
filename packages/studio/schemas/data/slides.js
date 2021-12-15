@@ -1,8 +1,6 @@
 const slides = [
   {
-    name: "colorBlock",
-    title: "Color Block",
-    type: "string",
+    type: "colorBlock",
   },
   {
     type: "italy",
