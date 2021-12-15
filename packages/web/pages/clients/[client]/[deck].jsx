@@ -1,7 +1,7 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import { gsap } from "gsap";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { getSlide } from "../../../helpers/getSlide";
 import {
@@ -20,6 +20,8 @@ const pluginWrapper = () => {
 };
 
 function Client({ data }) {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   const client = {
     title: data?.client?.title,
   };
@@ -28,27 +30,13 @@ function Client({ data }) {
     title: data?.deck?.title,
     slides: data?.deck?.slides,
   };
-  console.log("deck", deck);
 
-  /**
-   * Handle animations
-   * Can this be passed off to another component?
-   */
-  const [tl, setTl] = useState(() =>
-    gsap.timeline({
-      paused: true,
-    })
-  );
-  useEffect(() => {
-    tl.seek(1);
-    console.log(tl);
-  }, []);
-  /**
-   * End animations
-   */
+  function afterLoad(origin) {
+    setActiveIndex(origin.index);
+  }
 
-  function onLeave(origin, destination, direction) {
-    console.log("onLeave", { origin, destination, direction });
+  function onLeave(destination) {
+    setActiveIndex(destination.index);
   }
 
   return (
@@ -60,17 +48,20 @@ function Client({ data }) {
       <ReactFullpage
         navigation={false}
         pluginWrapper={pluginWrapper}
+        afterLoad={afterLoad.bind(this)}
         onLeave={onLeave.bind(this)}
         // scrollHorizontally = {true}
-        render={(comp) => (
-          <ReactFullpage.Wrapper>
-            {deck?.slides?.map((slide) => (
-              <div key={slide._key} className="section">
-                {getSlide(slide, tl)}
-              </div>
-            ))}
-          </ReactFullpage.Wrapper>
-        )}
+        render={() => {
+          return (
+            <ReactFullpage.Wrapper>
+              {deck?.slides?.map((slide, index) => (
+                <div key={slide._key} className="section">
+                  {getSlide(slide, index)}
+                </div>
+              ))}
+            </ReactFullpage.Wrapper>
+          );
+        }}
       />
     </>
   );
