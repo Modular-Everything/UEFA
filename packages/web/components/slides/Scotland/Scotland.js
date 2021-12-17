@@ -12,8 +12,6 @@ import { Pattern } from "./ScotlandPattern";
 export function Scotland({ data, index }) {
   const el = useRef();
 
-  console.log(data);
-
   return (
     <S.Scotland
       ref={el}
