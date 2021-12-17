@@ -1,4 +1,5 @@
 import BlockContent from "@sanity/block-content-to-react";
+import { readableColorIsBlack } from "color2k";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
@@ -14,16 +15,36 @@ export function Scotland({ data, index }) {
   console.log(data);
 
   return (
-    <S.Scotland ref={el}>
-      <Content>
+    <S.Scotland
+      ref={el}
+      style={{
+        backgroundColor: data?.brandColors,
+      }}
+    >
+      <Content
+        textColor={
+          readableColorIsBlack(data?.brandColors)
+            ? "var(--uefa-black)"
+            : "var(--white)"
+        }
+      >
         <div className="container">
           {data?.copy && (
-            <SimpleCopy textAlign="right">
+            <SimpleCopy>
               <BlockContent blocks={data.copy} />
             </SimpleCopy>
           )}
 
-          {data?.headline && <Headline data={{ headline: data.headline }} />}
+          {data?.headline && (
+            <Headline
+              data={{ headline: data.headline }}
+              dividerColor={
+                readableColorIsBlack(data?.brandColors)
+                  ? "var(--white)"
+                  : "var(--uefa-black)"
+              }
+            />
+          )}
         </div>
       </Content>
 

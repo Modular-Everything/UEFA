@@ -6,7 +6,8 @@ export const Headline = styled.h2`
   font-size: clamp(3.2rem, 5vw, 6.4rem);
   line-height: clamp(2.8rem, 4vw, 4.8rem);
   color: inherit;
-  border-left: 1px solid var(--uefa-yellow);
+  border-left: 1px solid
+    ${({ dividerColor }) => dividerColor || "var(--uefa-yellow)"};
   padding: 0.6rem 0;
   width: 100%;
   margin: 0;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 // ---
 
 export const Content = styled.div`
+  color: var(--white);
   cursor: default;
   width: calc(100% - (var(--gutter) * 2));
   height: 100%;
