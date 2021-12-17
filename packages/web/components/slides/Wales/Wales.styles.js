@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Wales = styled.article`
   height: 100%;
   background-color: var(--uefa-lt-blue);
-  display: block;
 
   .content {
     color: var(--white);
@@ -12,20 +11,39 @@ export const Wales = styled.article`
 
     .container {
       display: flex;
-      flex-direction: row;
+      flex-direction: column-reverse;
       align-items: center;
       max-width: 88rem;
       gap: 4.8rem;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+
+      .simpleCopy {
+        width: 100%;
+
+        @media (min-width: 375px) {
+          width: 50vw;
+          max-width: 32rem;
+        }
+      }
     }
   }
 
   .pattern {
-    /* object-position: right; */
-    right: -300px !important;
-    /* min-height: 100% !important; */
+    right: -10rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
 
-    @media (min-width: 375px) {
+    @media (min-width: 768px) {
       right: 0;
+    }
+
+    img {
+      object-position: right;
     }
   }
 `;

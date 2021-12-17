@@ -29,15 +29,15 @@ export function Wales({ data, index }) {
         </div>
       </Content>
 
-      <Image
-        src={Pattern}
-        className="pattern"
-        alt=""
-        layout="responsive"
-        width={1212}
-        height={1800}
-        quality={100}
-      />
+      <div className="pattern">
+        <Image
+          src={Pattern}
+          alt=""
+          layout="fill"
+          quality={100}
+          objectFit="contain"
+        />
+      </div>
     </S.Wales>
   );
 }
