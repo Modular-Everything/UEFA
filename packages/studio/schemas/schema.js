@@ -6,10 +6,20 @@ import client from "./client";
 import deck from "./deck";
 import colorBlock from "./slides/colorBlock";
 import italy from "./slides/italy";
+import romania from "./slides/romania";
 import scotland from "./slides/scotland";
 import wales from "./slides/wales";
 
 export default createSchema({
   name: "default",
-  types: [...schemaTypes, client, deck, italy, scotland, wales, colorBlock],
+  types: [
+    ...schemaTypes,
+    client,
+    deck,
+    italy,
+    scotland,
+    wales,
+    romania,
+    colorBlock,
+  ],
 });
