@@ -1,3 +1,5 @@
+import brandColorsList from "./brandColorsList";
+
 export const headline = {
   name: "headline",
   title: "Headline",
@@ -64,4 +66,13 @@ export const pills = {
       },
     },
   ],
+};
+
+export const brandColors = {
+  name: "brandColors",
+  title: "Brand Colours",
+  type: "string",
+  options: {
+    list: brandColorsList,
+  },
 };

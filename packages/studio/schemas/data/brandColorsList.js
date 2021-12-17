@@ -1,0 +1,27 @@
+const brandColorsList = [
+  { title: "UEFA Light Blue", value: "uefa-lt-blue" },
+  { title: "UEFA Blue", value: "uefa-blue" },
+  { title: "UEFA Medium Blue", value: "uefa-mdm-blue" },
+  { title: "UEFA Dark Blue", value: "uefa-drk-blue" },
+  { title: "UEFA Light Green", value: "uefa-lt-green" },
+  { title: "UEFA Green", value: "uefa-green" },
+  { title: "UEFA Medium Green", value: "uefa-mdm-green" },
+  { title: "UEFA Dark Green", value: "uefa-drk-green" },
+  { title: "UEFA Light Red", value: "uefa-lt-red" },
+  { title: "UEFA Red", value: "uefa-red" },
+  { title: "UEFA Medium Red", value: "uefa-mdm-red" },
+  { title: "UEFA Dark Red", value: "uefa-drk-red" },
+  { title: "UEFA Light Yellow", value: "uefa-lt-yellow" },
+  { title: "UEFA Yellow", value: "uefa-yellow" },
+  { title: "UEFA Medium Yellow", value: "uefa-mdm-yellow" },
+  { title: "UEFA Dark Yellow", value: "uefa-drk-yellow" },
+  { title: "UEFA Light Black", value: "uefa-lt-black" },
+  { title: "UEFA Black", value: "uefa-black" },
+  { title: "UEFA Medium Black", value: "uefa-mdm-black" },
+  { title: "UEFA Light Grey", value: "uefa-lt-grey" },
+  { title: "UEFA Grey", value: "uefa-grey" },
+  { title: "UEFA Medium Grey", value: "uefa-mdm-grey" },
+  { title: "UEFA Dark Grey", value: "uefa-drk-grey" },
+];
+
+export default brandColorsList;
