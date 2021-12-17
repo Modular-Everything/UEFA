@@ -40,8 +40,8 @@ export function Scotland({ data, index }) {
               data={{ headline: data.headline }}
               dividerColor={
                 readableColorIsBlack(data?.brandColors)
-                  ? "var(--white)"
-                  : "var(--uefa-black)"
+                  ? "var(--uefa-red)"
+                  : null
               }
             />
           )}
