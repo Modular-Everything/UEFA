@@ -20,6 +20,8 @@ const pluginWrapper = () => {
 };
 
 function Client({ data }) {
+  console.log(data);
+
   const [activeIndex, setActiveIndex] = useState(null);
 
   const client = {
