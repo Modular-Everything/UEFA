@@ -13,8 +13,6 @@ export function Romania({ data, index }) {
   const imageProps = useNextSanityImage(sanityConfig, data?.image);
   const el = useRef();
 
-  console.log(data);
-
   return (
     <S.Romania
       ref={el}
@@ -30,7 +28,13 @@ export function Romania({ data, index }) {
 
       {data?.image && (
         <div className="bg">
-          <Image {...imageProps} alt="" layout="fill" objectFit="cover" />
+          <Image
+            {...imageProps}
+            alt=""
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+          />
         </div>
       )}
     </S.Romania>
