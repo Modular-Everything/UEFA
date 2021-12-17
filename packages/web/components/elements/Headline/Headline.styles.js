@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const Headline = styled.h2`
   text-rendering: optimizeLegibility;
   text-transform: uppercase;
-  font-size: clamp(4rem, 6vw, 6.4rem);
-  line-height: clamp(3rem, 5vw, 5.6rem);
+  font-size: clamp(3.2rem, 5vw, 6.4rem);
+  line-height: clamp(2.8rem, 4vw, 4.8rem);
   color: inherit;
   border-left: 1px solid var(--uefa-yellow);
-  padding: 1.6rem 0;
+  padding: 0.6rem 0;
   width: 100%;
   margin: 0;
 
@@ -17,6 +17,7 @@ export const Headline = styled.h2`
   }
 
   @media (min-width: 1000px) {
+    padding: 1.4rem 0;
     width: 50vw;
     max-width: 45rem;
   }
