@@ -1,6 +1,12 @@
 import { createElement } from "react";
 
-import { Italy, Wales, ColorBlock, Scotland } from "../components/slides";
+import {
+  Italy,
+  Wales,
+  ColorBlock,
+  Scotland,
+  Romania,
+} from "../components/slides";
 
 export function getSlide(slide, index) {
   const id = slide._type;
@@ -8,6 +14,7 @@ export function getSlide(slide, index) {
     italy: <Italy />,
     wales: <Wales />,
     scotland: <Scotland />,
+    romania: <Romania />,
     colorBlock: <ColorBlock />,
   };
   return slides[id] && createElement(slides[id].type, { data: slide, index });
