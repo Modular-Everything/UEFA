@@ -18,7 +18,6 @@ export const Pill = styled.article`
     background-color: var(--data-color);
     color: var(--white);
     min-height: 1.2rem;
-    min-width: 1.2rem;
     margin-right: 0.8rem;
     font-family: var(--font-uefa-heavy-extended);
     font-weight: 900;
