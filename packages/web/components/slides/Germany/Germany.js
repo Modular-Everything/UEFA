@@ -16,8 +16,6 @@ export function Germany({ data, index }) {
   const imageProps = useNextSanityImage(sanityConfig, data?.image);
   const el = useRef();
 
-  console.log(data);
-
   return (
     <S.Germany ref={el}>
       <Content>
