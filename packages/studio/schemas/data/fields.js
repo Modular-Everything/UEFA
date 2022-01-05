@@ -76,3 +76,9 @@ export const brandColors = {
     list: brandColorsList,
   },
 };
+
+export const number = {
+  name: "customNumber",
+  title: "Number",
+  type: "number",
+};
