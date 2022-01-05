@@ -8,6 +8,7 @@ import {
   Romania,
   Germany,
   England,
+  Greece,
 } from "../components/slides";
 
 export function getSlide(slide, index) {
@@ -19,6 +20,7 @@ export function getSlide(slide, index) {
     romania: <Romania />,
     germany: <Germany />,
     england: <England />,
+    greece: <Greece />,
     colorBlock: <ColorBlock />,
   };
   return slides[id] && createElement(slides[id].type, { data: slide, index });

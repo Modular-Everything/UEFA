@@ -7,6 +7,7 @@ import deck from "./deck";
 import colorBlock from "./slides/colorBlock";
 import england from "./slides/england";
 import germany from "./slides/germany";
+import greece from "./slides/greece";
 import italy from "./slides/italy";
 import romania from "./slides/romania";
 import scotland from "./slides/scotland";
@@ -22,6 +23,7 @@ export default createSchema({
     scotland,
     wales,
     romania,
+    greece,
     germany,
     england,
     colorBlock,
