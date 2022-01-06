@@ -15,6 +15,7 @@
     "@sanity/client": "^2.21.10",
     "babel-plugin-styled-components": "^2.0.2",
     "color2k": "^1.2.4",
+    "fitty": "^2.3.5",
     "gsap": "^3.8.0",
     "next": "^12.0.7",
     "next-sanity": "^0.4.0",

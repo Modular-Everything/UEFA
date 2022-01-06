@@ -1,3 +1,5 @@
+import React from "react";
+
 import brandColorsList from "./brandColorsList";
 
 export const headline = {
@@ -29,6 +31,15 @@ export const image = {
   name: "image",
   title: "Slide Image",
   type: "image",
+  description: (
+    <span>
+      Consider compressing your images before uploading them. We recommend{" "}
+      <a href="https://squoosh.app/" target="_blank" rel="noreferrer noopener">
+        Squoosh App
+      </a>{" "}
+      for this.
+    </span>
+  ),
 };
 
 export const pills = {
