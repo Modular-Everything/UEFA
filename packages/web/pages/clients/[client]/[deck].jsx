@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import Head from "next/head";
 import { useState } from "react";
 
+import { NavBar } from "../../../components/navigation/NavBar";
 import { getSlide } from "../../../helpers/getSlide";
 import {
   deckQuery,
@@ -26,6 +27,7 @@ function Client({ data }) {
 
   const client = {
     title: data?.client?.title,
+    slug: data?.client?.slug,
   };
 
   const deck = {
@@ -46,6 +48,8 @@ function Client({ data }) {
       <Head>
         <title>{deck.title} | UEFA Dash</title>
       </Head>
+
+      <NavBar returnTo={client.slug} />
 
       <ReactFullpage
         navigation={false}
