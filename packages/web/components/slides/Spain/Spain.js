@@ -28,7 +28,6 @@ export function Spain({ data, index }) {
               }
 
               let content = null;
-              console.log(item);
 
               switch (item._type) {
                 case "logo":
