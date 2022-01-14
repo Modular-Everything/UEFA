@@ -17,6 +17,7 @@
     "color2k": "^1.2.4",
     "fitty": "^2.3.5",
     "gsap": "^3.8.0",
+    "keen-slider": "^6.6.3",
     "next": "^12.0.7",
     "next-sanity": "^0.4.0",
     "next-sanity-image": "^3.2.1",

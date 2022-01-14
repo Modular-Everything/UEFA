@@ -20,6 +20,10 @@ const pluginWrapper = () => {
    */
 };
 
+function moveTo(index) {
+  window.fullpage_api.moveTo(index);
+}
+
 function Client({ data }) {
   console.log(data);
 
@@ -49,7 +53,12 @@ function Client({ data }) {
         <title>{deck.title} | UEFA Dash</title>
       </Head>
 
-      <NavBar returnTo={client.slug} />
+      <NavBar
+        returnTo={client.slug}
+        slideIndex={{ activeIndex, setActiveIndex }}
+        slides={deck?.slides}
+        moveTo={moveTo}
+      />
 
       <ReactFullpage
         navigation={false}

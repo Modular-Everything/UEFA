@@ -48,6 +48,8 @@ body {
     sans-serif;
   color: var(--uefa-black);
   font-size: 2rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
