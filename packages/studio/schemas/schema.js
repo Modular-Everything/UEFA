@@ -12,6 +12,7 @@ import greece from "./slides/greece";
 import italy from "./slides/italy";
 import romania from "./slides/romania";
 import scotland from "./slides/scotland";
+import spain from "./slides/spain";
 import turkey from "./slides/turkey";
 import wales from "./slides/wales";
 
@@ -30,6 +31,7 @@ export default createSchema({
     germany,
     england,
     turkey,
+    spain,
     colorBlock,
   ],
 });

@@ -56,7 +56,7 @@ function Client({ data }) {
         pluginWrapper={pluginWrapper}
         afterLoad={afterLoad.bind(this)}
         onLeave={onLeave.bind(this)}
-        // scrollHorizontally = {true}
+        scrollOverflow
         render={() => {
           return (
             <ReactFullpage.Wrapper>

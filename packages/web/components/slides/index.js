@@ -7,4 +7,5 @@ export * from "./England";
 export * from "./Greece";
 export * from "./Turkey";
 export * from "./France";
+export * from "./Spain";
 export * from "./ColorBlock";
