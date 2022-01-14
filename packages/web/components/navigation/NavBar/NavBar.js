@@ -8,14 +8,14 @@ import * as S from "./NavBar.styles";
 export function NavBar() {
   const [navOpen, setNavOpen] = useState(false);
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "M") {
-      setNavOpen(true);
-    }
-    if (e.key === "Escape") {
-      setNavOpen(false);
-    }
-  });
+  // document.addEventListener("keydown", (e) => {
+  //   if (e.key === "M") {
+  //     setNavOpen(true);
+  //   }
+  //   if (e.key === "Escape") {
+  //     setNavOpen(false);
+  //   }
+  // });
 
   return (
     <>
