@@ -1,13 +1,8 @@
 import PropTypes from "prop-types";
 
-import { ChartPie } from "../../elements/ChartPie";
+import { ChartPie2 } from "../../elements/ChartPie2";
 
 export function ColorBlock({ data, index }) {
-  const chartData = [
-    { name: "Group A", value: 80 },
-    { name: "Group B", value: 20 },
-  ];
-
   return (
     <div
       style={{
@@ -21,10 +16,7 @@ export function ColorBlock({ data, index }) {
     >
       <h5>index: {index}</h5>
       <h2>{data?.headline}</h2>
-      <ChartPie
-        data={chartData}
-        label="8 out of 10 Europeans tuned into Euro 2020 8 out of 10 Europeans tuned into Euro 2020"
-      />
+      <ChartPie2 />
     </div>
   );
 }
