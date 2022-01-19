@@ -1,6 +1,6 @@
-import * as S from "./PieChart.styles";
+import * as S from "./ChartPie3.styles";
 
-export function PieChart() {
+export function ChartPie3() {
   const segments = [
     {
       label: 0,
@@ -30,7 +30,7 @@ export function PieChart() {
   ];
 
   return (
-    <S.PieChart className="donut" segments={segments}>
+    <S.ChartPie3 className="donut" segments={segments}>
       <div className="donut__slice donut__slice__0" />
       <div className="donut__slice donut__slice__1" />
       <div className="donut__slice donut__slice__2" />
@@ -40,6 +40,6 @@ export function PieChart() {
         <div className="donut__label__heading">Donut Charts</div>
         <div className="donut__label__sub">with Pure CSS</div>
       </div>
-    </S.PieChart>
+    </S.ChartPie3>
   );
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PieChart = styled.div`
+export const ChartPie3 = styled.div`
   ${({ segments }) =>
     segments.map((segment) => `--${segment.label}: ${segment.value};`)}
 
