@@ -1,7 +1,5 @@
 import PropTypes from "prop-types";
 
-import { PieChart } from "../../elements/PieChart";
-
 export function ColorBlock({ data, index }) {
   return (
     <div
@@ -16,7 +14,6 @@ export function ColorBlock({ data, index }) {
     >
       <h5>index: {index}</h5>
       <h2>{data?.headline}</h2>
-      <PieChart />
     </div>
   );
 }
