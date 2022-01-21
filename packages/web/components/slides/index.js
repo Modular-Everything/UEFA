@@ -9,4 +9,5 @@ export * from "./Turkey";
 export * from "./France";
 export * from "./Spain";
 export * from "./Russia";
+export * from "./Austria";
 export * from "./ColorBlock";

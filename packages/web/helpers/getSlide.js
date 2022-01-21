@@ -13,6 +13,7 @@ import {
   France,
   Spain,
   Russia,
+  Austria,
 } from "../components/slides";
 
 export function getSlide(slide, index) {
@@ -30,6 +31,7 @@ export function getSlide(slide, index) {
     france: <France />,
     spain: <Spain />,
     russia: <Russia />,
+    austria: <Austria />,
     colorBlock: <ColorBlock />,
   };
 

@@ -4,6 +4,7 @@ import createSchema from "part:@sanity/base/schema-creator";
 
 import client from "./client";
 import deck from "./deck";
+import austria from "./slides/austria";
 import colorBlock from "./slides/colorBlock";
 import england from "./slides/england";
 import france from "./slides/france";
@@ -34,6 +35,7 @@ export default createSchema({
     turkey,
     russia,
     spain,
+    austria,
     colorBlock,
   ],
 });
