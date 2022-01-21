@@ -12,6 +12,7 @@ const slides = [
   { type: "spain" },
   { type: "russia" },
   { type: "austria" },
+  { type: "belgium" },
 ];
 
 export default slides;

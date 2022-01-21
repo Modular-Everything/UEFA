@@ -15,6 +15,7 @@ import {
   Russia,
   Austria,
 } from "../components/slides";
+import { Belgium } from "../components/slides/Belgium/Belgium";
 
 export function getSlide(slide, index) {
   const id = slide._type;
@@ -32,6 +33,7 @@ export function getSlide(slide, index) {
     spain: <Spain />,
     russia: <Russia />,
     austria: <Austria />,
+    belgium: <Belgium />,
     colorBlock: <ColorBlock />,
   };
 

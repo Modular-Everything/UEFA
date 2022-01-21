@@ -10,4 +10,5 @@ export * from "./France";
 export * from "./Spain";
 export * from "./Russia";
 export * from "./Austria";
+export * from "./Belgium";
 export * from "./ColorBlock";
