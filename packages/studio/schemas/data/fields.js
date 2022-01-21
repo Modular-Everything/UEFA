@@ -57,6 +57,7 @@ export const pills = {
           title: "Data",
           type: "string",
           description: 'The number or value, for example "1.8b", "300m", etc.',
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "context",
@@ -64,6 +65,7 @@ export const pills = {
           type: "string",
           description:
             'The context for the data, for example "Facebook interactions"',
+          validation: (Rule) => Rule.required(),
         },
       ],
       preview: {
@@ -108,15 +110,17 @@ export const bullets = {
           name: "label",
           title: "Label",
           type: "string",
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "bulletColor",
-          title: "Bullet Color",
+          title: "Bullet Colour",
           type: "string",
           initialValue: "#1e1e28",
           options: {
             list: brandColorsList,
           },
+          validation: (Rule) => Rule.required(),
         },
       ],
       preview: {
@@ -156,29 +160,43 @@ export const bars = {
           name: "label",
           title: "Label",
           type: "string",
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "value",
           title: "Value",
           type: "string",
+          validation: (Rule) => Rule.required(),
         },
         {
           name: "barColor",
-          title: "Bar Color",
+          title: "Bar Colour",
           type: "string",
           initialValue: "#749baa",
           options: {
             list: brandColorsList,
           },
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: "progress",
+          title: "Bar Progress",
+          type: "number",
+          initialValue: 0,
+          description: "Controls the width (10 being 100%) of the bar colour",
+          validation: (Rule) => Rule.required().min(0).max(10),
         },
       ],
       preview: {
         select: {
           title: "label",
+          value: "value",
           color: "barColor",
+          progress: "progress",
         },
-        prepare: ({ title, color }) => ({
-          title,
+        prepare: ({ title, value, progress, color }) => ({
+          title: `${title} — ${value ? value : 0}`,
+          subtitle: `${progress ? progress * 10 : 0}%`,
           media: (
             <span
               style={{
