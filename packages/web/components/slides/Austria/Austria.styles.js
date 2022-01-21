@@ -6,11 +6,11 @@ export const Austria = styled.article`
 
   .content {
     display: grid;
-    gap: 2.4rem;
-    padding-top: 13rem;
-    padding-bottom: 13rem;
+    gap: 4.8rem;
 
     @media (min-width: 1024px) {
+      padding-top: 13rem;
+      padding-bottom: 13rem;
       grid-template-columns: repeat(2, 1fr);
     }
   }
