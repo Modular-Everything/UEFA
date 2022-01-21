@@ -19,7 +19,7 @@ export function NavItems({ navOpen, slides, moveTo }) {
   return (
     <S.NavItems isOpen={navOpen}>
       <ol ref={sliderRef} className="keen-slider">
-        {slides.map((slide, index) => {
+        {slides?.map((slide, index) => {
           const slideIndex = index + 1;
 
           return (
