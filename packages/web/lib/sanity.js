@@ -5,7 +5,7 @@ import {
   createPreviewSubscriptionHook,
 } from "next-sanity";
 
-import { config } from "./config";
+import { sanityConfig as config } from "./config";
 
 if (!config.projectId) {
   throw new Error(
