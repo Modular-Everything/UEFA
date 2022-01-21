@@ -2,10 +2,14 @@ import styled from "styled-components";
 
 export const Bars = styled.ul`
   display: grid;
-  gap: 2rem;
+  gap: 0.8rem;
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media (min-width: 1024px) {
+    gap: 1.6rem;
+  }
 
   li {
     display: flex;
