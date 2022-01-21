@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { useRef } from "react";
 
 import { Bars } from "../../elements/Bars";
-import { Bullets } from "../../elements/Bullets";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { SimpleCopy } from "../../elements/SimpleCopy";
