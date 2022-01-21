@@ -25,7 +25,7 @@ function moveTo(index) {
 }
 
 function Client({ data }) {
-  console.log(data);
+  // console.log(data);
 
   const [activeIndex, setActiveIndex] = useState(null);
 

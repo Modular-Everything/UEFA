@@ -17,8 +17,6 @@ export function Russia({ data, index }) {
   });
   const el = useRef();
 
-  console.log(data);
-
   return (
     <S.Russia ref={el}>
       <Content>

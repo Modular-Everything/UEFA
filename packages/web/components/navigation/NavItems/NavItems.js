@@ -14,7 +14,7 @@ export function NavItems({ navOpen, slides, moveTo }) {
     },
   });
 
-  console.log(slides);
+  // console.log(slides);
 
   return (
     <S.NavItems isOpen={navOpen}>
