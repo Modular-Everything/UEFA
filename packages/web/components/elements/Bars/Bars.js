@@ -9,8 +9,12 @@ export function Bars({ bars }) {
         <li key={bar._key}>
           <span
             className="progress"
-            style={{ backgroundColor: bar.barColor }}
+            style={{
+              backgroundColor: bar.barColor,
+              width: `${bar.progress * 10}%`,
+            }}
           />
+
           <div className="meta">
             <span className="label">{bar.label}</span>
             <span className="value">{bar.value}</span>
