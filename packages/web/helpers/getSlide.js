@@ -12,10 +12,12 @@ import {
   Turkey,
   France,
   Spain,
+  Russia,
 } from "../components/slides";
 
 export function getSlide(slide, index) {
   const id = slide._type;
+
   const slides = {
     italy: <Italy />,
     wales: <Wales />,
@@ -27,7 +29,9 @@ export function getSlide(slide, index) {
     turkey: <Turkey />,
     france: <France />,
     spain: <Spain />,
+    russia: <Russia />,
     colorBlock: <ColorBlock />,
   };
+
   return slides[id] && createElement(slides[id].type, { data: slide, index });
 }
