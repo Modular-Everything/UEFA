@@ -1,16 +1,13 @@
-import { useNextSanityImage } from "next-sanity-image";
-import Image from "next/image";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
-import { sanityConfig } from "../../../lib/config";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
+import { Image } from "../../elements/Image";
 import * as S from "./Spain.styles";
 
 function ImageRef({ id }) {
-  const imageProps = useNextSanityImage(sanityConfig, id);
-  return <Image {...imageProps} alt="" className="logo" />;
+  return <Image src={id} alt="" className="logo" />;
 }
 
 export function Spain({ data, index }) {

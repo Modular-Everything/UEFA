@@ -1,14 +1,11 @@
-import { useNextSanityImage } from "next-sanity-image";
-import Image from "next/image";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
-import { sanityConfig } from "../../../lib/config";
+import { Image } from "../../elements/Image";
 import { RepeatedText } from "../../elements/RepeatedText/RepeatedText";
 import * as S from "./Turkey.styles";
 
 export function Turkey({ data, index }) {
-  const imageProps = useNextSanityImage(sanityConfig, data?.image);
   const el = useRef();
 
   return (
@@ -19,7 +16,7 @@ export function Turkey({ data, index }) {
 
       <div className="image">
         <Image
-          {...imageProps}
+          src={data?.image}
           alt=""
           layout="fill"
           objectFit="contain"

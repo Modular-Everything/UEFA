@@ -1,13 +1,10 @@
 import BlockContent from "@sanity/block-content-to-react";
-// import { useNextSanityImage } from "next-sanity-image";
 import Image from "next/image";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
-// import { sanityConfig } from "../../../lib/config";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
-// import { Pills } from "../../elements/Pills";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Wales.styles";
 import Pattern from "./WalesPattern.png";
@@ -34,7 +31,7 @@ export function Wales({ data, index }) {
           src={Pattern}
           alt=""
           layout="fill"
-          quality={100}
+          quality={90}
           objectFit="contain"
         />
       </div>

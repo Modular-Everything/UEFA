@@ -1,20 +1,11 @@
-import { useNextSanityImage } from "next-sanity-image";
-import Image from "next/image";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
-import { sanityConfig } from "../../../lib/config";
 import { Content } from "../../elements/Content";
+import { Image } from "../../elements/Image";
 import * as S from "./Russia.styles";
 
-function saturateImage(imageUrlBuilder) {
-  return imageUrlBuilder.saturation(-100);
-}
-
 export function Russia({ data, index }) {
-  const imageProps = useNextSanityImage(sanityConfig, data?.image, {
-    imageBuilder: saturateImage,
-  });
   const el = useRef();
 
   return (
@@ -34,7 +25,8 @@ export function Russia({ data, index }) {
 
       <div className="image">
         <Image
-          {...imageProps}
+          src={data?.image}
+          modifiers={["saturation(-100)"]}
           alt=""
           layout="fill"
           objectFit="cover"
