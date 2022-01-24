@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { getImgUrl } from "../../../helpers/getImgUrl";
 import { Content } from "../../elements/Content";
 import { Image } from "../../elements/Image";
 import * as S from "./Russia.styles";
@@ -26,7 +27,7 @@ export function Russia({ data, index }) {
       <div className="image">
         <Image
           src={data?.image}
-          modifiers={["saturation(-100)"]}
+          override={getImgUrl(data?.image).saturation(-100)}
           alt=""
           layout="fill"
           objectFit="cover"
