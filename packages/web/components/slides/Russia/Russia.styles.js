@@ -27,8 +27,13 @@ export const Russia = styled.article`
 
     .chart {
       display: flex;
-      justify-content: center;
-      aspect-ratio: 1/1;
+      align-self: center;
+      justify-self: center;
+      width: 70%;
+
+      @media (min-width: 768px) {
+        width: unset;
+      }
 
       img {
         width: 100%;
