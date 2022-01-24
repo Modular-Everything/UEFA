@@ -13,14 +13,11 @@ export function Russia({ data, index }) {
     <S.Russia ref={el}>
       <Content>
         <div className="charts">
-          {data?.charts?.map((chart) => {
-            // const imageProps = useNextSanityImage(sanityConfig, chart);
-            return (
-              <div key={chart._key} className="chart">
-                <img src="https://picsum.photos/350/350" alt="" />
-              </div>
-            );
-          })}
+          {data?.charts?.map((chart) => (
+            <div key={chart._key} className="chart">
+              <Image src={chart} quality={90} />
+            </div>
+          ))}
         </div>
       </Content>
 
