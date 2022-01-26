@@ -34,5 +34,13 @@ export default {
         },
       ],
     },
+    {
+      name: "logo",
+      title: "Logo",
+      type: "image",
+      validation: (Rule) => Rule.required(),
+      description:
+        "The logo as it appears across the decks. This should be an SVG in white.",
+    },
   ],
 };
