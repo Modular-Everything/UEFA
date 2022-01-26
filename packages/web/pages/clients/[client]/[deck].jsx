@@ -25,13 +25,14 @@ function moveTo(index) {
 }
 
 function Client({ data }) {
-  console.log(data);
+  console.log("[deck]", data);
 
   const [activeIndex, setActiveIndex] = useState(null);
 
   const client = {
     title: data?.client?.title,
     slug: data?.client?.slug,
+    logo: data?.client?.logo,
   };
 
   const deck = {
@@ -71,7 +72,7 @@ function Client({ data }) {
             <ReactFullpage.Wrapper>
               {deck?.slides?.map((slide, index) => (
                 <div key={slide._key} className="section">
-                  {getSlide(slide, index)}
+                  {getSlide(slide, index, deck, client)}
                 </div>
               ))}
             </ReactFullpage.Wrapper>
