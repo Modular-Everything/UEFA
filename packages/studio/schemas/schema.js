@@ -16,6 +16,7 @@ import romania from "./slides/romania";
 import russia from "./slides/russia";
 import scotland from "./slides/scotland";
 import spain from "./slides/spain";
+import title from "./slides/title";
 import turkey from "./slides/turkey";
 import wales from "./slides/wales";
 
@@ -25,6 +26,7 @@ export default createSchema({
     ...schemaTypes,
     client,
     deck,
+    title,
     italy,
     scotland,
     wales,

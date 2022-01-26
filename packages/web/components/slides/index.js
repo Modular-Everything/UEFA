@@ -1,3 +1,4 @@
+export * from "./Title";
 export * from "./Italy";
 export * from "./Scotland";
 export * from "./Wales";

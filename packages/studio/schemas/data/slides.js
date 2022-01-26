@@ -1,4 +1,5 @@
 const slides = [
+  { type: "title" },
   { type: "colorBlock" },
   { type: "italy" },
   { type: "scotland" },

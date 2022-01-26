@@ -14,10 +14,11 @@ import {
   Spain,
   Russia,
   Austria,
+  Title,
 } from "../components/slides";
 import { Belgium } from "../components/slides/Belgium/Belgium";
 
-export function getSlide(slide, index) {
+export function getSlide(slide, index, deck, client) {
   const id = slide._type;
 
   const slides = {
@@ -34,8 +35,12 @@ export function getSlide(slide, index) {
     russia: <Russia />,
     austria: <Austria />,
     belgium: <Belgium />,
+    title: <Title />,
     colorBlock: <ColorBlock />,
   };
 
-  return slides[id] && createElement(slides[id].type, { data: slide, index });
+  return (
+    slides[id] &&
+    createElement(slides[id].type, { data: slide, index, deck, client })
+  );
 }
