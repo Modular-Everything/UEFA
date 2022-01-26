@@ -5,6 +5,7 @@
 const clientFields = `
   _id,
   title,
+  logo,
   "slug": slug.current,
   "decks": decks[]->
 `;
