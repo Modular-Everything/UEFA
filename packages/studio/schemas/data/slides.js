@@ -12,6 +12,7 @@ const slides = [
   { type: "russia" },
   { type: "scotland" },
   { type: "spain" },
+  { type: "switzerland" },
   { type: "title" },
   { type: "turkey" },
   { type: "wales" },

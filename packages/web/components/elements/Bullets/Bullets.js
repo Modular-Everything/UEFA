@@ -4,7 +4,7 @@ import * as S from "./Bullets.styles";
 
 export function Bullets({ bullets }) {
   return (
-    <S.Bullets>
+    <S.Bullets className={bullets.length > 6 ? "two-col" : "one-col"}>
       {bullets?.map((bullet) => (
         <li key={bullet._key}>
           <span

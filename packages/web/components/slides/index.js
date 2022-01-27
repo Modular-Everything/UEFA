@@ -11,6 +11,7 @@ export * from "./Romania";
 export * from "./Russia";
 export * from "./Scotland";
 export * from "./Spain";
+export * from "./Switzerland";
 export * from "./Title";
 export * from "./Turkey";
 export * from "./Wales";

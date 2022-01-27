@@ -13,13 +13,11 @@ export const Headline = styled.h2`
   margin: 0;
 
   @media (min-width: 375px) {
-    width: 50vw;
     max-width: 32rem;
   }
 
   @media (min-width: 1000px) {
     padding: 1.4rem 0;
-    width: 50vw;
     max-width: 45rem;
   }
 `;
