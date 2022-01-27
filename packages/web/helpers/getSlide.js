@@ -3,6 +3,7 @@ import { createElement } from "react";
 import {
   Austria,
   ColorBlock,
+  Denmark,
   England,
   France,
   Germany,
@@ -25,6 +26,7 @@ export function getSlide(slide, index, deck, client) {
     austria: <Austria />,
     belgium: <Belgium />,
     colorBlock: <ColorBlock />,
+    denmark: <Denmark />,
     england: <England />,
     france: <France />,
     germany: <Germany />,

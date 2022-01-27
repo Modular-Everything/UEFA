@@ -2,6 +2,7 @@ const slides = [
   { type: "austria" },
   { type: "belgium" },
   { type: "colorBlock" },
+  { type: "denmark" },
   { type: "england" },
   { type: "france" },
   { type: "germany" },

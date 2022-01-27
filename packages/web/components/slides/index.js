@@ -1,6 +1,7 @@
 export * from "./Austria";
 export * from "./Belgium";
 export * from "./ColorBlock";
+export * from "./Denmark";
 export * from "./England";
 export * from "./France";
 export * from "./Germany";
