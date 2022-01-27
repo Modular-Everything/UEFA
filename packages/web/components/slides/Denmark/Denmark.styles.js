@@ -31,8 +31,13 @@ export const Denmark = styled.article`
     z-index: 50;
     bottom: 0;
     right: 0;
-    max-width: 64rem;
-    min-width: 42rem;
+    width: unset;
+    max-height: 64rem;
+    max-width: 90%;
     display: flex;
+
+    @media (min-width: 1024px) {
+      max-height: 90%;
+    }
   }
 `;

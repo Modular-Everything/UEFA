@@ -25,7 +25,12 @@ export function Denmark({ data, index }) {
       </Content>
 
       <div className="image">
-        <Image src={data?.image} quality={95} className="Denmark__image" />
+        <Image
+          src={data?.image}
+          quality={95}
+          objectFit="contain"
+          className="Denmark__image"
+        />
       </div>
 
       <Pattern />
