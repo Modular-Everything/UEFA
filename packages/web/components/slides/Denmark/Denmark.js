@@ -5,7 +5,6 @@ import { useRef } from "react";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { Image } from "../../elements/Image";
-import { Pills } from "../../elements/Pills";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Denmark.styles";
 import { Pattern } from "./DenmarkPattern";
@@ -22,13 +21,6 @@ export function Denmark({ data, index }) {
           <SimpleCopy>
             <BlockContent blocks={data.copy} />
           </SimpleCopy>
-        )}
-
-        {data?.pills && (
-          <Pills
-            pills={data.pills}
-            colors={{ data: "uefa-blue", context: "uefa-lt-blue" }}
-          />
         )}
       </Content>
 
