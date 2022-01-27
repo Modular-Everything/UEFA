@@ -13,6 +13,7 @@ import france from "./slides/france";
 import germany from "./slides/germany";
 import greece from "./slides/greece";
 import italy from "./slides/italy";
+import norway from "./slides/norway";
 import romania from "./slides/romania";
 import russia from "./slides/russia";
 import scotland from "./slides/scotland";
@@ -37,6 +38,7 @@ export default createSchema({
     germany,
     greece,
     italy,
+    norway,
     romania,
     russia,
     scotland,
