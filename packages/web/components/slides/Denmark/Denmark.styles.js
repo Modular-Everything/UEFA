@@ -38,6 +38,7 @@ export const Denmark = styled.article`
 
     @media (min-width: 1024px) {
       max-height: 90%;
+      max-width: 66rem;
     }
   }
 `;
