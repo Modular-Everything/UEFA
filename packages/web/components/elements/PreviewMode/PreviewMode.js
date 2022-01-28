@@ -9,7 +9,11 @@ export function PreviewMode({ preview }) {
 
   return (
     <S.PreviewMode>
-      {preview && <Link href="/api/exit-preview">Preview Mode Activated!</Link>}
+      {preview && (
+        <Link href="/api/exit-preview">
+          <a>Preview Mode Activated</a>
+        </Link>
+      )}
     </S.PreviewMode>
   );
 }
