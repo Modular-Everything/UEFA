@@ -4,6 +4,7 @@ import Head from "next/head";
 // import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
+import { PreviewMode } from "../../../components/elements/PreviewMode";
 import { NavBar } from "../../../components/navigation/NavBar";
 import { getSlide } from "../../../helpers/getSlide";
 import {
@@ -92,6 +93,8 @@ function Client({ data, preview }) {
         slides={deck?.slides}
         moveTo={moveTo}
       />
+
+      <PreviewMode preview={preview} />
 
       <ReactFullpage
         navigation={false}
