@@ -8,6 +8,7 @@ const slides = [
   { type: "germany" },
   { type: "greece" },
   { type: "italy" },
+  { type: "latvia" },
   { type: "norway" },
   { type: "poland" },
   { type: "romania" },

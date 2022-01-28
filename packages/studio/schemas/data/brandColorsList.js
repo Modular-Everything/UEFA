@@ -1,4 +1,5 @@
 const brandColorsList = [
+  { title: "Transparent", value: "transparent" },
   { title: "UEFA Light Blue", value: "#2767ff" },
   { title: "UEFA Blue", value: "#1a34db" },
   { title: "UEFA Medium Blue", value: "#052992" },
@@ -18,6 +19,7 @@ const brandColorsList = [
   { title: "UEFA Light Black", value: "#34343e" },
   { title: "UEFA Black", value: "#1e1e28" },
   { title: "UEFA Medium Black", value: "#000000" },
+  { title: "UEFA White", value: "#fff" },
   { title: "UEFA Light Grey", value: "#eff4f8" },
   { title: "UEFA Grey", value: "#d4e2eb" },
   { title: "UEFA Medium Grey", value: "#abc8d8" },
