@@ -16,6 +16,7 @@ export function Image({ src, override, layout, modifiers, ...rest }) {
       layout={layout}
       width={layout === "fill" ? null : width}
       height={layout === "fill" ? null : height}
+      loading="eager"
       {...rest}
     />
   );

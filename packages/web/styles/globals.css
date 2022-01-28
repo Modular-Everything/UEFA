@@ -113,3 +113,47 @@ a {
 .dns--gap .content > *:not(:last-child) {
   margin-bottom: clamp(2.4rem, 5vh, 6rem);
 }
+
+/**
+  ******************************************
+  * Print mode
+  ******************************************
+*/
+
+@media print {
+  header {
+    display: none !important;
+  }
+
+  html,
+  body {
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  .fullpage-wrapper {
+    height: auto !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .fp-section {
+    height: auto !important;
+    break-inside: avoid !important;
+  }
+
+  .fp-slidesContainer {
+    width: auto !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .fp-slides,
+  .fp-slides * {
+    position: static !important;
+  }
+
+  .fp-slide {
+    width: auto !important;
+  }
+}
