@@ -11,8 +11,6 @@ import * as S from "./Poland.styles";
 export function Poland({ data, index }) {
   const el = useRef();
 
-  console.log(data);
-
   return (
     <S.Poland ref={el}>
       <Content>
