@@ -6,13 +6,19 @@ export const NavDot = styled.button`
   padding: 0;
   margin: 0;
   cursor: pointer;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 4rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
   display: grid;
   place-items: center;
   transition: 250ms ease all;
   outline: none;
+
+  @media (min-width: 768px) {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 4rem;
+  }
 
   &.inactive {
     background-color: var(--white);

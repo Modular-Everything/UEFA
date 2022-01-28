@@ -22,7 +22,7 @@ export const Germany = styled.article`
     position: absolute;
     right: var(--content-gutter);
     left: var(--content-gutter);
-    top: var(--content-gutter);
+    top: calc(var(--content-gutter) * 2);
     bottom: var(--content-gutter);
     height: auto;
     gap: 3.2rem;
