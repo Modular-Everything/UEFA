@@ -7,6 +7,7 @@ export const NavLabel = styled.div`
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   transition: 250ms ease opacity;
   transition-delay: ${({ isOpen }) => (isOpen ? "250ms" : 0)};
+  pointer-events: ${({ isOpen }) => (isOpen ? "all" : "none")};
 
   @media (min-width: 768px) {
     display: flex;
