@@ -64,11 +64,6 @@ function Client({ data, preview }) {
     logo: data?.client?.logo,
   };
 
-  // const deck = {
-  //   title: data?.deck?.title,
-  //   slides: data?.deck?.slides,
-  // };
-
   const deck = filterDataToSingleItem(previewData, preview);
 
   function afterLoad(origin) {
