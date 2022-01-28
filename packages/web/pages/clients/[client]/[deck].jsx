@@ -1,7 +1,8 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import { gsap } from "gsap";
 import Head from "next/head";
-import { useState } from "react";
+// import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 import { NavBar } from "../../../components/navigation/NavBar";
 import { getSlide } from "../../../helpers/getSlide";
@@ -25,9 +26,9 @@ function moveTo(index) {
 }
 
 function Client({ data }) {
-  console.log("[deck]", data);
-
   const [activeIndex, setActiveIndex] = useState(null);
+
+  // const router = useRouter();
 
   const client = {
     title: data?.client?.title,
@@ -48,6 +49,12 @@ function Client({ data }) {
     setActiveIndex(destination.index);
   }
 
+  // useEffect(() => {
+  //   // if (activeIndex) {
+  //   //   router.push(`#${activeIndex}`);
+  //   // }
+  // }, [activeIndex]);
+
   return (
     <>
       <Head>
@@ -67,6 +74,7 @@ function Client({ data }) {
         afterLoad={afterLoad.bind(this)}
         onLeave={onLeave.bind(this)}
         scrollOverflow
+        scrollingSpeed={350}
         render={() => {
           return (
             <ReactFullpage.Wrapper>
