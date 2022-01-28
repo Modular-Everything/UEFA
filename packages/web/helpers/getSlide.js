@@ -22,6 +22,7 @@ import {
   Wales,
 } from "../components/slides";
 import { Belgium } from "../components/slides/Belgium/Belgium";
+import { Sweden } from "../components/slides/Sweden/Sweden";
 
 export function getSlide(slide, index, deck, client) {
   const id = slide._type;
@@ -43,6 +44,7 @@ export function getSlide(slide, index, deck, client) {
     russia: <Russia />,
     scotland: <Scotland />,
     spain: <Spain />,
+    sweden: <Sweden />,
     switzerland: <Switzerland />,
     title: <Title />,
     turkey: <Turkey />,
