@@ -40,19 +40,19 @@ export const LargeOutlinedText = styled.div`
       line-height: 2;
     }
 
-    @supports (-webkit-text-stroke: 1px black) {
+    @supports (-webkit-text-stroke: 0.3rem black) {
       display: flex;
       -webkit-text-fill-color: transparent;
 
       &:nth-of-type(1) {
         top: 0;
-        -webkit-text-stroke: 1px
+        -webkit-text-stroke: 0.3rem
           ${({ colorA }) => colorA || "var(--uefa-lt-blue)"};
       }
 
       &:nth-of-type(2) {
         bottom: 0;
-        -webkit-text-stroke: 1px
+        -webkit-text-stroke: 0.3rem
           ${({ colorB }) => colorB || "var(--uefa-lt-green)"};
       }
     }

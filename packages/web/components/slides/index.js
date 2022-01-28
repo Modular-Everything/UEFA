@@ -8,6 +8,7 @@ export * from "./Germany";
 export * from "./Greece";
 export * from "./Italy";
 export * from "./Norway";
+export * from "./Poland";
 export * from "./Romania";
 export * from "./Russia";
 export * from "./Scotland";
