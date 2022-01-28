@@ -35,7 +35,7 @@ const deckFields = `
 
 export const deckQuery = `
 {
-  "deck": *[_type == "deck" && slug.current == $deck][0] {
+  "deck": *[_type == "deck" && slug.current == $deck] {
     ${deckFields}
   },
   "client": *[_type == "client" && slug.current == $client][0] {

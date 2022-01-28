@@ -11,6 +11,7 @@ import {
   deckSlugsQuery,
   clientSlugsQuery,
 } from "../../../lib/queries";
+import { usePreviewSubscription } from "../../../lib/sanity";
 import { sanityClient, getClient } from "../../../lib/sanity.server";
 
 // ---
@@ -25,7 +26,34 @@ function moveTo(index) {
   window.fullpage_api.moveTo(index);
 }
 
-function Client({ data }) {
+function filterDataToSingleItem(data, preview) {
+  if (!Array.isArray(data)) {
+    return data;
+  }
+
+  if (data.length === 1) {
+    return data[0];
+  }
+
+  if (preview) {
+    return data.find((item) => item._id.startsWith(`drafts.`)) || data[0];
+  }
+
+  return data[0];
+}
+
+function Client({ data, preview }) {
+  const { data: previewData } = usePreviewSubscription(data?.query, {
+    params: data?.queryParams ?? {},
+    // The hook will return this on first render
+    // This is why it's important to fetch *draft* content server-side!
+    initialData: data?.deck,
+    // The passed-down preview context determines whether this function does anything
+    enabled: preview,
+  });
+
+  // return true;
+
   const [activeIndex, setActiveIndex] = useState(null);
 
   // const router = useRouter();
@@ -36,10 +64,12 @@ function Client({ data }) {
     logo: data?.client?.logo,
   };
 
-  const deck = {
-    title: data?.deck?.title,
-    slides: data?.deck?.slides,
-  };
+  // const deck = {
+  //   title: data?.deck?.title,
+  //   slides: data?.deck?.slides,
+  // };
+
+  const deck = filterDataToSingleItem(previewData, preview);
 
   function afterLoad(origin) {
     setActiveIndex(origin.index);
@@ -58,7 +88,7 @@ function Client({ data }) {
   return (
     <>
       <Head>
-        <title>{deck.title} | UEFA Dash</title>
+        <title>{deck?.title} | UEFA Dash</title>
       </Head>
 
       <NavBar
@@ -109,6 +139,7 @@ export async function getStaticProps({ params, preview = false }) {
       data: {
         deck,
         client,
+        query: deckQuery,
       },
     },
   };
