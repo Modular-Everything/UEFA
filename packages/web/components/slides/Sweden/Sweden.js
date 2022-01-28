@@ -26,8 +26,8 @@ export function Sweden({ data, index }) {
     });
 
     fitRefA.current.addEventListener("fit", (e) => {
-      setContainerAHeight(fitRefA.current.clientHeight);
-      setContainerBHeight(fitRefA.current.clientHeight);
+      setContainerAHeight(fitRefA?.current?.clientHeight);
+      setContainerBHeight(fitRefA?.current?.clientHeight);
     });
   }, []);
 
