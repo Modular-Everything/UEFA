@@ -1,3 +1,6 @@
+import React from "react";
+
+import Thumbnail from "../../assets/slide-thumbs/Title-Slide.jpg";
 import { headline } from "../data/fields";
 
 export default {
@@ -21,6 +24,9 @@ export default {
     prepare: ({ title }) => ({
       title,
       subtitle: "Slide Type: Title",
+      media: (
+        <img src={Thumbnail} alt="Title Slide" style={{ objectFit: "cover" }} />
+      ),
     }),
   },
 };

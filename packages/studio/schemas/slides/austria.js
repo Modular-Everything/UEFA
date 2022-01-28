@@ -1,3 +1,6 @@
+import React from "react";
+
+import Thumbnail from "../../assets/slide-thumbs/Austria-Slide.jpg";
 import { headline, copy, bullets, bars } from "../data/fields";
 
 export default {
@@ -23,6 +26,13 @@ export default {
     prepare: ({ title }) => ({
       title,
       subtitle: "Slide Type: Austria",
+      media: (
+        <img
+          src={Thumbnail}
+          alt="Austria Slide"
+          style={{ objectFit: "cover" }}
+        />
+      ),
     }),
   },
 };

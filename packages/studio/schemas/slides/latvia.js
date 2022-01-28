@@ -1,3 +1,6 @@
+import React from "react";
+
+import Thumbnail from "../../assets/slide-thumbs/Latvia-Slide.jpg";
 import brandColorsList from "../data/brandColorsList";
 import { copy, image } from "../data/fields";
 
@@ -53,4 +56,16 @@ export default {
     },
     image,
   ],
+  preview: {
+    select: {
+      title: "smallHeadline",
+    },
+    prepare: ({ title }) => ({
+      title,
+      subtitle: "Slide Type: Latvia",
+      media: (
+        <img src={Thumbnail} alt="Latvia Slide" style={{ objectFit: "cover" }} />
+      ),
+    }),
+  },
 };

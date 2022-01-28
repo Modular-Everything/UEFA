@@ -1,5 +1,6 @@
 import React from "react";
 
+import Thumbnail from "../../assets/slide-thumbs/Russia-Slide.jpg";
 import { image } from "../data/fields";
 
 export default {
@@ -33,7 +34,13 @@ export default {
     prepare: ({ charts, media }) => ({
       title: `${charts ? charts : 0} Chart(s)`,
       subtitle: "Slide Type: Russia",
-      media: <img src={media} alt="" />,
+      media: (
+        <img
+          src={Thumbnail}
+          alt="Russia Slide"
+          style={{ objectFit: "cover" }}
+        />
+      ),
     }),
   },
 };

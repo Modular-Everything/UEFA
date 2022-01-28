@@ -1,5 +1,6 @@
 import React from "react";
 
+import Thumbnail from "../../assets/slide-thumbs/Germany-Slide.jpg";
 import { headline, bullets } from "../data/fields";
 
 export default {
@@ -59,6 +60,13 @@ export default {
     prepare: ({ title }) => ({
       title,
       subtitle: "Slide Type: Switzerland",
+      media: (
+        <img
+          src={Thumbnail}
+          alt="Switzerland Slide"
+          style={{ objectFit: "cover" }}
+        />
+      ),
     }),
   },
 };
