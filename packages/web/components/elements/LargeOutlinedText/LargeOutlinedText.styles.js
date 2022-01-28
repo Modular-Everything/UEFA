@@ -32,7 +32,12 @@ export const LargeOutlinedText = styled.div`
     }
 
     @media (min-width: 1180px) {
-      font-size: clamp(12rem, 35vw, 54rem);
+      font-size: clamp(12rem, 40vw, 64rem);
+    }
+
+    @media (min-width: 1500px) {
+      font-size: clamp(12rem, 50vw, 76rem);
+      line-height: 2;
     }
 
     @supports (-webkit-text-stroke: 1px black) {
