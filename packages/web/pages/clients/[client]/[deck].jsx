@@ -43,17 +43,18 @@ function filterDataToSingleItem(data, preview) {
   return data[0];
 }
 
-function Client({ data, preview }) {
-  const { data: previewData } = usePreviewSubscription(data?.query, {
-    params: data?.queryParams ?? {},
-    // The hook will return this on first render
-    // This is why it's important to fetch *draft* content server-side!
-    initialData: data?.deck,
-    // The passed-down preview context determines whether this function does anything
-    enabled: preview,
-  });
-
-  // return true;
+function Deck({ data, preview }) {
+  const { data: previewData } = usePreviewSubscription(
+    `*[_type == "deck" && slug.current == $deck]`,
+    {
+      params: data?.queryParams ?? {},
+      // The hook will return this on first render
+      // This is why it's important to fetch *draft* content server-side!
+      initialData: data?.deck,
+      // The passed-down preview context determines whether this function does anything
+      enabled: preview,
+    }
+  );
 
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -119,13 +120,18 @@ function Client({ data, preview }) {
   );
 }
 
-export default Client;
+export default Deck;
 
 export async function getStaticProps({ params, preview = false }) {
-  const { deck, client } = await getClient(preview).fetch(deckQuery, {
+  const queryParams = {
     deck: params.deck,
     client: params.client,
-  });
+  };
+
+  const { deck, client } = await getClient(preview).fetch(
+    deckQuery,
+    queryParams
+  );
 
   if (!client || !deck) {
     return { notFound: true };
@@ -138,6 +144,7 @@ export async function getStaticProps({ params, preview = false }) {
         deck,
         client,
         query: deckQuery,
+        queryParams,
       },
     },
   };

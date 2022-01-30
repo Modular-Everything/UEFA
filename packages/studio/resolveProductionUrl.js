@@ -5,7 +5,7 @@ const remoteUrl = `https://uefa-dash.netlify.app`;
 const localUrl = `http://localhost:3000`;
 
 export default function resolveProductionUrl(doc) {
-  console.log("doc", doc);
+  // console.log("doc", doc);
 
   const baseUrl =
     window.location.hostname === "localhost" ? localUrl : remoteUrl;
