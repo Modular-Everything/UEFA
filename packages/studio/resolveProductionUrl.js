@@ -1,7 +1,7 @@
 const previewSecret = "2309dm9os";
 
 // Replace `remoteUrl` with your deployed Next.js site
-const remoteUrl = `https://uefa-deck.netlify.app`;
+const remoteUrl = `https://uefa-dash.netlify.app`;
 const localUrl = `http://localhost:3000`;
 
 export default function resolveProductionUrl(doc) {
