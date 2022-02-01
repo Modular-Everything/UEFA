@@ -9,15 +9,15 @@ export const Russia = styled.article`
     z-index: 10;
 
     .charts {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 1.6rem;
       height: 100%;
 
       @media (min-width: 768px) {
-        grid-template-columns: repeat(3, 1fr);
+        flex-direction: row;
       }
 
       @media (min-width: 1024px) {
