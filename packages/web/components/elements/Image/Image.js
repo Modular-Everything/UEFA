@@ -3,7 +3,7 @@ import NextImage from "next/image";
 import { getImgUrl } from "../../../helpers/getImgUrl";
 
 export function Image({ src, override, layout, modifiers, ...rest }) {
-  if (!src) {
+  if (!src || !src.asset) {
     return null;
   }
 
