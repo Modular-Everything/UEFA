@@ -3,6 +3,10 @@ import NextImage from "next/image";
 import { getImgUrl } from "../../../helpers/getImgUrl";
 
 export function Image({ src, override, layout, modifiers, ...rest }) {
+  if (!src) {
+    return null;
+  }
+
   const image = override || getImgUrl(src);
   // eslint-disable-next-line no-unused-vars
   const [assetType, _id, dimensions, filetype] = src.asset._ref.split("-");
