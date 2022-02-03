@@ -7,6 +7,7 @@ export * from "./France";
 export * from "./Germany";
 export * from "./Greece";
 export * from "./Italy";
+export * from "./Kazakhstan";
 export * from "./Latvia";
 export * from "./Norway";
 export * from "./Poland";
