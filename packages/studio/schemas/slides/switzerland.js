@@ -1,7 +1,7 @@
 import React from "react";
 
-import Thumbnail from "../../assets/slide-thumbs/Germany-Slide.jpg";
-import { headline, bullets } from "../data/fields";
+import Thumbnail from "../../assets/slide-thumbs/Switzerland-Slide.jpg";
+import { headline, bullets, copy } from "../data/fields";
 
 export default {
   name: "switzerland",
@@ -9,6 +9,7 @@ export default {
   type: "object",
   fields: [
     headline,
+    copy,
     bullets,
     {
       name: "mediaType",

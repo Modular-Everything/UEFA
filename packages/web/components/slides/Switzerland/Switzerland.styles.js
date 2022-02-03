@@ -17,8 +17,28 @@ export const Switzerland = styled.article`
   }
 
   .copy {
+    display: flex;
+    flex-direction: column;
+
     .headline {
-      margin-bottom: 5.6rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+
+      @media (min-width: 1024px) {
+        flex-direction: column;
+      }
+    }
+
+    ul {
+      margin-top: 5.6rem;
     }
   }
 
@@ -36,12 +56,16 @@ export const Switzerland = styled.article`
     bottom: 0;
 
     @media (min-width: 640px) {
-      width: 65%;
+      width: 85%;
+    }
+
+    @media (min-width: 769px) {
+      width: 55%;
     }
 
     @media (min-width: 1024px) {
       bottom: unset;
-      top: 50%;
+      top: 45%;
       transform: translateY(-50%);
     }
   }

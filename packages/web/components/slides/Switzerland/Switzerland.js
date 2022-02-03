@@ -1,3 +1,4 @@
+import BlockContent from "@sanity/block-content-to-react";
 import getVideoId from "get-video-id";
 import PropTypes from "prop-types";
 import { useRef } from "react";
@@ -6,6 +7,7 @@ import { Bullets } from "../../elements/Bullets";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { Image } from "../../elements/Image";
+import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Switzerland.styles";
 
 export function Switzerland({ data, index }) {
@@ -15,7 +17,15 @@ export function Switzerland({ data, index }) {
     <S.Switzerland ref={el}>
       <Content>
         <div className="copy">
-          {data?.headline && <Headline data={{ headline: data.headline }} />}
+          <div className="meta">
+            {data?.headline && <Headline data={{ headline: data.headline }} />}
+            {data?.copy && (
+              <SimpleCopy>
+                <BlockContent blocks={data.copy} />
+              </SimpleCopy>
+            )}
+          </div>
+
           {data?.bullets && <Bullets bullets={data.bullets} />}
         </div>
 
