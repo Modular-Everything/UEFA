@@ -1,6 +1,7 @@
 import React from "react";
 
 import brandColorsList from "./brandColorsList";
+import iconsList from "./iconsList";
 
 export const headline = {
   name: "headline",
@@ -87,6 +88,15 @@ export const brandColors = {
   type: "string",
   options: {
     list: brandColorsList,
+  },
+};
+
+export const icons = {
+  name: "icons",
+  title: "Icon Picker",
+  type: "string",
+  options: {
+    list: iconsList,
   },
 };
 

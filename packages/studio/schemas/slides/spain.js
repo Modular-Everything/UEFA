@@ -1,7 +1,7 @@
 import React from "react";
 
 import Thumbnail from "../../assets/slide-thumbs/Spain-Slide.jpg";
-import { headline } from "../data/fields";
+import { headline, copy, icons, brandColors } from "../data/fields";
 
 export default {
   name: "spain",
@@ -9,6 +9,7 @@ export default {
   type: "object",
   fields: [
     headline,
+    copy,
     {
       name: "matrix",
       title: "Matrix",
@@ -32,6 +33,8 @@ export default {
               type: "string",
               description: "A short title",
             },
+            icons,
+            brandColors,
           ],
         },
       ],

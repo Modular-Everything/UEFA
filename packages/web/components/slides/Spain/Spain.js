@@ -1,9 +1,13 @@
+import BlockContent from "@sanity/block-content-to-react";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
+import { Icons } from "../../elements/Icons/Icons";
+import { Alert } from "../../elements/Icons/assets/Alert";
 import { Image } from "../../elements/Image";
+import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Spain.styles";
 
 function ImageRef({ id }) {
@@ -13,10 +17,21 @@ function ImageRef({ id }) {
 export function Spain({ data, index }) {
   const el = useRef();
 
+  console.log(data);
+
   return (
     <S.Spain ref={el}>
       <Content>
-        <Headline data={{ headline: data?.headline }} />
+        <div className="header">
+          {data?.headline && <Headline data={{ headline: data.headline }} />}
+
+          {data?.copy && (
+            <SimpleCopy>
+              <BlockContent blocks={data.copy} />
+            </SimpleCopy>
+          )}
+        </div>
+
         <S.Grid>
           <ul>
             {data?.matrix.map((item, index) => {
@@ -33,11 +48,27 @@ export function Spain({ data, index }) {
                 case "title":
                   content = (
                     <>
-                      <span className="index">
-                        {index < 10 ? `0${index + 1}` : index + 1}
-                      </span>
+                      {!item.icons && (
+                        <span className="index">
+                          {index < 10 ? `0${index + 1}` : index + 1}
+                        </span>
+                      )}
 
-                      <div className="title">{item.title}</div>
+                      <div
+                        className="title"
+                        style={{
+                          color: item.brandColors
+                            ? item.brandColors
+                            : "inherit",
+                        }}
+                      >
+                        {item.icons && (
+                          <span className="icon">
+                            <Icons icon={item.icons} />
+                          </span>
+                        )}
+                        {item.title}
+                      </div>
                     </>
                   );
                   break;

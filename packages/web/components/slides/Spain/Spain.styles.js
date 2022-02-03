@@ -3,6 +3,33 @@ import styled from "styled-components";
 export const Spain = styled.article`
   height: 100%;
   background-color: var(--uefa-black);
+
+  @media (min-width: 768px) {
+    .content {
+      padding: var(--content-gutter) 2rem;
+    }
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: 768px) {
+      padding: 0 calc(var(--content-gutter) - 2rem);
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .simpleCopy {
+      margin-top: 2.4rem;
+      max-width: 38rem;
+
+      @media (min-width: 768px) {
+        margin-left: 2.4rem;
+      }
+    }
+  }
 `;
 
 export const Grid = styled.section`
@@ -25,12 +52,12 @@ export const Grid = styled.section`
     width: 100%;
 
     @media (min-width: 400px) {
-      --min: 14ch;
+      --min: 12ch;
     }
 
     @media (min-width: 768px) {
       --gap: 1.6rem;
-      --min: 16ch;
+      --min: 18ch;
     }
   }
 
@@ -41,8 +68,9 @@ export const Grid = styled.section`
     background-color: var(--black);
     border-radius: 1rem;
     padding: 1.2rem;
-    place-content: center;
-    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     color: var(--uefa-lt-grey);
     overflow: hidden;
@@ -60,16 +88,38 @@ export const Grid = styled.section`
       line-height: clamp(1.2rem, 2vw, 2.4rem);
     }
 
+    .icon {
+      display: none;
+
+      @media (min-width: 640px) {
+        display: grid;
+        place-content: center;
+        position: absolute;
+        width: calc(100% - (1.2rem * 2));
+        margin-top: calc(-2.2rem + -1.2rem);
+        color: var(--white);
+
+        svg {
+          height: 2.2rem;
+          width: 2.2rem;
+        }
+      }
+    }
+
     .title {
       width: 100%;
-      height: 100%;
       font-family: var(--font-uefa-heavy-extended);
       font-weight: 900;
       font-style: normal;
       text-transform: uppercase;
       text-align: center;
-      font-size: clamp(1.4rem, 4vw, 2.2rem);
-      line-height: clamp(1.8rem, 4vw, 2.7rem);
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      line-height: clamp(1.6rem, 3vw, 2.7rem);
+
+      @media (min-width: 768px) {
+        font-size: clamp(1.4rem, 2vw, 2.2rem);
+        line-height: clamp(1.8rem, 2vw, 2.7rem);
+      }
     }
   }
 `;

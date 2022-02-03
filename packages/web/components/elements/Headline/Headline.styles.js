@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Headline = styled.h2`
-  text-rendering: optimizeLegibility;
   text-transform: uppercase;
-  font-size: clamp(3.2rem, 5vw, 6.4rem);
-  line-height: clamp(2.8rem, 4vw, 4.8rem);
+  font-size: clamp(3.2rem, 4vw, 6.4rem);
+  line-height: clamp(2.8rem, 3.2vw, 4.8rem);
+  letter-spacing: -0.1rem;
   color: inherit;
   border-left: 1px solid
     ${({ dividerColor }) => dividerColor || "var(--uefa-yellow)"};
