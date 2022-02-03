@@ -5,7 +5,6 @@ import { useRef } from "react";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { Icons } from "../../elements/Icons/Icons";
-import { Alert } from "../../elements/Icons/assets/Alert";
 import { Image } from "../../elements/Image";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Spain.styles";
@@ -16,8 +15,6 @@ function ImageRef({ id }) {
 
 export function Spain({ data, index }) {
   const el = useRef();
-
-  console.log(data);
 
   return (
     <S.Spain ref={el}>
