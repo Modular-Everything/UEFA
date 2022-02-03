@@ -28,3 +28,12 @@ export const Title = styled.article`
     height: 100%;
   }
 `;
+
+export const LogoPlaceholder = styled.div`
+  border: 1px dashed var(--white);
+  padding: 2.4rem;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  line-height: 2.4rem;
+`;

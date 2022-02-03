@@ -109,7 +109,7 @@ function Deck({ data, preview }) {
             <ReactFullpage.Wrapper>
               {deck?.slides?.map((slide, index) => (
                 <div key={slide._key} className="section">
-                  {getSlide(slide, index, deck, client)}
+                  {getSlide(slide, index, deck, client, preview)}
                 </div>
               ))}
             </ReactFullpage.Wrapper>

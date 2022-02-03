@@ -7,11 +7,8 @@ import { Image } from "../../elements/Image";
 import * as S from "./Title.styles";
 import { Pattern } from "./TitlePattern";
 
-export function Title({ data, index, client }) {
+export function Title({ data, index, client, preview }) {
   const el = useRef();
-
-  // console.log(data);
-  console.log("client", client);
 
   return (
     <S.Title
@@ -35,7 +32,11 @@ export function Title({ data, index, client }) {
         </div>
 
         <div className="client-logo">
-          <Image src={client?.logo} alt={client?.title} />
+          {preview ? (
+            <S.LogoPlaceholder>Client Logo</S.LogoPlaceholder>
+          ) : (
+            <Image src={client?.logo} alt={client?.title} />
+          )}
         </div>
       </Content>
 
