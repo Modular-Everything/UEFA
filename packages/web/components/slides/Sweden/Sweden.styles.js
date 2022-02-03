@@ -17,12 +17,7 @@ export const Sweden = styled.article`
     height: 100%;
 
     @media (min-width: 640px) {
-      margin-top: 25vw;
       height: unset;
-    }
-
-    @media (min-width: 768px) {
-      margin-top: 0;
     }
 
     .title {
