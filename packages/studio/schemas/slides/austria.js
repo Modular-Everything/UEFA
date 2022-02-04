@@ -2,11 +2,16 @@ import React from "react";
 
 import Thumbnail from "../../assets/slide-thumbs/Austria-Slide.jpg";
 import { headline, copy, bullets, bars } from "../data/fields";
+import { color, label } from "../data/navFields";
 
 export default {
   name: "austria",
   title: "Slide — Austria",
   type: "object",
+  fieldsets: [
+    { name: "nav", title: "Navigation" },
+    { name: "slide", title: "Slide Content" },
+  ],
   fields: [
     headline,
     copy,
@@ -18,19 +23,27 @@ export default {
       type: "string",
       description: "Automatically CAPITALISED.",
     },
+    color,
+    label,
   ],
   preview: {
     select: {
+      navColor: "navColor",
+      navLabel: "navLabel",
       title: "headline",
     },
-    prepare: ({ title }) => ({
+    prepare: ({ navColor, navLabel, title }) => ({
       title,
-      subtitle: "Slide Type: Austria",
+      subtitle: `${navLabel ? `${navLabel} |` : ""} Slide Type: Austria`,
       media: (
         <img
           src={Thumbnail}
           alt="Austria Slide"
-          style={{ objectFit: "cover" }}
+          style={{
+            boxSizing: "border-box",
+            objectFit: "cover",
+            border: `4px solid ${navColor || "transparent"}`,
+          }}
         />
       ),
     }),

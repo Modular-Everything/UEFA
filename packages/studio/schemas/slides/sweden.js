@@ -2,11 +2,15 @@ import React from "react";
 
 import Thumbnail from "../../assets/slide-thumbs/Sweden-Slide.jpg";
 import { copy } from "../data/fields";
+import { color, label } from "../data/navFields";
 
 export default {
   name: "sweden",
   title: "Slide — Sweden",
   type: "object",
+  fieldsets: [
+    { name: "nav", title: "Navigation", options: { collapsible: true } },
+  ],
   fields: [
     {
       name: "titleA",
@@ -59,20 +63,28 @@ export default {
       ),
     },
     copy,
+    color,
+    label,
   ],
   preview: {
     select: {
+      navColor: "navColor",
+      navLabel: "navLabel",
       titleA: "titleA",
       titleB: "titleB",
     },
-    prepare: ({ titleA, titleB }) => ({
+    prepare: ({ navColor, navLabel, titleA, titleB }) => ({
       title: `${titleA} ${titleB}`,
-      subtitle: "Slide Type: Sweden",
+      subtitle: `${navLabel ? `${navLabel} |` : ""} Slide Type: Sweden`,
       media: (
         <img
-          src={Thumbnail}
-          alt="Sweden Slide"
-          style={{ objectFit: "cover" }}
+        src={Thumbnail}
+        alt="Sweden Slide"
+        style={{
+          boxSizing: "border-box",
+          objectFit: "cover",
+          border: `4px solid ${navColor || "transparent"}`,
+        }}
         />
       ),
     }),

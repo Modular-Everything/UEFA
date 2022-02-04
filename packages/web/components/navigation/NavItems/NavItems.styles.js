@@ -17,7 +17,7 @@ export const NavItems = styled.div`
     padding: 0;
 
     li {
-      width: 6.4rem !important;
+      width: 7.2rem !important;
       height: 4rem;
 
       button {
@@ -33,7 +33,7 @@ export const NavItems = styled.div`
         place-content: center;
         opacity: 1;
         transition: 250ms ease opacity;
-        font-size: 1.4rem;
+        font-size: 1.1rem;
 
         &:hover {
           opacity: 0.75;

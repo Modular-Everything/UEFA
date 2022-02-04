@@ -3,6 +3,7 @@ import React from "react";
 import Thumbnail from "../../assets/slide-thumbs/Latvia-Slide.jpg";
 import brandColorsList from "../data/brandColorsList";
 import { copy, image } from "../data/fields";
+import { color, label } from "../data/navFields";
 
 const spotDesc = "The colour of one set of spots";
 
@@ -10,6 +11,7 @@ export default {
   name: "latvia",
   title: "Slide — Latvia",
   type: "object",
+  fieldsets: [{ name: "nav", title: "Navigation", options: {collapsible: true} }],
   fields: [
     {
       name: "smallHeadline",
@@ -55,16 +57,28 @@ export default {
       },
     },
     image,
+    color,
+    label,
   ],
   preview: {
     select: {
+      navColor: "navColor",
+      navLabel: "navLabel",
       title: "smallHeadline",
     },
-    prepare: ({ title }) => ({
+    prepare: ({ navColor, navLabel, title }) => ({
       title,
-      subtitle: "Slide Type: Latvia",
+      subtitle: `${navLabel ? `${navLabel} |` : ""} Slide Type: Latvia`,
       media: (
-        <img src={Thumbnail} alt="Latvia Slide" style={{ objectFit: "cover" }} />
+        <img
+          src={Thumbnail}
+          alt="Latvia Slide"
+          style={{
+            boxSizing: "border-box",
+            objectFit: "cover",
+            border: `4px solid ${navColor || "transparent"}`,
+          }}
+        />
       ),
     }),
   },

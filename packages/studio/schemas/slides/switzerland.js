@@ -2,11 +2,15 @@ import React from "react";
 
 import Thumbnail from "../../assets/slide-thumbs/Switzerland-Slide.jpg";
 import { headline, bullets, copy } from "../data/fields";
+import { color, label } from "../data/navFields";
 
 export default {
   name: "switzerland",
   title: "Slide — Switzerland",
   type: "object",
+  fieldsets: [
+    { name: "nav", title: "Navigation", options: { collapsible: true } },
+  ],
   fields: [
     headline,
     copy,
@@ -53,19 +57,27 @@ export default {
       hidden: ({ parent }) =>
         !parent?.mediaType || parent?.mediaType === "image",
     },
+    color,
+    label,
   ],
   preview: {
     select: {
+      navColor: "navColor",
+      navLabel: "navLabel",
       title: "headline",
     },
-    prepare: ({ title }) => ({
+    prepare: ({ navColor, navLabel, title }) => ({
       title,
-      subtitle: "Slide Type: Switzerland",
+      subtitle: `${navLabel ? `${navLabel} |` : ""} Slide Type: Switzerland`,
       media: (
         <img
           src={Thumbnail}
           alt="Switzerland Slide"
-          style={{ objectFit: "cover" }}
+          style={{
+            boxSizing: "border-box",
+            objectFit: "cover",
+            border: `4px solid ${navColor || "transparent"}`,
+          }}
         />
       ),
     }),

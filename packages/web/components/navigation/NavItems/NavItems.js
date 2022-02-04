@@ -1,3 +1,4 @@
+import contrast from "contrast";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import PropTypes from "prop-types";
@@ -14,8 +15,6 @@ export function NavItems({ navOpen, slides, moveTo }) {
     },
   });
 
-  // console.log(slides);
-
   return (
     <S.NavItems isOpen={navOpen}>
       <ol ref={sliderRef} className="keen-slider">
@@ -24,8 +23,19 @@ export function NavItems({ navOpen, slides, moveTo }) {
 
           return (
             <li key={slide._key} className="keen-slider__slide">
-              <button type="button" onClick={() => moveTo(slideIndex)}>
-                {index >= 9 ? slideIndex : `0${slideIndex}`}
+              <button
+                type="button"
+                onClick={() => moveTo(slideIndex)}
+                style={{
+                  backgroundColor: slide.navColor || "var(--white)",
+                  color:
+                    contrast(slide.navColor) === "dark"
+                      ? "var(--white)"
+                      : "var(--uefa-black)",
+                }}
+              >
+                <span>{index >= 9 ? slideIndex : `0${slideIndex}`}</span>
+                <span>{slide.navLabel || null}</span>
               </button>
             </li>
           );

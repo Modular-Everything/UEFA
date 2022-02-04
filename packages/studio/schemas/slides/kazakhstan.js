@@ -1,11 +1,13 @@
 import React from "react";
 
 import Thumbnail from "../../assets/slide-thumbs/Kazakhstan-Slide.jpg";
+import { color, label } from "../data/navFields";
 
 export default {
   name: "kazakhstan",
   title: "Slide — Kazakhstan",
   type: "object",
+  fieldsets: [{ name: "nav", title: "Navigation" }, color, label],
   fields: [
     {
       name: "video",
@@ -15,14 +17,22 @@ export default {
     },
   ],
   preview: {
-    prepare: () => ({
+    select: {
+      navColor: "navColor",
+      navLabel: "navLabel",
+    },
+    prepare: ({ navColor, navLabel, title }) => ({
       title: "Embedded Video",
-      subtitle: "Slide Type: Kazakhstan",
+      subtitle: `${navLabel ? `${navLabel} |` : ""} Slide Type: Kazakhstan`,
       media: (
         <img
           src={Thumbnail}
           alt="Kazakhstan Slide"
-          style={{ objectFit: "cover" }}
+          style={{
+            boxSizing: "border-box",
+            objectFit: "cover",
+            border: `4px solid ${navColor || "transparent"}`,
+          }}
         />
       ),
     }),
