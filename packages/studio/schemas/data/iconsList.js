@@ -10,7 +10,7 @@ const iconsList = [
   { title: "Like", value: "like" },
   { title: "Linesman", value: "linesman" },
   { title: "Location", value: "location" },
-  { title: "Node", value: "node" },
+  { title: "Multichannel", value: "node" },
   { title: "Pitch", value: "pitch" },
   { title: "Recycle", value: "recycle" },
   { title: "Shopping", value: "shopping" },
