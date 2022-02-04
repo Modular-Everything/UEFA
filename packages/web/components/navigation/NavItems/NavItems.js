@@ -29,7 +29,7 @@ export function NavItems({ navOpen, slides, moveTo }) {
                 style={{
                   backgroundColor: slide.navColor || "var(--white)",
                   color:
-                    contrast(slide.navColor) === "dark"
+                    contrast(slide?.navColor || "#fff") === "dark"
                       ? "var(--white)"
                       : "var(--uefa-black)",
                 }}
