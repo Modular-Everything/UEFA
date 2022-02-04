@@ -1,15 +1,19 @@
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 
 import { Arrow } from "../../icons/Arrow";
 import * as S from "./NavDot.styles";
 
 export function NavDot({ navOpen, setNavOpen }) {
+  const router = useRouter();
+  const client = router?.query?.client;
+
   function handleMenuOpen() {
     setNavOpen(true);
   }
 
   function handleMenuNavigate() {
-    setNavOpen(false);
+    router.push(`/clients/${client}`);
   }
 
   return (
