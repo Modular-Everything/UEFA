@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 export const SimpleCopy = styled.div`
   color: inherit;
+  opacity: 1;
+  transition: 750ms ease opacity;
+
+  &.hidden {
+    opacity: 0;
+  }
 
   p {
     text-rendering: optimizeLegibility;

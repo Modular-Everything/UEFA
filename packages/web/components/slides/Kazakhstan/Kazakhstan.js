@@ -2,10 +2,12 @@ import getVideoId from "get-video-id";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import * as S from "./Kazakhstan.styles";
 
-export function Kazakhstan({ data, index }) {
+export function Kazakhstan({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Kazakhstan ref={el}>

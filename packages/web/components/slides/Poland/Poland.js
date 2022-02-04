@@ -2,19 +2,23 @@ import PropTypes from "prop-types";
 import { useRef } from "react";
 
 import { getImgUrl } from "../../../helpers/getImgUrl";
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { Image } from "../../elements/Image";
 import { LargeOutlinedText } from "../../elements/LargeOutlinedText";
 import * as S from "./Poland.styles";
 
-export function Poland({ data, index }) {
+export function Poland({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Poland ref={el}>
       <Content>
-        {data?.headline && <Headline data={{ headline: data.headline }} />}
+        {data?.headline && (
+          <Headline data={{ headline: data.headline }} inView={inView} />
+        )}
       </Content>
 
       {data?.image && (

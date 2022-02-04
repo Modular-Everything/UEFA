@@ -1,7 +1,7 @@
 import ReactFullpage from "@fullpage/react-fullpage";
 import { gsap } from "gsap";
 import Head from "next/head";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import { PreviewMode } from "../../../components/elements/PreviewMode";
@@ -58,7 +58,7 @@ function Deck({ data, preview }) {
 
   const [activeIndex, setActiveIndex] = useState(null);
 
-  // const router = useRouter();
+  const router = useRouter();
 
   const client = {
     title: data?.client?.title,
@@ -68,19 +68,22 @@ function Deck({ data, preview }) {
 
   const deck = filterDataToSingleItem(previewData, preview);
 
-  function afterLoad(origin) {
-    setActiveIndex(origin.index);
+  function afterLoad(origin, destination) {
+    setActiveIndex(destination);
   }
 
   function onLeave(destination) {
     setActiveIndex(destination.index);
   }
 
-  // useEffect(() => {
-  //   // if (activeIndex) {
-  //   //   router.push(`#${activeIndex}`);
-  //   // }
-  // }, [activeIndex]);
+  useEffect(() => {
+    if (activeIndex?.index) {
+      router.push(`#${activeIndex.index}`);
+    } else {
+      router.push("#0");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeIndex]);
 
   return (
     <>
@@ -109,7 +112,7 @@ function Deck({ data, preview }) {
             <ReactFullpage.Wrapper>
               {deck?.slides?.map((slide, index) => (
                 <div key={slide._key} className="section">
-                  {getSlide(slide, index, deck, client, preview)}
+                  {getSlide(slide, index, activeIndex, deck, client, preview)}
                 </div>
               ))}
             </ReactFullpage.Wrapper>

@@ -3,14 +3,16 @@ import { readableColorIsBlack } from "color2k";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Scotland.styles";
 import { Pattern } from "./ScotlandPattern";
 
-export function Scotland({ data, index }) {
+export function Scotland({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Scotland
@@ -28,7 +30,7 @@ export function Scotland({ data, index }) {
       >
         <div className="container">
           {data?.copy && (
-            <SimpleCopy>
+            <SimpleCopy inView={inView}>
               <BlockContent blocks={data.copy} />
             </SimpleCopy>
           )}
@@ -36,6 +38,7 @@ export function Scotland({ data, index }) {
           {data?.headline && (
             <Headline
               data={{ headline: data.headline }}
+              inView={inView}
               dividerColor={
                 readableColorIsBlack(data?.brandColors)
                   ? "var(--uefa-red)"

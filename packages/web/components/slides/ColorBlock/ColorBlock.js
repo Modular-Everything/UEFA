@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function ColorBlock({ data, index }) {
+export function ColorBlock({ data, index, activeIndex }) {
   return (
     <div
       style={{

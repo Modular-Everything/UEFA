@@ -2,6 +2,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Bars } from "../../elements/Bars";
 import { Bullets } from "../../elements/Bullets";
 import { Content } from "../../elements/Content";
@@ -9,8 +10,9 @@ import { Headline } from "../../elements/Headline";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Austria.styles";
 
-export function Austria({ data, index }) {
+export function Austria({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Austria
@@ -24,11 +26,12 @@ export function Austria({ data, index }) {
           {data?.headline && (
             <Headline
               data={{ headline: data.headline }}
+              inView={inView}
               dividerColor="var(--uefa-lt-green)"
             />
           )}
           {data?.copy && (
-            <SimpleCopy>
+            <SimpleCopy inView={inView}>
               <BlockContent blocks={data.copy} />
             </SimpleCopy>
           )}

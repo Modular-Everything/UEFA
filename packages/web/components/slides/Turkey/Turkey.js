@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Image } from "../../elements/Image";
 import { RepeatedText } from "../../elements/RepeatedText/RepeatedText";
 import * as S from "./Turkey.styles";
 
-export function Turkey({ data, index }) {
+export function Turkey({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Turkey ref={el}>

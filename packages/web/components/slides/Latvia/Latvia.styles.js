@@ -17,6 +17,12 @@ export const Latvia = styled.article`
     font-size: 2.4rem;
     line-height: 3.2rem;
     font-weight: 500;
+    opacity: 1;
+    transition: 750ms ease opacity;
+
+    &.hidden {
+      opacity: 0;
+    }
   }
 
   .copy {

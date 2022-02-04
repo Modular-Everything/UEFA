@@ -25,7 +25,7 @@ import {
 import { Belgium } from "../components/slides/Belgium/Belgium";
 import { Sweden } from "../components/slides/Sweden/Sweden";
 
-export function getSlide(slide, index, deck, client, preview) {
+export function getSlide(slide, index, activeIndex, deck, client, preview) {
   const id = slide._type;
 
   const slides = {
@@ -58,6 +58,7 @@ export function getSlide(slide, index, deck, client, preview) {
     createElement(slides[id].type, {
       data: slide,
       index,
+      activeIndex,
       deck,
       client,
       preview,

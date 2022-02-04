@@ -3,17 +3,20 @@ import fitty from "fitty/dist/fitty.min.js";
 import PropTypes from "prop-types";
 import { useState, useRef, useEffect } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
 import { Image } from "../../elements/Image";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Sweden.styles";
 import { Pattern } from "./SwedenPattern";
 
-export function Sweden({ data, index }) {
+export function Sweden({ data, index, activeIndex }) {
   const [containerAHeight, setContainerAHeight] = useState(null);
   const [containerBHeight, setContainerBHeight] = useState(null);
 
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
+
   const fitRefA = useRef(null);
   const fitRefB = useRef(null);
 
@@ -78,7 +81,7 @@ export function Sweden({ data, index }) {
 
         <div className="footer">
           {data?.copy && (
-            <SimpleCopy>
+            <SimpleCopy inView={inView}>
               <BlockContent blocks={data.copy} />
             </SimpleCopy>
           )}

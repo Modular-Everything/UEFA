@@ -2,14 +2,16 @@ import BlockContent from "@sanity/block-content-to-react";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Bars } from "../../elements/Bars";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Belgium.styles";
 
-export function Belgium({ data, index }) {
+export function Belgium({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Belgium
@@ -23,11 +25,12 @@ export function Belgium({ data, index }) {
           {data?.headline && (
             <Headline
               data={{ headline: data.headline }}
+              inView={inView}
               dividerColor="var(--uefa-lt-green)"
             />
           )}
           {data?.copy && (
-            <SimpleCopy>
+            <SimpleCopy inView={inView}>
               <BlockContent blocks={data.copy} />
               {data?.source && <cite>Source: {data.source}</cite>}
             </SimpleCopy>

@@ -3,6 +3,7 @@ import getVideoId from "get-video-id";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Bullets } from "../../elements/Bullets";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
@@ -10,17 +11,20 @@ import { Image } from "../../elements/Image";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Switzerland.styles";
 
-export function Switzerland({ data, index }) {
+export function Switzerland({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Switzerland ref={el}>
       <Content>
         <div className="copy">
           <div className="meta">
-            {data?.headline && <Headline data={{ headline: data.headline }} />}
+            {data?.headline && (
+              <Headline data={{ headline: data.headline }} inView={inView} />
+            )}
             {data?.copy && (
-              <SimpleCopy>
+              <SimpleCopy inView={inView}>
                 <BlockContent blocks={data.copy} />
               </SimpleCopy>
             )}

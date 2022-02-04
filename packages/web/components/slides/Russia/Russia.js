@@ -2,12 +2,14 @@ import PropTypes from "prop-types";
 import { useRef } from "react";
 
 import { getImgUrl } from "../../../helpers/getImgUrl";
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
 import { Image } from "../../elements/Image";
 import * as S from "./Russia.styles";
 
-export function Russia({ data, index }) {
+export function Russia({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Russia ref={el}>

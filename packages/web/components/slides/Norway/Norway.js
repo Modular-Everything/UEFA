@@ -1,19 +1,27 @@
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { Image } from "../../elements/Image";
 import { LargeOutlinedText } from "../../elements/LargeOutlinedText";
 import * as S from "./Norway.styles";
 
-export function Norway({ data, index }) {
+export function Norway({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Norway ref={el}>
       <Content>
-        {data?.headline && <Headline data={{ headline: data.headline }} />}
+        {data?.headline && (
+          <Headline
+            data={{ headline: data.headline }}
+            inView={inView}
+            delay={5000}
+          />
+        )}
       </Content>
 
       {data?.outlinedTextA && data?.outlinedTextB && (

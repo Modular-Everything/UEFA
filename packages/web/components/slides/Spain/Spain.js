@@ -2,6 +2,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { Icons } from "../../elements/Icons/Icons";
@@ -13,17 +14,20 @@ function ImageRef({ id }) {
   return <Image src={id} alt="" className="logo" />;
 }
 
-export function Spain({ data, index }) {
+export function Spain({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Spain ref={el}>
       <Content>
         <div className="header">
-          {data?.headline && <Headline data={{ headline: data.headline }} />}
+          {data?.headline && (
+            <Headline data={{ headline: data.headline }} inView={inView} />
+          )}
 
           {data?.copy && (
-            <SimpleCopy>
+            <SimpleCopy inView={inView}>
               <BlockContent blocks={data.copy} />
             </SimpleCopy>
           )}

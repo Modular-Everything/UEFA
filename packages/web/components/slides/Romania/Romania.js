@@ -1,14 +1,16 @@
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { Image } from "../../elements/Image";
 import * as S from "./Romania.styles";
 import { Pattern } from "./RomaniaPattern";
 
-export function Romania({ data, index }) {
+export function Romania({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Romania
@@ -18,7 +20,9 @@ export function Romania({ data, index }) {
       }}
     >
       <Content>
-        {data?.headline && <Headline data={{ headline: data.headline }} />}
+        {data?.headline && (
+          <Headline data={{ headline: data.headline }} inView={inView} />
+        )}
       </Content>
 
       <Pattern />

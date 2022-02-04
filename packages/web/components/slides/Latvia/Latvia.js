@@ -2,14 +2,16 @@ import BlockContent from "@sanity/block-content-to-react";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
 import { Image } from "../../elements/Image";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Latvia.styles";
 import { LatviaPatternA, LatviaPatternB } from "./LatviaPatterns";
 
-export function Latvia({ data, index }) {
+export function Latvia({ data, index, activeIndex }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   const colors = [
     data?.spotColorA,
@@ -26,7 +28,7 @@ export function Latvia({ data, index }) {
             <h3 className="smallHeadline">{data.smallHeadline}</h3>
           )}
           {data?.copy && (
-            <SimpleCopy>
+            <SimpleCopy inView={inView}>
               <BlockContent blocks={data.copy} />
             </SimpleCopy>
           )}

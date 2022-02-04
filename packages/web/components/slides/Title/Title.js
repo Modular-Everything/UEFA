@@ -1,14 +1,16 @@
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
+import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { Image } from "../../elements/Image";
 import * as S from "./Title.styles";
 import { Pattern } from "./TitlePattern";
 
-export function Title({ data, index, client, preview }) {
+export function Title({ data, index, activeIndex, client, preview }) {
   const el = useRef();
+  const inView = useActiveSlide(activeIndex, index);
 
   return (
     <S.Title
@@ -26,6 +28,7 @@ export function Title({ data, index, client, preview }) {
           {data?.headline && (
             <Headline
               data={{ headline: data.headline }}
+              inView={inView}
               dividerColor="transparent"
             />
           )}
