@@ -20,7 +20,7 @@ export default function preview(req, res) {
   // Redirect to the path from the fetched post
   // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
   res.writeHead(307, {
-    Location: `/clients/${req.query.parentSlug}${req?.query?.slug}` ?? `/`,
+    Location: `/clients/preview/${req?.query?.slug}` ?? `/`,
   });
 
   return res.end();

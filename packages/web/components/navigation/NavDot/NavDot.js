@@ -13,7 +13,11 @@ export function NavDot({ navOpen, setNavOpen }) {
   }
 
   function handleMenuNavigate() {
-    router.push(`/clients/${client}`);
+    if (client === "preview") {
+      setNavOpen(false);
+    } else {
+      router.push(`/clients/${client}`);
+    }
   }
 
   return (

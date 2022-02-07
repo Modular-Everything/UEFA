@@ -136,7 +136,7 @@ export async function getStaticProps({ params, preview = false }) {
     queryParams
   );
 
-  if (!client || !deck) {
+  if (!deck) {
     return { notFound: true };
   }
 

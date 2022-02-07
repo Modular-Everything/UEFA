@@ -7,7 +7,7 @@ import { sanityClient, getClient } from "../../../lib/sanity.server";
 // ---
 
 function Client({ data }) {
-  // console.info(data);
+  console.info(data);
 
   const client = {
     title: data?.client?.title,
