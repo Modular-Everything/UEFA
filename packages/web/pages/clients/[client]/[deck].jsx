@@ -1,5 +1,4 @@
 import ReactFullpage from "@fullpage/react-fullpage";
-import { gsap } from "gsap";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -68,7 +67,6 @@ function Deck({ data, preview }) {
   };
 
   const deck = filterDataToSingleItem(previewData, preview);
-  console.log(deck);
 
   function afterLoad(origin, destination) {
     setActiveIndex(destination);
