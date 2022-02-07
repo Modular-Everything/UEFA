@@ -17,31 +17,33 @@ export function NavItems({ navOpen, slides, moveTo }) {
 
   return (
     <S.NavItems isOpen={navOpen}>
-      <ol ref={sliderRef} className="keen-slider">
-        {slides?.map((slide, index) => {
-          const slideIndex = index + 1;
+      {slides && (
+        <ol ref={sliderRef} className="keen-slider">
+          {slides?.map((slide, index) => {
+            const slideIndex = index + 1;
 
-          return (
-            <li key={slide._key} className="keen-slider__slide">
-              <button
-                type="button"
-                onClick={() => moveTo(slideIndex)}
-                style={{
-                  backgroundColor: slide.navColor || "var(--white)",
-                  color:
-                    contrast(slide?.navColor || "#fff") === "dark"
-                      ? "var(--white)"
-                      : "var(--uefa-black)",
-                }}
-              >
-                <span>{index >= 9 ? slideIndex : `0${slideIndex}`}</span>
-                <span>{slide.navLabel || null}</span>
-              </button>
-            </li>
-          );
-        })}
-        <li className="keen-slider__slide" />
-      </ol>
+            return (
+              <li key={slide._key} className="keen-slider__slide">
+                <button
+                  type="button"
+                  onClick={() => moveTo(slideIndex)}
+                  style={{
+                    backgroundColor: slide.navColor || "var(--white)",
+                    color:
+                      contrast(slide?.navColor || "#fff") === "dark"
+                        ? "var(--white)"
+                        : "var(--uefa-black)",
+                  }}
+                >
+                  <span>{index >= 9 ? slideIndex : `0${slideIndex}`}</span>
+                  <span>{slide.navLabel || null}</span>
+                </button>
+              </li>
+            );
+          })}
+          <li className="keen-slider__slide" />
+        </ol>
+      )}
     </S.NavItems>
   );
 }

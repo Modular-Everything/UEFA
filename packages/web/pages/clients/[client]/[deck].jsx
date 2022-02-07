@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
+import { AddSlide } from "../../../components/elements/AddSlide";
 import { PreviewMode } from "../../../components/elements/PreviewMode";
 import { NavBar } from "../../../components/navigation/NavBar";
 import { getSlide } from "../../../helpers/getSlide";
@@ -67,6 +68,7 @@ function Deck({ data, preview }) {
   };
 
   const deck = filterDataToSingleItem(previewData, preview);
+  console.log(deck);
 
   function afterLoad(origin, destination) {
     setActiveIndex(destination);
@@ -91,6 +93,8 @@ function Deck({ data, preview }) {
         <title>{deck?.title} | UEFA Dash</title>
       </Head>
 
+      <PreviewMode preview={preview} />
+
       <NavBar
         returnTo={client.slug}
         slideIndex={{ activeIndex, setActiveIndex }}
@@ -98,27 +102,29 @@ function Deck({ data, preview }) {
         moveTo={moveTo}
       />
 
-      <PreviewMode preview={preview} />
-
-      <ReactFullpage
-        navigation={false}
-        pluginWrapper={pluginWrapper}
-        afterLoad={afterLoad.bind(this)}
-        onLeave={onLeave.bind(this)}
-        scrollOverflow
-        scrollingSpeed={350}
-        render={() => {
-          return (
-            <ReactFullpage.Wrapper>
-              {deck?.slides?.map((slide, index) => (
-                <div key={slide._key} className="section">
-                  {getSlide(slide, index, activeIndex, deck, client, preview)}
-                </div>
-              ))}
-            </ReactFullpage.Wrapper>
-          );
-        }}
-      />
+      {deck?.slides ? (
+        <ReactFullpage
+          navigation={false}
+          pluginWrapper={pluginWrapper}
+          afterLoad={afterLoad.bind(this)}
+          onLeave={onLeave.bind(this)}
+          scrollOverflow
+          scrollingSpeed={350}
+          render={() => {
+            return (
+              <ReactFullpage.Wrapper>
+                {deck?.slides?.map((slide, index) => (
+                  <div key={slide._key} className="section">
+                    {getSlide(slide, index, activeIndex, deck, client, preview)}
+                  </div>
+                ))}
+              </ReactFullpage.Wrapper>
+            );
+          }}
+        />
+      ) : (
+        <AddSlide>Add a slide item to get started...</AddSlide>
+      )}
     </>
   );
 }
