@@ -12,7 +12,7 @@ export const NavBar = styled.header`
   align-items: center;
   gap: 2rem;
   background-color: var(--NavBarBG);
-  transition: 250ms ease background-color;
+  transition: 250ms cubic-bezier(0.16, 1, 0.3, 1) background-color;
 `;
 
 export const Skrim = styled.button`

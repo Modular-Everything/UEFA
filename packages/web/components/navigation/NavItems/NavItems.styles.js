@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const NavItems = styled.div`
   color: var(--white);
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
-  transition: 250ms ease opacity;
+  transition: 250ms cubic-bezier(0.16, 1, 0.3, 1) opacity;
   transition-delay: ${({ isOpen }) => (isOpen ? "300ms" : 0)};
   pointer-events: ${({ isOpen }) => (isOpen ? "all" : "none")};
 
@@ -32,7 +32,7 @@ export const NavItems = styled.div`
         display: grid;
         place-content: center;
         opacity: 1;
-        transition: 250ms ease opacity;
+        transition: 250ms cubic-bezier(0.16, 1, 0.3, 1) opacity;
         font-size: 1.1rem;
 
         &:hover {

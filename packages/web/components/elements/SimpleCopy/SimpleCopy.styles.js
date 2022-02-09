@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SimpleCopy = styled.div`
   color: inherit;
   opacity: 1;
-  transition: 750ms ease opacity;
+  transition: 750ms cubic-bezier(0.16, 1, 0.3, 1) opacity;
 
   &.hidden {
     opacity: 0;
