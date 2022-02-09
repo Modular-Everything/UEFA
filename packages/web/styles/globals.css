@@ -131,6 +131,14 @@ a {
     transform: none !important;
   }
 
+  iframe {
+    background-color: var(--uefa-lt-blue);
+  }
+
+  skrim {
+    display: none;
+  }
+
   html,
   body {
     overflow: visible !important;
