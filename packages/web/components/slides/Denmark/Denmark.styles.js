@@ -35,6 +35,16 @@ export const Denmark = styled.article`
     max-height: 64rem;
     max-width: 90%;
     display: flex;
+    opacity: 1;
+    transform: none;
+    transition: 250ms cubic-bezier(0.16, 1, 0.3, 1) opacity,
+      250ms cubic-bezier(0.16, 1, 0.3, 1) transform;
+
+    &.hidden {
+      opacity: 0;
+      transform: translateY(15%);
+      transition-delay: 250ms;
+    }
 
     @media (min-width: 1024px) {
       max-height: 90%;

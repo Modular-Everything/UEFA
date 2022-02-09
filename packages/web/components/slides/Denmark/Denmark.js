@@ -17,8 +17,9 @@ export function Denmark({ data, index, activeIndex }) {
   return (
     <S.Denmark ref={el}>
       <Content>
-        {data?.headline && <Headline data={{ headline: data.headline }}
-inView={inView} />}
+        {data?.headline && (
+          <Headline data={{ headline: data.headline }} inView={inView} />
+        )}
 
         {data?.copy && (
           <SimpleCopy inView={inView}>
@@ -27,7 +28,7 @@ inView={inView} />}
         )}
       </Content>
 
-      <div className="image">
+      <div className={`image ${inView ? "visible" : "hidden"}`}>
         <Image
           src={data?.image}
           quality={95}
