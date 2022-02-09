@@ -77,7 +77,15 @@ export function Spain({ data, index, activeIndex }) {
                   content = null;
               }
 
-              return <li key={item._key}>{content}</li>;
+              return (
+                <S.Item
+                  key={item._key}
+                  delay={index}
+                  className={`${inView ? "visible" : "hidden"}`}
+                >
+                  {content}
+                </S.Item>
+              );
             })}
           </ul>
         </S.Grid>

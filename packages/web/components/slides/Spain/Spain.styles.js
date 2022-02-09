@@ -61,51 +61,6 @@ export const Grid = styled.section`
     }
   }
 
-  li {
-    height: max(18vh, 12rem);
-    object-fit: cover;
-    width: 100%;
-    background-color: var(--black);
-    border-radius: 1rem;
-    padding: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    color: var(--uefa-lt-grey);
-    overflow: hidden;
-
-    @supports (aspect-ratio: 1) {
-      aspect-ratio: 1.5/1;
-      height: auto;
-    }
-
-    .index {
-      position: absolute;
-      top: 1.2rem;
-      left: 1.2rem;
-      font-size: clamp(1.2rem, 2vw, 1.6rem);
-      line-height: clamp(1.2rem, 2vw, 2.4rem);
-    }
-
-    .icon {
-      display: none;
-
-      @media (min-width: 640px) {
-        display: grid;
-        place-content: center;
-        position: absolute;
-        width: calc(100% - (1.2rem * 2));
-        margin-top: calc(-2.2rem + -1.2rem);
-        color: var(--white);
-
-        svg {
-          height: 2.2rem;
-          width: 2.2rem;
-        }
-      }
-    }
-
     .title {
       width: 100%;
       font-family: var(--font-uefa-heavy-extended);
@@ -119,6 +74,61 @@ export const Grid = styled.section`
       @media (min-width: 768px) {
         font-size: clamp(1.4rem, 2vw, 2.2rem);
         line-height: clamp(1.8rem, 2vw, 2.7rem);
+      }
+    }
+  }
+`;
+
+export const Item = styled.li`
+  --delay: ${({ delay }) => `calc(150ms + ${delay} * 150ms)` || 0};
+
+  transition: 150ms linear opacity;
+  transition-delay: var(--delay);
+  opacity: 1;
+  height: max(18vh, 12rem);
+  object-fit: cover;
+  width: 100%;
+  background-color: var(--black);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--uefa-lt-grey);
+  overflow: hidden;
+
+  &.hidden {
+    opacity: 0;
+  }
+
+  @supports (aspect-ratio: 1) {
+    aspect-ratio: 1.5/1;
+    height: auto;
+  }
+
+  .index {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: clamp(1.2rem, 2vw, 2.4rem);
+  }
+
+  .icon {
+    display: none;
+
+    @media (min-width: 640px) {
+      display: grid;
+      place-content: center;
+      position: absolute;
+      width: calc(100% - (1.2rem * 2));
+      margin-top: calc(-2.2rem + -1.2rem);
+      color: var(--white);
+
+      svg {
+        height: 2.2rem;
+        width: 2.2rem;
       }
     }
   }
