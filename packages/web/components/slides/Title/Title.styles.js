@@ -4,16 +4,29 @@ export const Title = styled.article`
   height: 100%;
   position: relative;
 
+  .visible {
+    opacity: 1;
+    transform: none;
+    transition: 250ms ease opacity, 250ms ease transform;
+  }
+
+  .hidden {
+    opacity: 0;
+    transform: translateX(-15%);
+  }
+
   .Title__logo {
     margin-left: 0.4rem;
   }
 
   .headline {
     padding-top: 0.4rem;
+    transition-delay: 150ms;
   }
 
   .client-logo {
     max-width: 14rem;
+    transition-delay: 300ms;
 
     @media (min-width: 768px) {
       max-width: 27rem;

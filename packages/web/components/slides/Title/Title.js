@@ -21,7 +21,7 @@ export function Title({ data, index, activeIndex, client, preview }) {
     >
       <Content>
         <div className="title">
-          <div className="Title__logo">
+          <div className={`Title__logo ${inView ? "visible" : "hidden"}`}>
             <Image src={data?.logo} alt={data?.headline} />
           </div>
 
@@ -34,7 +34,7 @@ export function Title({ data, index, activeIndex, client, preview }) {
           )}
         </div>
 
-        <div className="client-logo">
+        <div className={`client-logo ${inView ? "visible" : "hidden"}`}>
           {preview ? (
             <S.LogoPlaceholder>Client Logo</S.LogoPlaceholder>
           ) : (
