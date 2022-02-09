@@ -7,8 +7,8 @@ export const Title = styled.article`
   .visible {
     opacity: 1;
     transform: none;
-    transition: 250ms cubic-bezier(0.12, 0, 0.39, 0) opacity,
-      250ms cubic-bezier(0.12, 0, 0.39, 0) transform;
+    transition: 250ms var(--animation-timing) opacity,
+      250ms var(--animation-timing) transform;
   }
 
   .hidden {

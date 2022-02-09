@@ -5,7 +5,7 @@ export const NavLabel = styled.div`
   flex-direction: column;
   color: var(--white);
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
-  transition: 250ms cubic-bezier(0.12, 0, 0.39, 0) opacity;
+  transition: 250ms var(--animation-timing) opacity;
   transition-delay: ${({ isOpen }) => (isOpen ? "250ms" : 0)};
   pointer-events: ${({ isOpen }) => (isOpen ? "all" : "none")};
 

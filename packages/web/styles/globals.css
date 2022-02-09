@@ -36,6 +36,8 @@
   --font-uefa-heavy-extended: "UEFA Euro Heavy Extended";
   --font-uefa-book: "UEFA Euro Book";
   --font-uefa-medium-extended: "UEFA Euro Medium Extended";
+
+  --animation-timing: cubic-bezier(0.12, 0, 0.39, 0);
 }
 
 html {
