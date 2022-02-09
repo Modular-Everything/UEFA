@@ -125,6 +125,12 @@ a {
     display: none !important;
   }
 
+  .visible,
+  .hidden {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   html,
   body {
     overflow: visible !important;
