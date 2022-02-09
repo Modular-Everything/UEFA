@@ -30,11 +30,11 @@ export function Switzerland({ data, index, activeIndex }) {
             )}
           </div>
 
-          {data?.bullets && <Bullets bullets={data.bullets} />}
+          {data?.bullets && <Bullets bullets={data.bullets} inView={inView} />}
         </div>
 
         {data?.mediaType === "video" && (
-          <div className="media video">
+          <div className={`media video ${inView ? "visible" : "hidden"}`}>
             <iframe
               src={`https://player.vimeo.com/video/${
                 getVideoId(data?.video).id
@@ -51,7 +51,7 @@ export function Switzerland({ data, index, activeIndex }) {
       </Content>
 
       {data?.mediaType === "image" && (
-        <div className="media image">
+        <div className={`media image ${inView ? "visible" : "hidden"}`}>
           <Image
             src={data?.image}
             alt={data?.headline}

@@ -42,6 +42,17 @@ export const Switzerland = styled.article`
     }
   }
 
+  .media {
+    transition: 250ms ease opacity, 250ms ease transform;
+    opacity: 1;
+    transform: none;
+
+    &.hidden {
+      opacity: 0;
+      transform: translateX(15%);
+    }
+  }
+
   .media.video iframe {
     width: 100%;
     height: 100%;

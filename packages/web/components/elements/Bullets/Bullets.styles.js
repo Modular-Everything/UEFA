@@ -10,15 +10,26 @@ export const Bullets = styled.ul`
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.6rem;
   }
+`;
 
-  li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.4rem;
+export const Bullet = styled.li`
+  --delay: ${({ delay }) => `calc(250ms + ${delay} * 50ms)` || 0};
 
-    &:last-of-type {
-      margin-bottom: 0;
-    }
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  transition: 250ms ease opacity, 250ms ease transform;
+  transition-delay: var(--delay);
+  opacity: 1;
+  transform: none;
+
+  &.hidden {
+    opacity: 0;
+    transform: translateX(-15%);
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
   }
 
   .bullet {
