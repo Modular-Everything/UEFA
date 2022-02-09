@@ -18,7 +18,7 @@ export const Latvia = styled.article`
     line-height: 3.2rem;
     font-weight: 500;
     opacity: 1;
-    transition: 750ms cubic-bezier(0.16, 1, 0.3, 1) opacity;
+    transition: 750ms cubic-bezier(0.12, 0, 0.39, 0) opacity;
 
     &.hidden {
       opacity: 0;

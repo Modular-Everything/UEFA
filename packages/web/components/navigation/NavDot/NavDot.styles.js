@@ -11,7 +11,7 @@ export const NavDot = styled.button`
   border-radius: 3rem;
   display: grid;
   place-items: center;
-  transition: 250ms cubic-bezier(0.16, 1, 0.3, 1) all;
+  transition: 250ms cubic-bezier(0.12, 0, 0.39, 0) all;
   outline: none;
 
   @media (min-width: 768px) {

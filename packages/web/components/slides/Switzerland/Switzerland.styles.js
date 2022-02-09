@@ -43,7 +43,7 @@ export const Switzerland = styled.article`
   }
 
   .media {
-    transition: 250ms cubic-bezier(0.16, 1, 0.3, 1) opacity, 250ms cubic-bezier(0.16, 1, 0.3, 1) transform;
+    transition: 250ms cubic-bezier(0.12, 0, 0.39, 0) opacity, 250ms cubic-bezier(0.12, 0, 0.39, 0) transform;
     opacity: 1;
     transform: none;
 

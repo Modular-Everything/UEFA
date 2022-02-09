@@ -18,7 +18,7 @@ export const Bullet = styled.li`
   display: flex;
   align-items: center;
   margin-bottom: 0.4rem;
-  transition: 250ms cubic-bezier(0.16, 1, 0.3, 1) opacity, 250ms cubic-bezier(0.16, 1, 0.3, 1) transform;
+  transition: 250ms cubic-bezier(0.12, 0, 0.39, 0) opacity, 250ms cubic-bezier(0.12, 0, 0.39, 0) transform;
   transition-delay: var(--delay);
   opacity: 1;
   transform: none;
