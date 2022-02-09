@@ -4,7 +4,13 @@ export const Kazakhstan = styled.article`
   height: 100%;
   background-color: var(--uefa-black);
 
+  &.hidden .video {
+    opacity: 0;
+  }
+
   .video {
+    opacity: 1;
+    transition: 350ms ease opacity;
     border-radius: 0.8rem;
     overflow: hidden;
     width: 100%;

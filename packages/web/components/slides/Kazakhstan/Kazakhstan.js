@@ -10,7 +10,7 @@ export function Kazakhstan({ data, index, activeIndex }) {
   const inView = useActiveSlide(activeIndex, index);
 
   return (
-    <S.Kazakhstan ref={el}>
+    <S.Kazakhstan ref={el} className={inView ? "visible" : "hidden"}>
       <VideoPlayer
         video={data?.video}
         inView={inView}

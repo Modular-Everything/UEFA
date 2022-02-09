@@ -8,7 +8,7 @@ export function VideoPlayer({ video, inView, className, width, height }) {
   const [playing, setPlaying] = useState(false);
   return (
     <S.VideoPlayer
-      className={`video ${className} ${inView ? "visible" : "hidden"}`}
+      className={`video ${className || ""} ${inView ? "visible" : "hidden"}`}
     >
       {video && (
         <>
