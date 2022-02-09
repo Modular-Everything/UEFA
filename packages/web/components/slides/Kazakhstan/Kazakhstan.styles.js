@@ -12,10 +12,13 @@ export const Kazakhstan = styled.article`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     iframe {
       width: 90%;
       height: 90%;
+      position: relative;
+      z-index: 0;
     }
   }
 `;

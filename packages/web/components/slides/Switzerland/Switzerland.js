@@ -1,5 +1,4 @@
 import BlockContent from "@sanity/block-content-to-react";
-import getVideoId from "get-video-id";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
@@ -9,6 +8,7 @@ import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { Image } from "../../elements/Image";
 import { SimpleCopy } from "../../elements/SimpleCopy";
+import { VideoPlayer } from "../../elements/VideoPlayer";
 import * as S from "./Switzerland.styles";
 
 export function Switzerland({ data, index, activeIndex }) {
@@ -34,19 +34,7 @@ export function Switzerland({ data, index, activeIndex }) {
         </div>
 
         {data?.mediaType === "video" && (
-          <div className={`media video ${inView ? "visible" : "hidden"}`}>
-            <iframe
-              src={`https://player.vimeo.com/video/${
-                getVideoId(data?.video).id
-              }?h=0f405f633e&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;&amp;app_id=122963`}
-              title="Vimeo"
-              width="1920"
-              height="1080"
-              frameBorder="0"
-              allow="autoplay;"
-              allowFullScreen
-            />
-          </div>
+          <VideoPlayer className="media" video={data?.video} inView={inView} />
         )}
       </Content>
 
