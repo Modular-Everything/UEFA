@@ -19,4 +19,8 @@ export const getDefaultDocumentNode = () => {
 export default () =>
   S.list()
     .title("Dashboard")
-    .items([S.documentTypeListItem("client"), S.documentTypeListItem("deck")]);
+    .items([
+      S.documentTypeListItem("client"),
+      S.documentTypeListItem("deck"),
+      S.documentTypeListItem("users"),
+    ]);

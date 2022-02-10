@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -7,7 +8,7 @@ import { getClient, overlayDrafts } from "../lib/sanity.server";
 // ---
 
 function Home({ allClients }) {
-  // console.info(allClients);
+  const { data: session, status } = useSession();
 
   return (
     <div>
@@ -17,16 +18,23 @@ function Home({ allClients }) {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <ul>
-        {allClients.map((client) => (
-          <li key={client._id}>
-            Client name:{" "}
-            <Link href={`/clients/${client.slug}`}>
-              <a>{client.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {status === "authenticated" ? (
+        <>
+          <h2>You're logged in as {session.user.email}</h2>
+          <ul>
+            {allClients.map((client) => (
+              <li key={client._id}>
+                Client name:{" "}
+                <Link href={`/clients/${client.slug}`}>
+                  <a>{client.title}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <a href="/api/auth/signin">Sign in</a>
+      )}
     </div>
   );
 }

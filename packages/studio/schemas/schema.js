@@ -26,6 +26,7 @@ import switzerland from "./slides/switzerland";
 import title from "./slides/title";
 import turkey from "./slides/turkey";
 import wales from "./slides/wales";
+import users from "./users";
 
 export default createSchema({
   name: "default",
@@ -54,6 +55,7 @@ export default createSchema({
     switzerland,
     title,
     turkey,
+    users,
     wales,
   ],
 });
