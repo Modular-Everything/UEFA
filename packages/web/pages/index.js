@@ -14,7 +14,7 @@ function Home({ allClients }) {
     return <p>Loading...</p>;
   }
 
-  if (data?.allUserData === undefined) {
+  if (!data) {
     return <h2>Sorry, there was a problem. Please refresh the page.</h2>;
   }
 

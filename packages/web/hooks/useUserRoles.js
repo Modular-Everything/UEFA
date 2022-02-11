@@ -12,7 +12,12 @@ export function useUserRoles() {
 
   useEffect(() => {
     const client = sanityClient(sanityConfig);
-    const query = '*[_type == "users" && email == $email]';
+    const query = `
+      *[_type == "users" && email == $email][0] {
+        accessRoles->,
+        ...
+      }
+    `;
     const params = {
       email: session === undefined ? "" : session.user.email,
     };
@@ -30,10 +35,10 @@ export function useUserRoles() {
     loading: isLoading,
     data: data
       ? {
-          allUserData: data[0],
-          isSuperUser: data[0]?.superuser,
-          identity: data[0]?.email,
-          access: data[0]?.accessRoles,
+          allUserData: data,
+          isSuperUser: data?.superuser,
+          identity: data?.email,
+          access: data?.accessRoles,
         }
       : null,
     session,
