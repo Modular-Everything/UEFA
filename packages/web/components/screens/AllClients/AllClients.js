@@ -28,5 +28,5 @@ export function AllClients({ clients }) {
 }
 
 AllClients.propTypes = {
-  clients: PropTypes.object.isRequired,
+  clients: PropTypes.array.isRequired,
 };
