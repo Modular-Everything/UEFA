@@ -19,7 +19,7 @@ export function useUserRoles() {
       }
     `;
     const params = {
-      email: session === undefined ? "" : session.user.email,
+      email: session === undefined || !session ? "" : session.user.email,
     };
 
     async function getUserData() {
