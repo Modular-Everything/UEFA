@@ -42,6 +42,7 @@
 
 html {
   font-size: 10px;
+  height: -webkit-fill-available;
 }
 
 body {
@@ -50,6 +51,8 @@ body {
     sans-serif;
   color: var(--uefa-black);
   font-size: 2rem;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

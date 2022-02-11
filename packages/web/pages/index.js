@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import { AllClients } from "../components/screens/AllClients/AllClients";
+import { Login } from "../components/screens/Login";
 import { useUserRoles } from "../hooks/useUserRoles";
 import { indexQuery } from "../lib/queries";
 import { getClient, overlayDrafts } from "../lib/sanity.server";
@@ -10,12 +9,8 @@ import { getClient, overlayDrafts } from "../lib/sanity.server";
 function Home({ allClients }) {
   const { loading, data, status } = useUserRoles();
 
-  if (loading) {
+  if (loading || (!data && status !== "unauthenticated")) {
     return <p>Loading...</p>;
-  }
-
-  if (!data) {
-    return <h2>Sorry, there was a problem. Please refresh the page.</h2>;
   }
 
   if (status === "authenticated" && data?.isSuperUser) {
@@ -30,21 +25,10 @@ function Home({ allClients }) {
   }
 
   if (status === "authenticated" && !data?.isSuperUser) {
-    return (
-      <>
-        <h2>
-          Superuser? {data.isSuperUser ? "✅" : "❌"} &mdash; {data.identity}
-        </h2>
-        <p>Sorry you can't access this page.</p>
-      </>
-    );
+    return <Login status={status} denyAccess />;
   }
 
-  return (
-    <Link href="/api/auth/signin">
-      <a>Sign in</a>
-    </Link>
-  );
+  return <Login status={status} />;
 }
 
 export default Home;

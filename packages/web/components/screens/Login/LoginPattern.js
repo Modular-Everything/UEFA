@@ -6,6 +6,8 @@ export function Pattern() {
       viewBox="0 0 1440 409"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMax slice"
+      className="pattern"
     >
       <path
         d="M698.279 341.589L719.925 341.795V511.792L678.355 506.364L698.279 351.802V341.589Z"

@@ -2,12 +2,12 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import styled from "styled-components";
 
 import { LoginModal } from "../components/elements/LoginModal";
-import { Pattern } from "../components/general-patterns/LoginPattern";
 
 export default function Component() {
   const { data: session } = useSession();
 
-  return <LoginModal />;
+  return "login";
+  // return <LoginModal />;
 
   // if (session) {
   //   return (
