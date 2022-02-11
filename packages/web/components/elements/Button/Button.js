@@ -12,6 +12,11 @@ export function ButtonLink({ label, to }) {
   );
 }
 
+ButtonLink.propTypes = {
+  label: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+};
+
 export function ButtonEl({ label, ...rest }) {
   return (
     <S.ButtonWrap>
@@ -19,3 +24,6 @@ export function ButtonEl({ label, ...rest }) {
     </S.ButtonWrap>
   );
 }
+ButtonEl.propTypes = {
+  label: PropTypes.string.isRequired,
+};
