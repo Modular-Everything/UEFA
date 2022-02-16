@@ -40,10 +40,15 @@ export const Switzerland = styled.article`
     ul {
       margin-top: 5.6rem;
     }
+
+    .simpleCopy {
+      max-width: 40rem;
+    }
   }
 
   .media {
-    transition: 250ms var(--animation-timing) opacity, 250ms var(--animation-timing) transform;
+    transition: 250ms var(--animation-timing) opacity,
+      250ms var(--animation-timing) transform;
     opacity: 1;
     transform: none;
 
