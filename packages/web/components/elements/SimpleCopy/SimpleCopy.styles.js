@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SimpleCopy = styled.div`
   color: inherit;
   opacity: 1;
-  transition: 750ms var(--animation-timing) opacity;
+  transition: 450ms var(--animation-timing) opacity;
 
   &.hidden {
     opacity: 0;
