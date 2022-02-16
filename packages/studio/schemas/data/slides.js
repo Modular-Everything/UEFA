@@ -1,6 +1,5 @@
 const slides = [
   { type: "andorra" },
-  { type: "austria" },
   { type: "belgium" },
   { type: "colorBlock" },
   { type: "denmark" },

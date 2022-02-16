@@ -2,7 +2,6 @@ import { createElement } from "react";
 
 import {
   Andorra,
-  Austria,
   Belgium,
   ColorBlock,
   Denmark,
@@ -31,7 +30,6 @@ export function getSlide(slide, index, activeIndex, deck, client, preview) {
 
   const slides = {
     andorra: <Andorra />,
-    austria: <Austria />,
     belgium: <Belgium />,
     colorBlock: <ColorBlock />,
     denmark: <Denmark />,
