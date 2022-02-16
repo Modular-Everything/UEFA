@@ -1,15 +1,17 @@
 import React from "react";
 
 import Thumbnail from "../../assets/slide-thumbs/Romania-Slide.jpg";
-import { headline, image } from "../data/fields";
+import { headline, image, copy } from "../data/fields";
 import { color, label } from "../data/navFields";
 
 export default {
   name: "romania",
   title: "Slide — Romania",
   type: "object",
-  fieldsets: [{ name: "nav", title: "Navigation", options: {collapsible: true} }],
-  fields: [headline, image, color, label],
+  fieldsets: [
+    { name: "nav", title: "Navigation", options: { collapsible: true } },
+  ],
+  fields: [headline, copy, image, color, label],
   preview: {
     select: {
       navColor: "navColor",
