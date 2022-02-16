@@ -1,8 +1,9 @@
 import NextImage from "next/image";
 
 import { getImgUrl } from "../../../helpers/getImgUrl";
+import * as S from "./Image.styles";
 
-export function Image({ src, override, layout, modifiers, ...rest }) {
+export function Image({ src, override, saturate, layout, modifiers, ...rest }) {
   if (!src || !src.asset) {
     return null;
   }
@@ -13,15 +14,23 @@ export function Image({ src, override, layout, modifiers, ...rest }) {
   const [width, height] = dimensions.split("x");
 
   return (
-    <NextImage
-      src={image.url()}
-      placeholder="blur"
-      blurDataURL={image.blur().url()}
-      layout={layout}
-      width={layout === "fill" ? null : width}
-      height={layout === "fill" ? null : height}
-      loading="eager"
-      {...rest}
-    />
+    <S.Image>
+      {saturate && (
+        <>
+          <div className="apply-skrim" />
+          <div className="apply-saturation" />
+        </>
+      )}
+      <NextImage
+        src={image.url()}
+        placeholder="blur"
+        blurDataURL={image.blur().url()}
+        layout={layout}
+        width={layout === "fill" ? null : width}
+        height={layout === "fill" ? null : height}
+        loading="eager"
+        {...rest}
+      />
+    </S.Image>
   );
 }

@@ -7,6 +7,7 @@ import { Bars } from "../../elements/Bars";
 import { Bullets } from "../../elements/Bullets";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
+import { Image } from "../../elements/Image";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Belgium.styles";
 
@@ -41,6 +42,18 @@ export function Belgium({ data, index, activeIndex }) {
 
         <div className="chart">{data?.bars && <Bars bars={data.bars} />}</div>
       </Content>
+
+      <div className="image">
+        <Image
+          src={data?.image}
+          alt=""
+          layout="fill"
+          objectFit="cover"
+          saturate
+          quality={90}
+          className="Belgium__image"
+        />
+      </div>
     </S.Belgium>
   );
 }
