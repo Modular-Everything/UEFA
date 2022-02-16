@@ -10,7 +10,7 @@ export const Kazakhstan = styled.article`
 
   .video {
     opacity: 1;
-    transition: 350ms var(--animation-timing) opacity;
+    transition: 500ms var(--animation-timing) opacity;
     border-radius: 0.8rem;
     overflow: hidden;
     width: 100%;
