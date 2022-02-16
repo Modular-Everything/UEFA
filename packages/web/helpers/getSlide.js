@@ -1,7 +1,9 @@
 import { createElement } from "react";
 
 import {
+  Andorra,
   Austria,
+  Belgium,
   ColorBlock,
   Denmark,
   England,
@@ -17,18 +19,18 @@ import {
   Russia,
   Scotland,
   Spain,
+  Sweden,
   Switzerland,
   Title,
   Turkey,
   Wales,
 } from "../components/slides";
-import { Belgium } from "../components/slides/Belgium/Belgium";
-import { Sweden } from "../components/slides/Sweden/Sweden";
 
 export function getSlide(slide, index, activeIndex, deck, client, preview) {
   const id = slide._type;
 
   const slides = {
+    andorra: <Andorra />,
     austria: <Austria />,
     belgium: <Belgium />,
     colorBlock: <ColorBlock />,
