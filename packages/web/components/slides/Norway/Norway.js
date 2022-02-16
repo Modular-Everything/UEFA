@@ -16,11 +16,7 @@ export function Norway({ data, index, activeIndex }) {
     <S.Norway ref={el}>
       <Content>
         {data?.headline && (
-          <Headline
-            data={{ headline: data.headline }}
-            inView={inView}
-            delay={5000}
-          />
+          <Headline data={{ headline: data.headline }} inView={inView} />
         )}
       </Content>
 
