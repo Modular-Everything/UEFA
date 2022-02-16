@@ -50,7 +50,7 @@ export function Belgium({ data, index, activeIndex }) {
           layout="fill"
           objectFit="cover"
           saturate
-          quality={90}
+          quality={98}
           className="Belgium__image"
         />
       </div>
