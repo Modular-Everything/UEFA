@@ -26,7 +26,7 @@ export function Russia({ data, index, activeIndex }) {
       <div className="image">
         <Image
           src={data?.image}
-          override={getImgUrl(data?.image).saturation(-100)}
+          saturate
           alt=""
           layout="fill"
           objectFit="cover"
