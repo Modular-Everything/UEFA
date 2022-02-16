@@ -1,7 +1,7 @@
 import React from "react";
 
 import Thumbnail from "../../assets/slide-thumbs/Belgium-Slide.jpg";
-import { headline, copy, image, bars } from "../data/fields";
+import { headline, copy, image, bars, bullets } from "../data/fields";
 import { color, label } from "../data/navFields";
 
 export default {
@@ -22,6 +22,7 @@ export default {
       description: "Appears below copy.",
     },
     bars,
+    bullets,
     image,
     color,
     label,

@@ -4,6 +4,7 @@ import { useRef } from "react";
 
 import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Bars } from "../../elements/Bars";
+import { Bullets } from "../../elements/Bullets";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
 import { SimpleCopy } from "../../elements/SimpleCopy";
@@ -35,6 +36,7 @@ export function Belgium({ data, index, activeIndex }) {
               {data?.source && <cite>Source: {data.source}</cite>}
             </SimpleCopy>
           )}
+          {data?.bullets && <Bullets bullets={data.bullets} inView={inView} />}
         </div>
 
         <div className="chart">{data?.bars && <Bars bars={data.bars} />}</div>
