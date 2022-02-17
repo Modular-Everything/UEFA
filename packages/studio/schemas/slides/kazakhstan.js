@@ -15,6 +15,8 @@ export default {
       type: "url",
       description: "A link to a Vimeo video",
     },
+    color,
+    label,
   ],
   preview: {
     select: {
