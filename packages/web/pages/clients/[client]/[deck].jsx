@@ -77,13 +77,11 @@ function Deck({ data, preview }) {
   }
 
   useEffect(() => {
-    if (activeIndex?.index) {
-      router.push(`#${activeIndex.index}`);
-    } else {
-      router.push("#0");
+    if (activeIndex?.index !== undefined) {
+      router.push(`#${activeIndex?.index + 1}`);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeIndex]);
+  }, [activeIndex?.index]);
 
   return (
     <>
