@@ -107,7 +107,7 @@ function Deck({ data, preview }) {
           scrollOverflow
           loopBottom
           loopTop
-          scrollingSpeed={1000}
+          scrollingSpeed={500}
           render={() => {
             return (
               <ReactFullpage.Wrapper>
