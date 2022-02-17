@@ -5,15 +5,73 @@ import PropTypes from "prop-types";
 
 import * as S from "./NavItems.styles";
 
-export function NavItems({ navOpen, slides, moveTo }) {
-  const [sliderRef] = useKeenSlider({
-    loop: true,
-    mode: "free-snap",
-    slides: {
-      perView: "auto",
-      spacing: 16,
-    },
+function WheelControls(slider) {
+  let touchTimeout;
+  let position;
+  let wheelActive;
+
+  function dispatch(e, name) {
+    position.x -= e.deltaX;
+    position.y -= e.deltaY;
+    slider.container.dispatchEvent(
+      new CustomEvent(name, {
+        detail: {
+          x: position.x,
+          y: position.y,
+        },
+      })
+    );
+  }
+
+  function wheelStart(e) {
+    position = {
+      x: e.pageX,
+      y: e.pageY,
+    };
+    dispatch(e, "ksDragStart");
+  }
+
+  function wheel(e) {
+    dispatch(e, "ksDrag");
+  }
+
+  function wheelEnd(e) {
+    dispatch(e, "ksDragEnd");
+  }
+
+  function eventWheel(e) {
+    e.preventDefault();
+    if (!wheelActive) {
+      wheelStart(e);
+      wheelActive = true;
+    }
+    wheel(e);
+    clearTimeout(touchTimeout);
+    touchTimeout = setTimeout(() => {
+      wheelActive = false;
+      wheelEnd(e);
+    }, 50);
+  }
+
+  slider.on("created", () => {
+    slider.container.addEventListener("wheel", eventWheel, {
+      passive: false,
+    });
   });
+}
+
+export function NavItems({ navOpen, slides, moveTo }) {
+  const [sliderRef] = useKeenSlider(
+    {
+      loop: true,
+      mode: "free-snap",
+      slides: {
+        perView: "auto",
+        spacing: 16,
+      },
+    },
+    [WheelControls]
+  );
 
   return (
     <S.NavItems isOpen={navOpen}>
