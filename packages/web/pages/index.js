@@ -1,3 +1,4 @@
+import { Loading } from "../components/elements/Loading";
 import { AllClients } from "../components/screens/AllClients/AllClients";
 import { Login } from "../components/screens/Login";
 import { useUserRoles } from "../hooks/useUserRoles";
@@ -10,7 +11,7 @@ function Home({ allClients }) {
   const { loading, data, status } = useUserRoles();
 
   if (loading || (!data && status !== "unauthenticated")) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   if (status === "authenticated" && data?.isSuperUser) {
