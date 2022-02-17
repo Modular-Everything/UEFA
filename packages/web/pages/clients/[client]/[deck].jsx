@@ -105,7 +105,9 @@ function Deck({ data, preview }) {
           afterLoad={afterLoad.bind(this)}
           onLeave={onLeave.bind(this)}
           scrollOverflow
-          scrollingSpeed={350}
+          loopBottom
+          loopTop
+          scrollingSpeed={1000}
           render={() => {
             return (
               <ReactFullpage.Wrapper>
