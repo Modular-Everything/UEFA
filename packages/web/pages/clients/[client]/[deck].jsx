@@ -108,12 +108,20 @@ function Deck({ data, preview }) {
           loopBottom
           loopTop
           scrollingSpeed={500}
-          render={() => {
+          render={({ fullpageApi }) => {
             return (
               <ReactFullpage.Wrapper>
                 {deck?.slides?.map((slide, index) => (
                   <div key={slide._key} className="section">
-                    {getSlide(slide, index, activeIndex, deck, client, preview)}
+                    {getSlide(
+                      slide,
+                      index,
+                      activeIndex,
+                      fullpageApi,
+                      deck,
+                      client,
+                      preview
+                    )}
                   </div>
                 ))}
               </ReactFullpage.Wrapper>

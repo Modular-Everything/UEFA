@@ -90,13 +90,31 @@ export const Item = styled.li`
   width: 100%;
   background-color: var(--black);
   border-radius: 1rem;
-  padding: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   color: var(--uefa-lt-grey);
   overflow: hidden;
+
+  button {
+    background: transparent;
+    border: 0;
+    padding: 1.2rem;
+    margin: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  &.linked {
+    box-shadow: 0;
+    transition: 500ms ease box-shadow;
+
+    &:hover {
+      box-shadow: 0 0 1.2rem var(--uefa-lt-blue);
+    }
+  }
 
   &.hidden {
     opacity: 0;

@@ -14,9 +14,27 @@ function ImageRef({ id }) {
   return <Image src={id} alt="" className="logo" />;
 }
 
-export function Spain({ data, index, activeIndex }) {
+export function Spain({ data, index, activeIndex, fullpageApi }) {
   const el = useRef();
   const inView = useActiveSlide(activeIndex, index);
+
+  function Item({ key, content, anchor }) {
+    return (
+      <S.Item
+        key={key}
+        delay={index}
+        className={`${inView ? "visible" : "hidden"} ${anchor ? "linked" : ""}`}
+      >
+        {anchor ? (
+          <button type="button" onClick={() => fullpageApi.moveTo(anchor)}>
+            {content}
+          </button>
+        ) : (
+          content
+        )}
+      </S.Item>
+    );
+  }
 
   return (
     <S.Spain ref={el}>
@@ -78,13 +96,7 @@ export function Spain({ data, index, activeIndex }) {
               }
 
               return (
-                <S.Item
-                  key={item._key}
-                  delay={index}
-                  className={`${inView ? "visible" : "hidden"}`}
-                >
-                  {content}
-                </S.Item>
+                <Item key={item._key} content={content} anchor={item.anchor} />
               );
             })}
           </ul>
