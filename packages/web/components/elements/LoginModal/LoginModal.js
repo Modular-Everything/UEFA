@@ -57,7 +57,7 @@ export function LoginModal({ status, denyAccess, setDenyAccess }) {
         </form>
 
         <small>
-          <a href="mailto:hey@modular-everything.com?subject=Trouble logging in to UEFA Dashboard">
+          <a href="mailto:yo@modular-everything.com?subject=Trouble logging in to UEFA Dashboard">
             Having trouble logging in?
           </a>
         </small>
