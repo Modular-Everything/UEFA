@@ -8,7 +8,9 @@ export default {
   name: "spain",
   title: "Slide — Spain",
   type: "object",
-  fieldsets: [{ name: "nav", title: "Navigation", options: {collapsible: true} }],
+  fieldsets: [
+    { name: "nav", title: "Navigation", options: { collapsible: true } },
+  ],
   fields: [
     headline,
     copy,
@@ -34,6 +36,12 @@ export default {
               title: "Title",
               type: "string",
               description: "A short title",
+            },
+            {
+              name: "anchor",
+              title: "Link to slide",
+              type: "number",
+              description: "The index number of a slide you'd like to link to",
             },
             icons,
             brandColors,
