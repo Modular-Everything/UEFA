@@ -13,14 +13,15 @@ export const Headline = styled.h2`
   padding: 0.6rem 0;
   width: 100%;
   margin: 0;
-  transition: 250ms var(--animation-timing) opacity, 250ms var(--animation-timing) transform;
+  transition: 250ms var(--animation-timing) opacity,
+    250ms var(--animation-timing) transform;
   transition-delay: var(--delay);
   opacity: 1;
   transform: none;
 
   &.hidden {
     opacity: 0;
-    transform: translateX(-15%);
+    transform: translateX(-4.8rem);
   }
 
   @media (min-width: 375px) {

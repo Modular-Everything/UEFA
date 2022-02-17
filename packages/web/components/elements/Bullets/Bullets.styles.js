@@ -25,7 +25,7 @@ export const Bullet = styled.li`
 
   &.hidden {
     opacity: 0;
-    transform: translateX(-15%);
+    transform: translateX(-4.8rem);
   }
 
   &:last-of-type {

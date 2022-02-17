@@ -45,7 +45,7 @@ export const Scotland = styled.article`
     right: 0;
     width: 150%;
     z-index: 0;
-    transform: translateX(-15%);
+    transform: translateX(-4.8rem);
 
     @media (min-width: 768px) {
       width: 100%;
