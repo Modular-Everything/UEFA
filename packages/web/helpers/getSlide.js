@@ -3,6 +3,7 @@ import { createElement } from "react";
 import {
   Andorra,
   Belgium,
+  Coefficients,
   ColorBlock,
   Denmark,
   England,
@@ -39,6 +40,7 @@ export function getSlide(
   const slides = {
     andorra: <Andorra />,
     belgium: <Belgium />,
+    coefficients: <Coefficients />,
     colorBlock: <ColorBlock />,
     denmark: <Denmark />,
     england: <England />,

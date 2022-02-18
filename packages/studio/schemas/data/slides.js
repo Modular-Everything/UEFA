@@ -1,7 +1,7 @@
 const slides = [
   { type: "andorra" },
   { type: "belgium" },
-  { type: "colorBlock" },
+  { type: "coefficients" },
   { type: "denmark" },
   { type: "england" },
   { type: "france" },

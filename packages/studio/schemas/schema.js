@@ -6,6 +6,7 @@ import client from "./client";
 import deck from "./deck";
 import andorra from "./slides/andorra";
 import belgium from "./slides/belgium";
+import coefficients from "./slides/coefficients";
 import colorBlock from "./slides/colorBlock";
 import denmark from "./slides/denmark";
 import england from "./slides/england";
@@ -34,6 +35,7 @@ export default createSchema({
     ...schemaTypes,
     andorra,
     belgium,
+    coefficients,
     client,
     colorBlock,
     deck,
