@@ -11,7 +11,7 @@ export function Andorra({ data, index, activeIndex, fullpageApi }) {
   const inView = useActiveSlide(activeIndex, index);
 
   return (
-    <S.Andorra ref={el}>
+    <S.Andorra ref={el} className="andorra">
       {data?.backIndex && (
         <button
           type="button"

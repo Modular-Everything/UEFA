@@ -11,7 +11,7 @@ function openPrint() {
 
 export function DownloadPDF() {
   return (
-    <S.DownloadPDF>
+    <S.DownloadPDF className="downloadPDF">
       <Content>
         <div className="container">
           <Download />

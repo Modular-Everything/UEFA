@@ -176,4 +176,12 @@ a {
   .fp-slide {
     width: auto !important;
   }
+
+  .andorra {
+    position: relative;
+  }
+
+  .downloadPDF {
+    display: none;
+  }
 }
