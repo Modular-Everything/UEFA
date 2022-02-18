@@ -3,12 +3,17 @@ import NextImage from "next/image";
 import { getImgUrl } from "../../../helpers/getImgUrl";
 import * as S from "./Image.styles";
 
-export function Image({ src, saturate, layout, modifiers, ...rest }) {
+export function Image({ src, saturate, layout, blur, ...rest }) {
   if (!src || !src.asset) {
     return null;
   }
 
-  const image = getImgUrl(src);
+  let image;
+  if (blur) {
+    image = getImgUrl(src).blur(85);
+  } else {
+    image = getImgUrl(src);
+  }
   // eslint-disable-next-line no-unused-vars
   const [assetType, _id, dimensions, filetype] = src.asset._ref.split("-");
   const [width, height] = dimensions.split("x");

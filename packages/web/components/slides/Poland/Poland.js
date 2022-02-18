@@ -46,7 +46,7 @@ export function Poland({ data, index, activeIndex }) {
         <div className="bg">
           <Image
             src={data.backgroundImage}
-            override={getImgUrl(data.backgroundImage).blur(85)}
+            blur
             alt=""
             layout="fill"
             objectFit="cover"
