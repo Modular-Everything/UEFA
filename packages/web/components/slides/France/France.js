@@ -13,8 +13,6 @@ export function France({ data, index, activeIndex }) {
   const el = useRef();
   const inView = useActiveSlide(activeIndex, index);
 
-  console.log(data);
-
   return (
     <S.France
       ref={el}
