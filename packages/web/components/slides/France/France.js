@@ -29,9 +29,9 @@ export function France({ data, index, activeIndex }) {
       </Content>
 
       <Pattern
-        colorA={data?.patternColors[0] || "#EFF4F8"}
-        colorB={data?.patternColors[1] || "#FE0000"}
-        colorC={data?.patternColors[2] || "#052992"}
+        colorA={(data?.patternColors && data.patternColors[0]) || "#EFF4F8"}
+        colorB={(data?.patternColors && data.patternColors[1]) || "#FE0000"}
+        colorC={(data?.patternColors && data.patternColors[2]) || "#052992"}
       />
 
       {data?.image && (
