@@ -1,10 +1,12 @@
+import BlockContent from "@sanity/block-content-to-react";
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
-import { getImgUrl } from "../../../helpers/getImgUrl";
 import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
+import { Headline } from "../../elements/Headline";
 import { Image } from "../../elements/Image";
+import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Russia.styles";
 
 export function Russia({ data, index, activeIndex }) {
@@ -14,6 +16,20 @@ export function Russia({ data, index, activeIndex }) {
   return (
     <S.Russia ref={el}>
       <Content>
+        {(data?.headline || data?.copy) && (
+          <div className="header">
+            {data?.headline && (
+              <Headline data={{ headline: data.headline }} inView={inView} />
+            )}
+
+            {data?.copy && (
+              <SimpleCopy inView={inView}>
+                <BlockContent blocks={data.copy} />
+              </SimpleCopy>
+            )}
+          </div>
+        )}
+
         <div className="charts">
           {data?.charts?.map((chart) => (
             <div key={chart._key} className="chart">

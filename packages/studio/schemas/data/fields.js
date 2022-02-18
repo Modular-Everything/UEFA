@@ -7,7 +7,6 @@ export const headline = {
   name: "headline",
   title: "Headline",
   type: "string",
-  validation: (Rule) => Rule.required(),
   description: "Automatically CAPITALISED",
 };
 

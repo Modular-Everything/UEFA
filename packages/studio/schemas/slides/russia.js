@@ -1,15 +1,19 @@
 import React from "react";
 
 import Thumbnail from "../../assets/slide-thumbs/Russia-Slide.jpg";
-import { image } from "../data/fields";
+import { headline, copy, image } from "../data/fields";
 import { color, label } from "../data/navFields";
 
 export default {
   name: "russia",
   title: "Slide — Russia",
   type: "object",
-  fieldsets: [{ name: "nav", title: "Navigation", options: {collapsible: true} }],
+  fieldsets: [
+    { name: "nav", title: "Navigation", options: { collapsible: true } },
+  ],
   fields: [
+    headline,
+    copy,
     {
       name: "charts",
       title: "Charts",
@@ -32,13 +36,14 @@ export default {
   ],
   preview: {
     select: {
+      title: "headline",
       navColor: "navColor",
       navLabel: "navLabel",
       charts: "charts.length",
       media: "charts.0.asset.url",
     },
-    prepare: ({ navColor, navLabel, charts, media }) => ({
-      title: `${charts ? charts : 0} Chart(s)`,
+    prepare: ({ title, navColor, navLabel, charts, media }) => ({
+      title: `${title ? `${title} | ` : ""} ${charts ? charts : 0} Chart(s)`,
       subtitle: `${navLabel ? `${navLabel} |` : ""} Slide Type: Russia`,
       media: (
         <img

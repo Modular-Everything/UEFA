@@ -8,6 +8,27 @@ export const Russia = styled.article`
     position: relative;
     z-index: 10;
 
+    .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @media (min-width: 768px) {
+        padding: 0 calc(var(--content-gutter) - 2rem);
+        align-items: center;
+        flex-direction: row;
+      }
+
+      .simpleCopy {
+        margin-top: 2.4rem;
+        max-width: 38rem;
+
+        @media (min-width: 768px) {
+          margin-left: 2.4rem;
+        }
+      }
+    }
+
     .charts {
       display: flex;
       flex-direction: column;
