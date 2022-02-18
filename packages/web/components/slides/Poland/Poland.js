@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useRef } from "react";
 
-import { getImgUrl } from "../../../helpers/getImgUrl";
 import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
