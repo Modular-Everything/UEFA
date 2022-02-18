@@ -32,7 +32,7 @@
   --black: #000;
   --uefa-white: var(--white);
 
-  --content-gutter: clamp(2.4rem, 10vw, 9.6rem);
+  --content-gutter: clamp(2.4rem, 10vw, 4rem);
 
   --font-uefa-heavy-extended: "UEFA Euro Heavy Extended";
   --font-uefa-book: "UEFA Euro Book";
