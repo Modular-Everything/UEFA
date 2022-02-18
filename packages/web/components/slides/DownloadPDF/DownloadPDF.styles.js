@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DownloadPDF = styled.section`
+export const DownloadPDF = styled.article`
   height: 100%;
   background-color: var(--uefa-black);
 
