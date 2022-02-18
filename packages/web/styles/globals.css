@@ -30,6 +30,7 @@
 
   --white: #fff;
   --black: #000;
+  --uefa-white: var(--white);
 
   --content-gutter: clamp(2.4rem, 10vw, 9.6rem);
 
