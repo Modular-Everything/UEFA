@@ -13,6 +13,8 @@ export function France({ data, index, activeIndex }) {
   const el = useRef();
   const inView = useActiveSlide(activeIndex, index);
 
+  console.log(data);
+
   return (
     <S.France
       ref={el}
@@ -28,7 +30,11 @@ export function France({ data, index, activeIndex }) {
         )}
       </Content>
 
-      <Pattern />
+      <Pattern
+        colorA={data?.patternColors[0] || "#EFF4F8"}
+        colorB={data?.patternColors[1] || "#FE0000"}
+        colorC={data?.patternColors[2] || "#052992"}
+      />
 
       {data?.image && (
         <div className="bg">
