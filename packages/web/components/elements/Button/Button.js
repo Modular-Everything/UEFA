@@ -4,7 +4,7 @@ import * as S from "./Button.styles";
 
 export function ButtonLink({ label, to }) {
   return (
-    <S.ButtonWrap>
+    <S.ButtonWrap className="button">
       <S.ButtonLink href={to}>
         <a>{label}</a>
       </S.ButtonLink>
@@ -19,7 +19,7 @@ ButtonLink.propTypes = {
 
 export function ButtonEl({ label, ...rest }) {
   return (
-    <S.ButtonWrap>
+    <S.ButtonWrap className="button">
       <S.ButtonEl {...rest}>{label}</S.ButtonEl>
     </S.ButtonWrap>
   );

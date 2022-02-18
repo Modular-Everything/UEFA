@@ -4,6 +4,7 @@ import { Alert } from "./assets/Alert";
 import { Chat } from "./assets/Chat";
 import { Data } from "./assets/Data";
 import { Desktop } from "./assets/Desktop";
+import { Download } from "./assets/Download";
 import { Food } from "./assets/Food";
 import { Football } from "./assets/Football";
 import { Globe } from "./assets/Globe";
@@ -25,6 +26,7 @@ export function Icons({ icon }) {
     chat: <Chat />,
     data: <Data />,
     desktop: <Desktop />,
+    download: <Download />,
     food: <Food />,
     football: <Football />,
     globe: <Globe />,

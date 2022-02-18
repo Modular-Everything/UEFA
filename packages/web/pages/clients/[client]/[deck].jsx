@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AddSlide } from "../../../components/elements/AddSlide";
 import { PreviewMode } from "../../../components/elements/PreviewMode";
 import { NavBar } from "../../../components/navigation/NavBar";
+import { DownloadPDF } from "../../../components/slides/DownloadPDF";
 import { getSlide } from "../../../helpers/getSlide";
 import {
   deckQuery,
@@ -124,6 +125,9 @@ function Deck({ data, preview }) {
                     )}
                   </div>
                 ))}
+                <div className="section">
+                  <DownloadPDF />
+                </div>
               </ReactFullpage.Wrapper>
             );
           }}
