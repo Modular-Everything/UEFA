@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
 import { Headline } from "../../elements/Headline";
-import { Icons } from "../../elements/Icons/Icons";
+import { Icons } from "../../elements/Icons";
 import { Image } from "../../elements/Image";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./Spain.styles";
