@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 
 import * as S from "./Bars.styles";
 
-export function Bars({ bars }) {
+export function Bars({ bars, inView }) {
   return (
-    <S.Bars squash={bars.length > 4}>
+    <S.Bars squash={bars.length > 4} className={inView ? "visible" : "hidden"}>
       {bars?.map((bar) => (
         <li key={bar._key}>
           <span

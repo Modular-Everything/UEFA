@@ -38,7 +38,9 @@ export function Austria({ data, index, activeIndex }) {
           {data?.bullets && <Bullets bullets={data.bullets} />}
         </div>
 
-        <div className="chart">{data?.bars && <Bars bars={data.bars} />}</div>
+        <div className="chart">
+          {data?.bars && <Bars bars={data.bars} inView={inView} />}
+        </div>
       </Content>
     </S.Austria>
   );

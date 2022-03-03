@@ -21,6 +21,7 @@ export const Bars = styled.ul`
     padding: 1.6rem 2rem;
     position: relative;
     overflow: hidden;
+    transition: 250ms var(--animation-timing) background-color;
 
     @media (min-width: 1024px) {
       padding: ${({ squash }) => (squash ? "1.6rem" : "3.2rem")};
@@ -35,6 +36,9 @@ export const Bars = styled.ul`
     display: flex;
     justify-content: space-between;
     width: 100%;
+    opacity: 1;
+    transition: 450ms var(--animation-timing) opacity;
+    transition-delay: 800ms;
 
     .label {
       position: relative;
@@ -51,16 +55,32 @@ export const Bars = styled.ul`
       font-size: 3.2rem;
       line-height: 3.2rem;
       text-align: right;
+      opacity: 1;
     }
   }
 
   .progress {
     height: 100%;
-    width: 50%;
     position: absolute;
     left: 0;
     z-index: 0;
     border-top-right-radius: 6rem;
     border-bottom-right-radius: 6rem;
+    transition: 450ms var(--animation-timing) width;
+    transition-delay: 450ms;
+  }
+
+  &.hidden {
+    .progress {
+      width: 0 !important;
+    }
+
+    .meta {
+      opacity: 0;
+    }
+
+    li {
+      background-color: transparent;
+    }
   }
 `;

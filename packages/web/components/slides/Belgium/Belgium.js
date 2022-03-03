@@ -40,7 +40,9 @@ export function Belgium({ data, index, activeIndex }) {
           {data?.bullets && <Bullets bullets={data.bullets} inView={inView} />}
         </div>
 
-        <div className="chart">{data?.bars && <Bars bars={data.bars} />}</div>
+        <div className="chart">
+          {data?.bars && <Bars bars={data.bars} inView={inView} />}
+        </div>
       </Content>
 
       <div className="image">
