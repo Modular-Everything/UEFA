@@ -12,7 +12,8 @@ export const England = styled.article`
   .content {
     background-color: var(--uefa-lt-blue);
     color: var(--white);
-    padding: var(--content-gutter);
+    padding: calc(var(--content-gutter) * 2.5) var(--content-gutter)
+      var(--content-gutter);
     padding-right: 0;
     position: relative;
     z-index: 20;
