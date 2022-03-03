@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 
 import * as S from "./Pill.styles";
 
-export function Pill({ data, context, colors }) {
+export function Pill({ data, context, colors, className }) {
   return (
     <S.Pill
-      className="pill"
+      className={`pill ${className}`}
       dataColor={colors?.data}
       contextColor={colors?.context}
     >

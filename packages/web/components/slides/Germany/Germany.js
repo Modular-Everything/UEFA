@@ -37,6 +37,7 @@ export function Germany({ data, index, activeIndex }) {
             <Pills
               pills={data.pills}
               colors={{ data: "uefa-mdm-green", context: "uefa-drk-green" }}
+              inView={inView}
             />
           )}
         </div>

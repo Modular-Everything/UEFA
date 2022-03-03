@@ -11,6 +11,8 @@ export const Pill = styled.article`
   padding: 0.8rem 1.6rem 0.8rem 0.8rem;
   display: flex;
   align-items: center;
+  opacity: 1;
+  transition: 450ms var(--animation-timing) opacity;
 
   .data {
     padding: 0.8rem 1.2rem;
@@ -23,6 +25,8 @@ export const Pill = styled.article`
     font-weight: 900;
     font-size: clamp(2.3rem, 4vw, 3.2rem);
     line-height: clamp(2.3rem, 4vw, 3.2rem);
+    transition: 450ms var(--animation-timing) opacity;
+    transition-delay: 450ms;
   }
 
   .context {
@@ -31,5 +35,20 @@ export const Pill = styled.article`
     color: var(--white);
     font-size: clamp(1.7rem, 3vw, 2.4rem);
     line-height: clamp(2.3rem, 3vw, 3.2rem);
+    opacity: 1;
+    transition: 450ms var(--animation-timing) opacity;
+    transition-delay: 650ms;
+  }
+
+  &.hidden {
+    opacity: 0;
+
+    .context {
+      opacity: 0;
+    }
+
+    .data {
+      opacity: 0;
+    }
   }
 `;

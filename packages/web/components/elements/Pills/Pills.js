@@ -3,7 +3,7 @@
 import { Pill } from "../Pill";
 import * as S from "./Pills.styles";
 
-export function Pills({ pills, colors }) {
+export function Pills({ pills, colors, inView }) {
   return (
     <S.Pills className="pills">
       {pills?.map((pill) => (
@@ -12,6 +12,7 @@ export function Pills({ pills, colors }) {
           data={pill?.data}
           context={pill?.context}
           colors={colors}
+          className={inView ? "visible" : "hidden"}
         />
       ))}
     </S.Pills>
