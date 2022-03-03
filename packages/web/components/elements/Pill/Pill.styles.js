@@ -38,7 +38,7 @@ export const Pill = styled.article`
     line-height: clamp(2.3rem, 3vw, 3.2rem);
     opacity: 1;
     transition: 450ms var(--animation-timing) opacity;
-    transition-delay: 800ms;
+    transition-delay: 450ms;
   }
 
   &.hidden {
