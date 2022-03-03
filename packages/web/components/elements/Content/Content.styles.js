@@ -14,8 +14,4 @@ export const Content = styled.div`
   flex-direction: column;
   position: relative;
   z-index: 100;
-
-  /* @media (min-width: 768px) {
-    padding: var(--content-gutter);
-  } */
 `;
