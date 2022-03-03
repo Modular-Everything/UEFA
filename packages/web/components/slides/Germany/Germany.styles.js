@@ -14,6 +14,10 @@ export const Germany = styled.article`
     position: relative;
   }
 
+  .simpleCopy {
+    max-width: 50rem;
+  }
+
   .container {
     display: flex;
     height: 100%;
