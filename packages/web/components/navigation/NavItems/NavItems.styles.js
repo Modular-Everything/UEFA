@@ -28,12 +28,18 @@ export const NavItems = styled.div`
         border: 0;
         width: 100%;
         height: 100%;
-        padding: 0;
+        padding: 0.4rem;
         display: grid;
         place-content: center;
         opacity: 1;
         transition: 250ms var(--animation-timing) opacity;
         font-size: 1.1rem;
+
+        span {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
 
         &:hover {
           opacity: 0.75;
