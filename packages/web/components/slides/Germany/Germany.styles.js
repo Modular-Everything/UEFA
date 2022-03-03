@@ -49,18 +49,19 @@ export const Germany = styled.article`
 
   & > svg {
     position: absolute;
-    top: 0;
+    top: -38rem;
     bottom: 0;
     right: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
+    width: unset;
     z-index: 10;
-    display: none;
+    transform: rotate(90deg);
 
     @media (min-width: 768px) {
+      top: 0;
       display: block;
       right: unset;
+      height: 100%;
       width: 65%;
       transform: none;
     }
