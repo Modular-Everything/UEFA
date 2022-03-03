@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AddSlide } from "../../../components/elements/AddSlide";
 import { Loading } from "../../../components/elements/Loading";
 import { PreviewMode } from "../../../components/elements/PreviewMode";
+import { BackButton } from "../../../components/navigation/BackButton";
 import { NavBar } from "../../../components/navigation/NavBar";
 import { DownloadPDF } from "../../../components/slides/DownloadPDF";
 import { getSlide } from "../../../helpers/getSlide";
@@ -59,6 +60,8 @@ function Deck({ data, preview }) {
   );
 
   const [activeIndex, setActiveIndex] = useState(null);
+  const [fullpageApi, setFullpageApi] = useState(null);
+  const [prevSlide, setPrevSlide] = useState(null);
 
   const router = useRouter();
 
@@ -74,8 +77,15 @@ function Deck({ data, preview }) {
     setActiveIndex(destination);
   }
 
-  function onLeave(destination) {
+  function onLeave(origin, destination) {
     setActiveIndex(destination.index);
+
+    if (origin.item?.children[0].children[0].className.includes("Spain")) {
+      const index = origin.index + 1;
+      setPrevSlide(index);
+    } else {
+      setPrevSlide(null);
+    }
   }
 
   useEffect(() => {
@@ -100,6 +110,10 @@ function Deck({ data, preview }) {
         moveTo={moveTo}
       />
 
+      {fullpageApi && prevSlide && (
+        <BackButton fullpageApi={fullpageApi} moveTo={prevSlide} />
+      )}
+
       {deck?.slides ? (
         <ReactFullpage
           navigation={false}
@@ -111,6 +125,8 @@ function Deck({ data, preview }) {
           loopTop
           scrollingSpeed={500}
           render={({ fullpageApi }) => {
+            setFullpageApi(fullpageApi);
+
             return (
               <ReactFullpage.Wrapper>
                 {deck?.slides?.map((slide, index) => (

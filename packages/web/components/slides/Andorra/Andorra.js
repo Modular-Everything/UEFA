@@ -3,7 +3,6 @@ import { useRef } from "react";
 
 import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Image } from "../../elements/Image";
-import { Arrow } from "../../icons/Arrow";
 import * as S from "./Andorra.styles";
 
 export function Andorra({ data, index, activeIndex, fullpageApi }) {
@@ -12,17 +11,6 @@ export function Andorra({ data, index, activeIndex, fullpageApi }) {
 
   return (
     <S.Andorra ref={el} className="andorra">
-      {data?.backIndex && (
-        <button
-          type="button"
-          onClick={() => fullpageApi.moveTo(data.backIndex)}
-          className="back"
-          aria-label="Back to previous slide"
-        >
-          <Arrow />
-        </button>
-      )}
-
       <div className={`image ${inView ? "visible" : "hidden"}`}>
         <Image
           src={data?.image}

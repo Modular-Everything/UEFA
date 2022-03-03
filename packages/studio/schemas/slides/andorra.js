@@ -13,12 +13,6 @@ export default {
     { name: "slide", title: "Slide Content" },
   ],
   fields: [
-    {
-      name: "backIndex",
-      title: "Back Index",
-      type: "number",
-      description: "The slide number that the back button should return you to",
-    },
     image,
     {
       name: "imageLayout",
@@ -37,15 +31,12 @@ export default {
   ],
   preview: {
     select: {
-      backIndex: "backIndex",
       navColor: "navColor",
       navLabel: "navLabel",
     },
-    prepare: ({ backIndex, navColor, navLabel }) => ({
+    prepare: ({ navColor, navLabel }) => ({
       title: "Embedded Image",
-      subtitle: `${navLabel ? `${navLabel} |` : ""} Slide Type: Andorra ${
-        backIndex ? `[🔙 ${backIndex}]` : ""
-      }`,
+      subtitle: `${navLabel ? `${navLabel} |` : ""} Slide Type: Andorra`,
       media: (
         <img
           src={Thumbnail}
