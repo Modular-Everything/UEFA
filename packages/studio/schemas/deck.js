@@ -1,3 +1,5 @@
+import React from "react";
+
 import slides from "./data/slides";
 
 export default {
@@ -31,6 +33,25 @@ export default {
       options: {
         editModal: "fullscreen",
       },
+    },
+    {
+      name: "thumbnail",
+      title: "Deck Thumbnail",
+      type: "image",
+      description: (
+        <span>
+          The image used in the deck navigation (client and admin area).
+          Consider compressing your images before uploading them. We recommend{" "}
+          <a
+            href="https://squoosh.app/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Squoosh App
+          </a>{" "}
+          for this.
+        </span>
+      ),
     },
   ],
 };

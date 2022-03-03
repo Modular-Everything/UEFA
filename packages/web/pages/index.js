@@ -7,19 +7,23 @@ import { getClient, overlayDrafts } from "../lib/sanity.server";
 
 // ---
 
-function Home({ allClients }) {
+function Home({ allClients, preview }) {
   const { loading, data, status } = useUserRoles();
 
   if (loading || (!data && status !== "unauthenticated")) {
     return <Loading />;
   }
 
-  if (status === "authenticated" && data?.isSuperUser) {
+  if (preview || (status === "authenticated" && data?.isSuperUser)) {
     return (
       <>
-        <h2>
-          Superuser? {data.isSuperUser ? "✅" : "❌"} &mdash; {data.identity}
-        </h2>
+        {preview ? (
+          <h2>Preview mode active; super user access granted.</h2>
+        ) : (
+          <h2>
+            Superuser? {data.isSuperUser ? "✅" : "❌"} &mdash; {data.identity}
+          </h2>
+        )}
         <AllClients clients={allClients} />
       </>
     );

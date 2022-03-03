@@ -1,8 +1,7 @@
 import Error from "next/error";
-import Head from "next/head";
-import Link from "next/link";
 
 import { Loading } from "../../../components/elements/Loading";
+import { ClientArea } from "../../../components/screens/ClientArea";
 import { Login } from "../../../components/screens/Login";
 import { useUserRoles } from "../../../hooks/useUserRoles";
 import { clientQuery, clientSlugsQuery } from "../../../lib/queries";
@@ -10,7 +9,7 @@ import { sanityClient, getClient } from "../../../lib/sanity.server";
 
 // ---
 
-function Client({ data }) {
+function Client({ data, preview }) {
   const { loading, data: loadingData, status } = useUserRoles();
 
   if (loading || (!loadingData && status !== "unauthenticated")) {
@@ -21,32 +20,15 @@ function Client({ data }) {
     return <Error statusCode={404} />;
   }
 
-  if (status === "authenticated" && loadingData?.isSuperUser) {
+  if (preview || (status === "authenticated" && loadingData?.isSuperUser)) {
     const client = {
       title: data?.client?.title,
+      logo: data?.client?.logo,
       slug: data?.client?.slug,
       decks: data?.client?.decks,
     };
 
-    return (
-      <div>
-        <Head>
-          <title>{client.title} | UEFA Dash</title>
-        </Head>
-
-        <h1>{client.title}</h1>
-
-        <ul>
-          {client?.decks?.map((deck) => (
-            <li key={deck._id}>
-              <Link href={`/clients/${client.slug}/${deck.slug.current}`}>
-                <a>{deck.title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
+    return <ClientArea data={client} />;
   }
 
   if (status === "authenticated" && !loadingData?.isSuperUser) {
