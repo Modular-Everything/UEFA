@@ -13,6 +13,9 @@ export const NavDot = styled.button`
   place-items: center;
   transition: 250ms var(--animation-timing) all;
   outline: none;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 2.4rem;
 
   @media (min-width: 768px) {
     width: 4rem;
