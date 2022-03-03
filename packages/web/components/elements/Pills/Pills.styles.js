@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Pills = styled.section`
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 1.6rem;
 `;
