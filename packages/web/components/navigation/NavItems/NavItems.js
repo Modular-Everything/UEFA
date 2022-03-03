@@ -1,5 +1,6 @@
 import contrast from "contrast";
 import { useKeenSlider } from "keen-slider/react";
+import { useRouter } from "next/router";
 import "keen-slider/keen-slider.min.css";
 import PropTypes from "prop-types";
 
@@ -73,12 +74,15 @@ export function NavItems({ navOpen, slides, moveTo }) {
     [WheelControls]
   );
 
+  const router = useRouter();
+
   return (
     <S.NavItems isOpen={navOpen}>
       {slides && (
         <ol ref={sliderRef} className="keen-slider">
           {slides?.map((slide, index) => {
             const slideIndex = index + 1;
+            const activeSlide = router.asPath.includes(`#${slideIndex}`);
 
             return (
               <li key={slide._key} className="keen-slider__slide">
@@ -87,6 +91,9 @@ export function NavItems({ navOpen, slides, moveTo }) {
                   onClick={() => moveTo(slideIndex)}
                   style={{
                     backgroundColor: slide.navColor || "var(--white)",
+                    border: activeSlide
+                      ? "2px solid var(--uefa-yellow)"
+                      : "none",
                     color:
                       contrast(slide?.navColor || "#fff") === "dark"
                         ? "var(--white)"
