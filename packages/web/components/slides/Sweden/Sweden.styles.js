@@ -20,6 +20,15 @@ export const Sweden = styled.article`
       height: unset;
     }
 
+    &.hidden {
+      .title:nth-of-type(1) {
+        transform: translateX(-100vw);
+      }
+      .title:nth-of-type(2) {
+        transform: translateX(100vw);
+      }
+    }
+
     .title {
       line-height: 1;
       font-family: var(--font-uefa-heavy-extended);
@@ -28,6 +37,8 @@ export const Sweden = styled.article`
       width: 100%;
       color: var(--white);
       position: relative;
+      transform: translateX(0);
+      transition: 450ms ease transform;
 
       @media (max-width: 639px) {
         height: auto !important;

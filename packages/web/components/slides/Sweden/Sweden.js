@@ -37,7 +37,7 @@ export function Sweden({ data, index, activeIndex }) {
   return (
     <S.Sweden ref={el}>
       <Content>
-        <div className="titles">
+        <div className={`titles ${inView ? "visible" : "hidden"}`}>
           <div
             className="title title--a"
             style={{ height: `${containerAHeight}px` }}
