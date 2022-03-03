@@ -6,7 +6,7 @@ export const Spain = styled.article`
 
   @media (min-width: 768px) {
     .content {
-      padding: var(--content-gutter) 2rem;
+      padding: calc(var(--content-gutter) * 1.5) 2rem var(--content-gutter);
     }
   }
 
