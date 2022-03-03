@@ -50,7 +50,6 @@ export const Russia = styled.article`
       display: flex;
       align-self: center;
       justify-self: center;
-      /* width: 70%; */
       max-width: 45rem;
 
       @media (min-width: 768px) {
