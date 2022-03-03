@@ -20,11 +20,7 @@ export function Spain({ data, index, activeIndex, fullpageApi }) {
 
   function Item({ key, content, anchor }) {
     return (
-      <S.Item
-        key={key}
-        delay={index}
-        className={`${inView ? "visible" : "hidden"} ${anchor ? "linked" : ""}`}
-      >
+      <S.Item key={key} className={`item ${anchor ? "linked" : ""}`}>
         {anchor ? (
           <button type="button" onClick={() => fullpageApi.moveTo(anchor)}>
             {content}
@@ -51,7 +47,7 @@ export function Spain({ data, index, activeIndex, fullpageApi }) {
           )}
         </div>
 
-        <S.Grid>
+        <S.Grid className={`${inView ? "visible" : "hidden"}`}>
           <ul>
             {data?.matrix.map((item, index) => {
               if (index > 14) {

@@ -77,14 +77,18 @@ export const Grid = styled.section`
       }
     }
   }
+
+  ul {
+    opacity: 1;
+    transition: 450ms var(--animation-timing) opacity;
+  }
+
+  &.hidden ul {
+    opacity: 0;
+  }
 `;
 
 export const Item = styled.li`
-  --delay: ${({ delay }) => `calc(150ms + ${delay} * 150ms)` || 0};
-
-  transition: 150ms linear opacity;
-  transition-delay: var(--delay);
-  opacity: 1;
   height: max(18vh, 12rem);
   object-fit: cover;
   width: 100%;
@@ -115,10 +119,6 @@ export const Item = styled.li`
     &:hover {
       box-shadow: 0 0 1.2rem var(--uefa-lt-blue);
     }
-  }
-
-  &.hidden {
-    opacity: 0;
   }
 
   @supports (aspect-ratio: 1) {
