@@ -35,8 +35,8 @@ export function Wales({ data, index, activeIndex }) {
           src={Pattern}
           alt=""
           layout="fill"
-          quality={90}
-          objectFit="contain"
+          quality={95}
+          objectFit="cover"
         />
       </div>
     </S.Wales>
