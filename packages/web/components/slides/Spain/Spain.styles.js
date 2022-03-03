@@ -90,6 +90,7 @@ export const Item = styled.li`
   width: 100%;
   background-color: var(--black);
   border-radius: 1rem;
+  padding: 0.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
