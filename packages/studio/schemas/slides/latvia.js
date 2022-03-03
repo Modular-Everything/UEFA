@@ -2,7 +2,7 @@ import React from "react";
 
 import Thumbnail from "../../assets/slide-thumbs/Latvia-Slide.jpg";
 import brandColorsList from "../data/brandColorsList";
-import { copy, image } from "../data/fields";
+import { headline, copy, image } from "../data/fields";
 import { color, label } from "../data/navFields";
 
 const spotDesc = "The colour of one set of spots";
@@ -11,8 +11,11 @@ export default {
   name: "latvia",
   title: "Slide — Latvia",
   type: "object",
-  fieldsets: [{ name: "nav", title: "Navigation", options: {collapsible: true} }],
+  fieldsets: [
+    { name: "nav", title: "Navigation", options: { collapsible: true } },
+  ],
   fields: [
+    headline,
     {
       name: "smallHeadline",
       title: "Small Title",
