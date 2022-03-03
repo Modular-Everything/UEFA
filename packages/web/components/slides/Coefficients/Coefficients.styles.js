@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Coefficients = styled.article`
   height: 100%;
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: minmax(60%, 1fr) 1fr;
 
   @media (min-width: 800px) {
     grid-template-rows: minmax(70%, 1fr) 1fr;
