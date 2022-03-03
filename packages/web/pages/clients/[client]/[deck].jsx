@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import { AddSlide } from "../../../components/elements/AddSlide";
+import { Loading } from "../../../components/elements/Loading";
 import { PreviewMode } from "../../../components/elements/PreviewMode";
 import { NavBar } from "../../../components/navigation/NavBar";
 import { DownloadPDF } from "../../../components/slides/DownloadPDF";
@@ -132,8 +133,10 @@ function Deck({ data, preview }) {
             );
           }}
         />
-      ) : (
+      ) : preview ? (
         <AddSlide>Add a slide item to get started...</AddSlide>
+      ) : (
+        <Loading />
       )}
     </>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 import Thumbnail from "../../assets/slide-thumbs/Coefficients-Slide.jpg";
 import brandColorsList from "../data/brandColorsList";
-import { headline, copy } from "../data/fields";
+import { headline, copy, image } from "../data/fields";
 import { color, label } from "../data/navFields";
 
 export default {
@@ -16,6 +16,7 @@ export default {
   fields: [
     headline,
     copy,
+    image,
     {
       name: "patternColors",
       title: "Flag Colours",
@@ -32,8 +33,8 @@ export default {
         },
       ],
       description:
-        "The colours for the flag. 1–3 are the flag colours, 4 is the EURO 2024 colour, 5 is the headline colour and 6 is the headline divider colour. 4–6 can be left blank if desired. Phew!",
-      validation: (Rule) => Rule.min(3).max(6),
+        "The colours for the flag. 1–3 are the flag colours, 4 is the EURO 2024 colour, 5 is the headline colour, 6 is the headline divider colour and 7 is the copy colour. 4–7 can be left blank if you don't need them and defaults will be used. Phew!",
+      validation: (Rule) => Rule.min(3).max(7),
     },
     color,
     label,
