@@ -25,7 +25,9 @@ export function Latvia({ data, index, activeIndex }) {
       <Content>
         <div className="copy">
           {data?.smallHeadline && (
-            <h3 className="smallHeadline">{data.smallHeadline}</h3>
+            <h3 className={`smallHeadline ${inView ? "visible" : "hidden"}`}>
+              {data.smallHeadline}
+            </h3>
           )}
           {data?.copy && (
             <SimpleCopy inView={inView}>
