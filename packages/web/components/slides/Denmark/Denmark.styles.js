@@ -29,12 +29,14 @@ export const Denmark = styled.article`
   .image {
     position: absolute;
     z-index: 50;
-    bottom: 0;
+    top: 0;
     right: 0;
+    padding: var(--content-gutter);
+    height: 100%;
     width: unset;
-    max-height: 64rem;
-    max-width: 90%;
+    max-width: 70rem;
     display: flex;
+    align-items: flex-end;
     opacity: 1;
     transform: none;
     transition: 250ms var(--animation-timing) opacity,
@@ -47,8 +49,7 @@ export const Denmark = styled.article`
     }
 
     @media (min-width: 1024px) {
-      max-height: 90%;
-      max-width: 66rem;
+      align-items: center;
     }
   }
 `;
