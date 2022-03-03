@@ -36,6 +36,12 @@ export const Russia = styled.article`
       justify-content: center;
       gap: 1.6rem;
       height: 100%;
+      opacity: 1;
+      transition: 450ms var(--animation-timing) opacity;
+
+      &.hidden {
+        opacity: 0;
+      }
 
       @media (min-width: 768px) {
         flex-direction: row;

@@ -30,7 +30,7 @@ export function Russia({ data, index, activeIndex }) {
           </div>
         )}
 
-        <div className="charts">
+        <div className={`${inView ? "visible" : "hidden"} charts`}>
           {data?.charts?.map((chart) => (
             <div key={chart._key} className="chart">
               <Image src={chart} quality={90} />
