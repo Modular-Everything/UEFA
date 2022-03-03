@@ -2,9 +2,12 @@ import PropTypes from "prop-types";
 
 import * as S from "./Number.styles";
 
-export function Number({ value, as, className }) {
+export function Number({ value, as, className, inView }) {
   return (
-    <S.Number as={as} className={className}>
+    <S.Number
+      as={as}
+      className={`${className} ${inView ? "visible" : "hidden"}`}
+    >
       {value}
     </S.Number>
   );

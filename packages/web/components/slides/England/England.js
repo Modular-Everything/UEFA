@@ -20,6 +20,7 @@ export function England({ data, index, activeIndex }) {
         <div className="container">
           <div className="top">
             <Number
+              inView={inView}
               value={
                 data?.customNumber >= 10
                   ? data.customNumber
@@ -35,8 +36,9 @@ export function England({ data, index, activeIndex }) {
           </div>
 
           <div className="bottom">
-            {data?.headline && <Headline data={{ headline: data.headline }}
-inView={inView} />}
+            {data?.headline && (
+              <Headline data={{ headline: data.headline }} inView={inView} />
+            )}
           </div>
         </div>
 

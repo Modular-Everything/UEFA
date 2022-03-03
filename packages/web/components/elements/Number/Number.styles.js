@@ -8,4 +8,10 @@ export const Number = styled.h4`
   line-height: clamp(3.2rem, 4vw, 4.8rem);
   color: var(--white);
   margin: 0 0 1.6rem;
+  opacity: 1;
+  transition: 450ms var(--animation-timing) opacity;
+
+  &.hidden {
+    opacity: 0;
+  }
 `;
