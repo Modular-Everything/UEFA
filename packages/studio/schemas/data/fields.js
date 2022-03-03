@@ -57,7 +57,17 @@ export const pills = {
           title: "Data",
           type: "string",
           description: 'The number or value, for example "1.8b", "300m", etc.',
-          validation: (Rule) => Rule.required(),
+          hidden: ({ parent }) => parent.icons,
+        },
+        {
+          name: "icons",
+          title: "Icon Picker",
+          type: "string",
+          description: "Optional: use an icon instead of the data field above",
+          hidden: ({ parent }) => parent.data,
+          options: {
+            list: iconsList,
+          },
         },
         {
           name: "context",

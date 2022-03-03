@@ -16,6 +16,7 @@ export const Pill = styled.article`
   transition-delay: 450ms;
 
   .data {
+    display: flex;
     padding: 0.8rem 1.2rem;
     border-radius: 1000rem;
     background-color: var(--data-color);
@@ -28,6 +29,11 @@ export const Pill = styled.article`
     line-height: clamp(2.3rem, 4vw, 3.2rem);
     transition: 450ms var(--animation-timing) opacity;
     transition-delay: 450ms;
+
+    svg {
+      height: 2.4rem;
+      width: 2.4rem;
+    }
   }
 
   .context {

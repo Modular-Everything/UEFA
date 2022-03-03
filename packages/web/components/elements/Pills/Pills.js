@@ -1,5 +1,3 @@
-// import PropTypes from "prop-types";
-
 import { Pill } from "../Pill";
 import * as S from "./Pills.styles";
 
@@ -10,6 +8,7 @@ export function Pills({ pills, colors, inView }) {
         <Pill
           key={pill?._key}
           data={pill?.data}
+          icon={pill?.icons}
           context={pill?.context}
           colors={colors}
           className={inView ? "visible" : "hidden"}
@@ -18,22 +17,3 @@ export function Pills({ pills, colors, inView }) {
     </S.Pills>
   );
 }
-
-// Pills.propTypes = {
-//   pills: PropTypes.arrayOf({
-//     data: PropTypes.string,
-//     context: PropTypes.string,
-//   }),
-//   colors: PropTypes.shape({
-//     data: PropTypes.string,
-//     context: PropTypes.string,
-//   }),
-// };
-
-// Pills.defaultProps = {
-//   pills: null,
-//   colors: {
-//     data: null,
-//     context: null,
-//   },
-// };

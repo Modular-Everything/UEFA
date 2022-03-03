@@ -47,7 +47,7 @@ export const Germany = styled.article`
     z-index: 0;
   }
 
-  svg {
+  & > svg {
     position: absolute;
     top: 0;
     bottom: 0;
