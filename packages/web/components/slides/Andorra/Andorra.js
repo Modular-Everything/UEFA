@@ -27,7 +27,8 @@ export function Andorra({ data, index, activeIndex, fullpageApi }) {
         <Image
           src={data?.image}
           quality={98}
-          objectFit="contain"
+          layout={data?.imageLayout === "cover" ? "fill" : "intrinsic"}
+          objectFit={data?.imageLayout === "cover" ? "cover" : "contain"}
           className="Andorra__image"
         />
       </div>

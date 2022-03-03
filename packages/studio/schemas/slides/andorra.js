@@ -20,6 +20,18 @@ export default {
       description: "The slide number that the back button should return you to",
     },
     image,
+    {
+      name: "imageLayout",
+      title: "Image Layout",
+      type: "string",
+      initialValue: "contain",
+      options: {
+        list: [
+          { title: "Cover", value: "cover" },
+          { title: "Contain", value: "contain" },
+        ],
+      },
+    },
     color,
     label,
   ],
