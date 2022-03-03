@@ -1,7 +1,7 @@
 import React from "react";
 
 import Thumbnail from "../../assets/slide-thumbs/Andorra-Slide.jpg";
-import { image } from "../data/fields";
+import { headline, copy, image } from "../data/fields";
 import { color, label } from "../data/navFields";
 
 export default {
@@ -13,12 +13,15 @@ export default {
     { name: "slide", title: "Slide Content" },
   ],
   fields: [
+    headline,
+    copy,
     image,
     {
       name: "imageLayout",
       title: "Image Layout",
       type: "string",
       initialValue: "contain",
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
           { title: "Cover", value: "cover" },

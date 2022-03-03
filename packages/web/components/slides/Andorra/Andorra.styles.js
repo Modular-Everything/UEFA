@@ -1,8 +1,23 @@
 import styled from "styled-components";
 
 export const Andorra = styled.article`
-  height: 100%;
   background-color: var(--uefa-black);
+  height: 100%;
+
+  .content {
+    justify-content: flex-end;
+
+    @media (min-width: 1230px) {
+      justify-content: flex-start;
+      flex-direction: row;
+      align-items: flex-end;
+    }
+  }
+
+  .simpleCopy {
+    max-width: 38rem;
+    width: 90%;
+  }
 
   .image {
     position: absolute;
