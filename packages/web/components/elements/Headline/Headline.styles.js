@@ -18,9 +18,6 @@ export const Headline = styled.h2`
   transition-delay: var(--delay);
   opacity: 1;
   transform: none;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
 
   &.hidden {
     opacity: 0;
