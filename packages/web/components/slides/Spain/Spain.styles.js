@@ -89,7 +89,7 @@ export const Grid = styled.section`
 `;
 
 export const Item = styled.li`
-  height: max(18vh, 12rem);
+  aspect-ratio: 1.5/1;
   object-fit: cover;
   width: 100%;
   background-color: var(--black);
@@ -101,6 +101,10 @@ export const Item = styled.li`
   position: relative;
   color: var(--uefa-lt-grey);
   overflow: hidden;
+
+  @supports not (aspect-ratio: 1/1) {
+    height: max(18vh, 12rem);
+  }
 
   button {
     background: transparent;
@@ -119,11 +123,6 @@ export const Item = styled.li`
     &:hover {
       box-shadow: 0 0 1.2rem var(--uefa-lt-blue);
     }
-  }
-
-  @supports (aspect-ratio: 1) {
-    aspect-ratio: 1.5/1;
-    height: auto;
   }
 
   .index {
