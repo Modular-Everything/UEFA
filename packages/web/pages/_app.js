@@ -8,7 +8,9 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
       <Script id="logrocket">
-        {typeof window !== "undefined" && LogRocket.init("rpltij/uefa")}
+        {typeof window !== "undefined" &&
+          process.env.NODE_ENV !== "development" &&
+          LogRocket.init("rpltij/uefa")}
       </Script>
       <Component {...pageProps} />
     </SessionProvider>
