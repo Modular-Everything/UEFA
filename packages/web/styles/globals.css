@@ -160,6 +160,8 @@ a {
   .fp-section {
     height: auto !important;
     break-inside: avoid !important;
+    page-break-after: always !important;
+    overflow: hidden !important;
   }
 
   .fp-slidesContainer {
