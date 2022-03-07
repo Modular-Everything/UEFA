@@ -47,15 +47,17 @@ export const Pill = styled.article`
     transition-delay: 450ms;
   }
 
-  &.hidden {
-    opacity: 0;
-
-    .context {
+  @media not print {
+    &.hidden {
       opacity: 0;
-    }
 
-    .data {
-      opacity: 0;
+      .context {
+        opacity: 0;
+      }
+
+      .data {
+        opacity: 0;
+      }
     }
   }
 `;

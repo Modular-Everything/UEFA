@@ -70,17 +70,19 @@ export const Bars = styled.ul`
     transition-delay: 450ms;
   }
 
-  &.hidden {
-    .progress {
-      width: 0 !important;
-    }
+  @media not print {
+    &.hidden {
+      .progress {
+        width: 0 !important;
+      }
 
-    .meta {
-      opacity: 0;
-    }
+      .meta {
+        opacity: 0;
+      }
 
-    li {
-      background-color: transparent;
+      li {
+        background-color: transparent;
+      }
     }
   }
 `;

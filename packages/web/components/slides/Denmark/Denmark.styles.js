@@ -42,10 +42,12 @@ export const Denmark = styled.article`
     transition: 250ms var(--animation-timing) opacity,
       250ms var(--animation-timing) transform;
 
-    &.hidden {
-      opacity: 0;
-      transform: translateY(15%);
-      transition-delay: 250ms;
+    @media not print {
+      &.hidden {
+        opacity: 0;
+        transform: translateY(15%);
+        transition-delay: 250ms;
+      }
     }
 
     @media (min-width: 1024px) {

@@ -39,8 +39,10 @@ export const Russia = styled.article`
       opacity: 1;
       transition: 450ms var(--animation-timing) opacity;
 
-      &.hidden {
-        opacity: 0;
+      @media not print {
+        &.hidden {
+          opacity: 0;
+        }
       }
 
       @media (min-width: 768px) {

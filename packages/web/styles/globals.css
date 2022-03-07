@@ -138,7 +138,7 @@ a {
   }
 
   iframe {
-    background-color: var(--uefa-lt-blue);
+    border: 1px solid var(--white);
   }
 
   skrim {
@@ -185,5 +185,6 @@ a {
 
   .downloadPDF {
     display: none;
+    height: 0;
   }
 }

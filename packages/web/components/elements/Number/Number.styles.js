@@ -11,7 +11,9 @@ export const Number = styled.h4`
   opacity: 1;
   transition: 450ms var(--animation-timing) opacity;
 
-  &.hidden {
-    opacity: 0;
+  @media not print {
+    &.hidden {
+      opacity: 0;
+    }
   }
 `;

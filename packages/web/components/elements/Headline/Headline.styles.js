@@ -19,9 +19,11 @@ export const Headline = styled.h2`
   opacity: 1;
   transform: none;
 
-  &.hidden {
-    opacity: 0;
-    transform: translateX(-4.8rem);
+  @media not print {
+    &.hidden {
+      opacity: 0;
+      transform: translateX(-4.8rem);
+    }
   }
 
   @media (min-width: 375px) {

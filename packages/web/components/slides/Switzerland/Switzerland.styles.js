@@ -52,9 +52,11 @@ export const Switzerland = styled.article`
     opacity: 1;
     transform: none;
 
-    &.hidden {
-      opacity: 0;
-      transform: translateX(15%);
+    @media not print {
+      &.hidden {
+        opacity: 0;
+        transform: translateX(15%);
+      }
     }
   }
 

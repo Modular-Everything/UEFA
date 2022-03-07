@@ -32,8 +32,10 @@ export const Andorra = styled.article`
     transition: 500ms ease opacity;
     z-index: 0;
 
-    &.hidden {
-      opacity: 0;
+    @media not print {
+      &.hidden {
+        opacity: 0;
+      }
     }
   }
 `;

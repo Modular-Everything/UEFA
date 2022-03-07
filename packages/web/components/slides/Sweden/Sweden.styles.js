@@ -20,12 +20,14 @@ export const Sweden = styled.article`
       height: unset;
     }
 
-    &.hidden {
-      .title:nth-of-type(1) {
-        transform: translateX(-100vw);
-      }
-      .title:nth-of-type(2) {
-        transform: translateX(100vw);
+    @media not print {
+      &.hidden {
+        .title:nth-of-type(1) {
+          transform: translateX(-100vw);
+        }
+        .title:nth-of-type(2) {
+          transform: translateX(100vw);
+        }
       }
     }
 
