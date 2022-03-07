@@ -12,6 +12,7 @@ export const PreviewMode = styled.div`
     font-size: 1.2rem;
     z-index: 1000;
     transition: 250ms var(--animation-timing) all;
+    text-align: center;
 
     &:hover {
       border: 1px solid var(--uefa-mdm-red);

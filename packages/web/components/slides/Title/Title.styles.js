@@ -50,4 +50,12 @@ export const LogoPlaceholder = styled.div`
   place-content: center;
   text-align: center;
   line-height: 2.4rem;
+
+  small {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    margin-top: 0.4rem;
+    letter-spacing: 0.05ch;
+  }
 `;

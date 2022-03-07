@@ -11,7 +11,11 @@ export function PreviewMode({ preview }) {
     <S.PreviewMode>
       {preview && (
         <Link href="/api/exit-preview">
-          <a>Preview Mode Activated</a>
+          <a>
+            Preview Mode Activated
+            <br />
+            (click to exit)
+          </a>
         </Link>
       )}
     </S.PreviewMode>

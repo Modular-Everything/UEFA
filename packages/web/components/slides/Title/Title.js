@@ -36,7 +36,10 @@ export function Title({ data, index, activeIndex, client, preview }) {
 
         <div className={`client-logo ${inView ? "visible" : "hidden"}`}>
           {preview ? (
-            <S.LogoPlaceholder>Client Logo</S.LogoPlaceholder>
+            <S.LogoPlaceholder>
+              Client logo
+              <small>(disabled in preview mode)</small>
+            </S.LogoPlaceholder>
           ) : (
             <Image src={client?.logo} alt={client?.title} />
           )}
