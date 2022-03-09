@@ -4,8 +4,8 @@ export const Headline = styled.h2`
   --delay: ${({ delay }) => `${delay}s` || 0};
 
   text-transform: uppercase;
-  font-size: clamp(3.2rem, 4vw, 6.4rem);
-  line-height: clamp(2.8rem, 3.2vw, 4.8rem);
+  font-size: clamp(3.2rem, 4vw, 4.8rem);
+  line-height: 0.8;
   word-break: break-word;
   hyphens: auto;
   letter-spacing: -0.1rem;
