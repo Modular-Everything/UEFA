@@ -26,15 +26,7 @@ import {
   Wales,
 } from "../components/slides";
 
-export function getSlide(
-  slide,
-  index,
-  activeIndex,
-  fullpageApi,
-  deck,
-  client,
-  preview
-) {
+export function getSlide(slide, index, activeIndex, deck, client, preview) {
   const id = slide._type;
 
   const slides = {
@@ -69,7 +61,6 @@ export function getSlide(
       data: slide,
       index,
       activeIndex,
-      fullpageApi,
       deck,
       client,
       preview,

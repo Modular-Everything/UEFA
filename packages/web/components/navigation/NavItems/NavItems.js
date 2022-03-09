@@ -61,8 +61,29 @@ function WheelControls(slider) {
   });
 }
 
-export function NavItems({ navOpen, slides, moveTo }) {
-  const [sliderRef] = useKeenSlider(
+function ThumbnailPlugin(mainRef) {
+  return (slider) => {
+    function addClickEvents() {
+      slider.slides.forEach((slide, idx) => {
+        slide.addEventListener("click", () => {
+          if (mainRef.current) {
+            mainRef.current.moveToIdx(idx);
+          }
+        });
+      });
+    }
+
+    slider.on("created", () => {
+      if (mainRef.current) {
+        addClickEvents();
+      }
+      return null;
+    });
+  };
+}
+
+export function NavItems({ navOpen, slides, instanceRef }) {
+  const [thumbnailRef] = useKeenSlider(
     {
       loop: true,
       mode: "free-snap",
@@ -71,7 +92,7 @@ export function NavItems({ navOpen, slides, moveTo }) {
         spacing: 16,
       },
     },
-    [WheelControls]
+    [WheelControls, ThumbnailPlugin(instanceRef)]
   );
 
   const router = useRouter();
@@ -79,7 +100,7 @@ export function NavItems({ navOpen, slides, moveTo }) {
   return (
     <S.NavItems isOpen={navOpen}>
       {slides && (
-        <ol ref={sliderRef} className="keen-slider">
+        <ol ref={thumbnailRef} className="keen-slider">
           {slides?.map((slide, index) => {
             const slideIndex = index + 1;
             const activeSlide = router.asPath.includes(`#${slideIndex}`);
@@ -88,7 +109,6 @@ export function NavItems({ navOpen, slides, moveTo }) {
               <li key={slide._key} className="keen-slider__slide">
                 <button
                   type="button"
-                  onClick={() => moveTo(slideIndex)}
                   style={{
                     backgroundColor: slide.navColor || "var(--white)",
                     border: activeSlide
