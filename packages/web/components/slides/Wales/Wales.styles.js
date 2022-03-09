@@ -41,9 +41,15 @@ export const Wales = styled.article`
   .pattern {
     position: absolute;
     top: 0;
-    right: 0;
+    transform: scale(125%);
+    right: -15%;
     width: 100%;
     height: 100%;
+
+    @media (min-width: 768px) {
+      right: 0;
+      transform: none;
+    }
 
     img {
       object-position: right;
