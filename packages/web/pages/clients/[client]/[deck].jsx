@@ -54,7 +54,7 @@ function Deck({ data, preview }) {
   const router = useRouter();
   const { height: windowHeight } = useWindowSize();
 
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [prevSlide, setPrevSlide] = useState(null);
   const [hasChanged, setHasChanged] = useState(false);
   const [isSpain, setSpain] = useState(false);
