@@ -94,7 +94,7 @@ export const Item = styled.li`
   width: 100%;
   background-color: var(--black);
   border-radius: 1rem;
-  padding: 0.8rem;
+  padding: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,7 +109,7 @@ export const Item = styled.li`
   button {
     background: transparent;
     border: 0;
-    padding: 1.2rem;
+    padding: 0;
     margin: 0;
     display: block;
     height: 100%;
