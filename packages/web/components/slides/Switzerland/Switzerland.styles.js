@@ -2,24 +2,14 @@ import styled from "styled-components";
 
 export const Switzerland = styled.article`
   height: 100%;
-  max-height: 85vh;
   background-color: var(--uefa-lt-grey);
 
-  @media (min-width: 770px) {
-    max-height: unset;
-  }
-
   .content {
-    max-height: 85vh;
     color: var(--uefa-lt-blue);
     position: relative;
     z-index: 10;
     display: grid;
     grid-template-columns: 1fr;
-
-    @media (min-width: 770px) {
-      max-height: unset;
-    }
 
     @media (min-width: 1024px) {
       grid-template-columns: repeat(2, 1fr);
@@ -81,7 +71,7 @@ export const Switzerland = styled.article`
     z-index: 0;
     width: 100%;
     right: 0;
-    bottom: 0;
+    bottom: 1.6rem;
 
     @media (min-width: 640px) {
       width: 85%;
