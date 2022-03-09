@@ -73,12 +73,7 @@ function ThumbnailPlugin(mainRef) {
       });
     }
 
-    slider.on("created", () => {
-      if (mainRef.current) {
-        addClickEvents();
-      }
-      return null;
-    });
+    addClickEvents();
   };
 }
 
