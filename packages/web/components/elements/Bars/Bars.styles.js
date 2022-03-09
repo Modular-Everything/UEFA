@@ -55,8 +55,8 @@ export const Bars = styled.ul`
       font-family: var(--font-uefa-heavy-extended);
       font-weight: 900;
       font-style: normal;
-      font-size: 3.2rem;
-      line-height: 3.2rem;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      line-height: 1;
       text-align: right;
       opacity: 1;
     }
