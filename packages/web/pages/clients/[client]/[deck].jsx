@@ -60,7 +60,7 @@ function Deck({ data, preview }) {
   );
 
   const [activeIndex, setActiveIndex] = useState(null);
-  const [fullpageApi, setFullpageApi] = useState(null);
+  // const [fullpageApi, setFullpageApi] = useState(null);
   const [prevSlide, setPrevSlide] = useState(null);
 
   const router = useRouter();
@@ -88,12 +88,12 @@ function Deck({ data, preview }) {
     }
   }
 
-  useEffect(() => {
-    if (activeIndex?.index !== undefined) {
-      router.push(`#${activeIndex?.index + 1}`);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeIndex?.index]);
+  // useEffect(() => {
+  //   // if (activeIndex?.index !== undefined) {
+  //   //   router.push(`#${activeIndex?.index + 1}`);
+  //   // }
+
+  // }, [activeIndex?.index]);
 
   return (
     <>
@@ -110,22 +110,22 @@ function Deck({ data, preview }) {
         moveTo={moveTo}
       />
 
-      {fullpageApi && prevSlide && (
+      {/* {fullpageApi && prevSlide && (
         <BackButton fullpageApi={fullpageApi} moveTo={prevSlide} />
-      )}
+      )} */}
 
       {deck?.slides ? (
         <ReactFullpage
           navigation={false}
           pluginWrapper={pluginWrapper}
           afterLoad={afterLoad.bind(this)}
-          onLeave={onLeave.bind(this)}
-          scrollOverflow
-          loopBottom
-          loopTop
+          // onLeave={onLeave.bind(this)}
+          // scrollOverflow
+          // loopBottom
+          // loopTop
           scrollingSpeed={500}
           render={({ fullpageApi }) => {
-            setFullpageApi(fullpageApi);
+            // setFullpageApi(fullpageApi);
 
             return (
               <ReactFullpage.Wrapper>
