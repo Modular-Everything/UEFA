@@ -6,6 +6,8 @@ export const Headline = styled.h2`
   text-transform: uppercase;
   font-size: clamp(3.2rem, 4vw, 6.4rem);
   line-height: clamp(2.8rem, 3.2vw, 4.8rem);
+  word-break: break-word;
+  hyphens: auto;
   letter-spacing: -0.1rem;
   color: inherit;
   border-left: 1px solid
