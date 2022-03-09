@@ -110,6 +110,12 @@ a {
     max-height: unset !important;
     height: auto !important;
   }
+
+  .hidden,
+  .hidden * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 .section article {
