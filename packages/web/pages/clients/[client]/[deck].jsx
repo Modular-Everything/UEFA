@@ -1,7 +1,8 @@
-import ReactFullpage from "@fullpage/react-fullpage";
+import { useKeenSlider } from "keen-slider/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import "keen-slider/keen-slider.min.css";
 
 import { AddSlide } from "../../../components/elements/AddSlide";
 import { Loading } from "../../../components/elements/Loading";
@@ -10,6 +11,7 @@ import { BackButton } from "../../../components/navigation/BackButton";
 import { NavBar } from "../../../components/navigation/NavBar";
 import { DownloadPDF } from "../../../components/slides/DownloadPDF";
 import { getSlide } from "../../../helpers/getSlide";
+import { useWindowSize } from "../../../hooks/useWindowSize";
 import {
   deckQuery,
   deckSlugsQuery,
@@ -19,16 +21,6 @@ import { usePreviewSubscription } from "../../../lib/sanity";
 import { sanityClient, getClient } from "../../../lib/sanity.server";
 
 // ---
-
-const pluginWrapper = () => {
-  /*
-   * require('../static/fullpage.scrollHorizontally.min.js'); // Optional. Required when using the "scrollHorizontally" extension.
-   */
-};
-
-function moveTo(index) {
-  window.fullpage_api.moveTo(index);
-}
 
 function filterDataToSingleItem(data, preview) {
   if (!Array.isArray(data)) {
@@ -59,11 +51,72 @@ function Deck({ data, preview }) {
     }
   );
 
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [fullpageApi, setFullpageApi] = useState(null);
-  const [prevSlide, setPrevSlide] = useState(null);
-
   const router = useRouter();
+  const { height: windowHeight } = useWindowSize();
+
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [prevSlide, setPrevSlide] = useState(null);
+  const [hasChanged, setHasChanged] = useState(false);
+  const [isSpain, setSpain] = useState(false);
+  const [viaSpainLink, setViaSpainLink] = useState(false);
+
+  const [sliderRef, instanceRef] = useKeenSlider({
+    loop: false,
+    breakpoints: {
+      "(max-width: 770px)": {
+        mode: "free",
+      },
+    },
+    slides: {
+      origin: "center",
+      perView: 1,
+      spacing: 0,
+    },
+    vertical: true,
+    created(slide) {
+      if (!hasChanged) {
+        const matchedSlide = Number(
+          router.asPath.match(/#([a-z0-9]+)/giu)[0].replace("#", "")
+        );
+        slide.moveToIdx(matchedSlide - 1);
+      }
+    },
+    slideChanged(slide) {
+      setHasChanged(true);
+      setActiveIndex(slide.track.details.abs);
+
+      function isSpain(slideNumber) {
+        return slide.slides[slideNumber].children[0].className.includes(
+          "Spain"
+        );
+      }
+
+      const velocity = Math.sign(slide.track.velocity());
+
+      if (isSpain(slide.track.details.abs)) {
+        setSpain(true);
+      } else {
+        setSpain(false);
+      }
+
+      if (velocity > 0) {
+        if (isSpain(slide.track.details.abs - 1)) {
+          setPrevSlide(slide.track.details.abs - 1);
+        }
+      } else {
+        if (isSpain(slide.track.details.abs + 1)) {
+          setPrevSlide(slide.track.details.abs + 1);
+        }
+      }
+    },
+  });
+
+  useEffect(() => {
+    if (activeIndex !== undefined) {
+      router.push(`#${activeIndex + 1}`);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeIndex]);
 
   const client = {
     title: data?.client?.title,
@@ -72,28 +125,6 @@ function Deck({ data, preview }) {
   };
 
   const deck = filterDataToSingleItem(previewData, preview);
-
-  function afterLoad(origin, destination) {
-    setActiveIndex(destination);
-  }
-
-  function onLeave(origin, destination) {
-    setActiveIndex(destination.index);
-
-    if (origin.item?.children[0].children[0].className.includes("Spain")) {
-      const index = origin.index + 1;
-      setPrevSlide(index);
-    } else {
-      setPrevSlide(null);
-    }
-  }
-
-  useEffect(() => {
-    if (activeIndex?.index !== undefined) {
-      router.push(`#${activeIndex?.index + 1}`);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeIndex?.index]);
 
   return (
     <>
@@ -105,50 +136,44 @@ function Deck({ data, preview }) {
 
       <NavBar
         returnTo={client.slug}
-        slideIndex={{ activeIndex, setActiveIndex }}
         slides={deck?.slides}
-        moveTo={moveTo}
+        instanceRef={instanceRef}
       />
 
-      {fullpageApi && prevSlide && (
-        <BackButton fullpageApi={fullpageApi} moveTo={prevSlide} />
+      {!isSpain && viaSpainLink && instanceRef && prevSlide && (
+        <BackButton instanceRef={instanceRef} moveTo={prevSlide} />
       )}
 
       {deck?.slides ? (
-        <ReactFullpage
-          navigation={false}
-          pluginWrapper={pluginWrapper}
-          afterLoad={afterLoad.bind(this)}
-          onLeave={onLeave.bind(this)}
-          scrollOverflow
-          loopBottom
-          loopTop
-          scrollingSpeed={500}
-          render={({ fullpageApi }) => {
-            setFullpageApi(fullpageApi);
+        <div
+          className="slides keen-slider"
+          ref={sliderRef}
+          style={{ height: windowHeight }}
+        >
+          {deck?.slides?.map((slide, index) => (
+            <div
+              key={slide._key}
+              className={`section keen-slider__slide slide${index + 1} ${
+                activeIndex === index ? "active" : ""
+              }`}
+            >
+              {getSlide(
+                slide,
+                index,
+                activeIndex,
+                setViaSpainLink,
+                instanceRef,
+                deck,
+                client,
+                preview
+              )}
+            </div>
+          ))}
 
-            return (
-              <ReactFullpage.Wrapper>
-                {deck?.slides?.map((slide, index) => (
-                  <div key={slide._key} className="section">
-                    {getSlide(
-                      slide,
-                      index,
-                      activeIndex,
-                      fullpageApi,
-                      deck,
-                      client,
-                      preview
-                    )}
-                  </div>
-                ))}
-                <div className="section">
-                  <DownloadPDF />
-                </div>
-              </ReactFullpage.Wrapper>
-            );
-          }}
-        />
+          <div className="section keen-slider__slide">
+            <DownloadPDF />
+          </div>
+        </div>
       ) : preview ? (
         <AddSlide>Add a slide item to get started...</AddSlide>
       ) : (

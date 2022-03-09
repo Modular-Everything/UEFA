@@ -14,11 +14,14 @@
     "@sanity/desk-tool",
     "media",
     "@sanity/production-preview",
-    "iframe-pane"
+    "iframe-pane",
+    "netlify-deploy-status-badge"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [

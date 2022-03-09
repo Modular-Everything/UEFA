@@ -71,7 +71,7 @@ export const Switzerland = styled.article`
     z-index: 0;
     width: 100%;
     right: 0;
-    bottom: 0;
+    bottom: 1.6rem;
 
     @media (min-width: 640px) {
       width: 85%;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Turkey = styled.article`
   height: 100%;
+  position: relative;
   background-color: var(--uefa-black);
 
   .content {

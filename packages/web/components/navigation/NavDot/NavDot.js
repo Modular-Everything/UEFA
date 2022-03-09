@@ -25,7 +25,7 @@ export function NavDot({ navOpen, setNavOpen }) {
       className={navOpen ? "active" : "inactive"}
       onClick={navOpen ? handleMenuNavigate : handleMenuOpen}
     >
-      {navOpen && client === "preview" ? <>&times;</> : <Arrow />}
+      {navOpen && (client === "preview" ? <>&times;</> : <Arrow />)}
     </S.NavDot>
   );
 }

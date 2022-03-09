@@ -5,7 +5,7 @@ export const Coefficients = styled.article`
   display: grid;
   grid-template-rows: minmax(60%, 1fr) 1fr;
 
-  @media (min-width: 800px) {
+  @media (min-width: 770px) {
     grid-template-rows: minmax(70%, 1fr) 1fr;
   }
 
@@ -33,7 +33,7 @@ export const Flag = styled.div`
   position: absolute;
   bottom: 0;
 
-  @media (min-width: 800px) {
+  @media (min-width: 770px) {
     height: 100%;
     grid-template-rows: unset;
     grid-template-columns: auto auto minmax(10rem, 25%);
@@ -45,7 +45,7 @@ export const Flag = styled.div`
     align-items: flex-end;
     padding: calc(var(--content-gutter) / 2) var(--content-gutter);
 
-    @media (min-width: 800px) {
+    @media (min-width: 770px) {
       padding: var(--content-gutter);
     }
   }

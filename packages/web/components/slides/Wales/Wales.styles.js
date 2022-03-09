@@ -12,12 +12,13 @@ export const Wales = styled.article`
     .container {
       display: flex;
       flex-direction: column-reverse;
-      align-items: center;
+      align-items: flex-start;
       max-width: 88rem;
       gap: 2.4rem;
 
       @media (min-width: 768px) {
         gap: 4.8rem;
+        align-items: center;
         flex-direction: row;
       }
 

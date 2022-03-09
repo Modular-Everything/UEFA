@@ -14,7 +14,13 @@ function ImageRef({ id }) {
   return <Image src={id} alt="" className="logo" />;
 }
 
-export function Spain({ data, index, activeIndex, fullpageApi }) {
+export function Spain({
+  data,
+  index,
+  activeIndex,
+  instanceRef,
+  setViaSpainLink,
+}) {
   const el = useRef();
   const inView = useActiveSlide(activeIndex, index);
 
@@ -22,7 +28,13 @@ export function Spain({ data, index, activeIndex, fullpageApi }) {
     return (
       <S.Item key={key} className={`item ${anchor ? "linked" : ""}`}>
         {anchor ? (
-          <button type="button" onClick={() => fullpageApi.moveTo(anchor)}>
+          <button
+            type="button"
+            onClick={() => {
+              instanceRef.current.moveToIdx(anchor);
+              setViaSpainLink(true);
+            }}
+          >
             {content}
           </button>
         ) : (

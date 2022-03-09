@@ -44,6 +44,7 @@
 html {
   font-size: 10px;
   height: -webkit-fill-available;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -54,6 +55,7 @@ body {
   font-size: 2rem;
   min-height: 100vh;
   min-height: -webkit-fill-available;
+  -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -102,8 +104,27 @@ a {
   ******************************************
 */
 
-.section {
-  overflow: hidden;
+@media (max-width: 770px) {
+  .section {
+    min-height: 100% !important;
+    max-height: unset !important;
+    height: auto !important;
+  }
+
+  .hidden,
+  .hidden * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.section article {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slides {
+  height: 100vh;
 }
 
 /**
@@ -151,32 +172,20 @@ a {
     height: auto !important;
   }
 
-  .fullpage-wrapper {
+  .slides {
     height: auto !important;
     transform: none !important;
     transition: none !important;
   }
 
-  .fp-section {
-    height: auto !important;
-    break-inside: avoid !important;
+  .section {
+    min-height: unset !important;
+    max-height: unset !important;
+    width: 100vw !important;
+    height: 100vh !important;
     page-break-after: always !important;
+    break-inside: avoid !important;
     overflow: hidden !important;
-  }
-
-  .fp-slidesContainer {
-    width: auto !important;
-    transition: none !important;
-    transform: none !important;
-  }
-
-  .fp-slides,
-  .fp-slides * {
-    position: static !important;
-  }
-
-  .fp-slide {
-    width: auto !important;
   }
 
   .andorra {

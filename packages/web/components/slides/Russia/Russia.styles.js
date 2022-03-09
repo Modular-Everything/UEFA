@@ -58,10 +58,15 @@ export const Russia = styled.article`
       display: flex;
       align-self: center;
       justify-self: center;
-      max-width: 45rem;
+      max-height: 24rem;
 
       @media (min-width: 768px) {
         width: unset;
+        max-height: 32rem;
+      }
+
+      span {
+        max-height: 100%;
       }
 
       img {
