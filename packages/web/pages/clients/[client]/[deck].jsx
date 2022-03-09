@@ -55,7 +55,10 @@ function Deck({ data, preview }) {
   const { height: windowHeight } = useWindowSize();
 
   const [activeIndex, setActiveIndex] = useState(null);
+  const [prevSlide, setPrevSlide] = useState(null);
   const [hasChanged, setHasChanged] = useState(false);
+  const [isSpain, setSpain] = useState(false);
+  const [viaSpainLink, setViaSpainLink] = useState(false);
 
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: false,
@@ -81,6 +84,30 @@ function Deck({ data, preview }) {
     slideChanged(slide) {
       setHasChanged(true);
       setActiveIndex(slide.track.details.abs);
+
+      function isSpain(slideNumber) {
+        return slide.slides[slideNumber].children[0].className.includes(
+          "Spain"
+        );
+      }
+
+      const velocity = Math.sign(slide.track.velocity());
+
+      if (isSpain(slide.track.details.abs)) {
+        setSpain(true);
+      } else {
+        setSpain(false);
+      }
+
+      if (velocity > 0) {
+        if (isSpain(slide.track.details.abs - 1)) {
+          setPrevSlide(slide.track.details.abs - 1);
+        }
+      } else {
+        if (isSpain(slide.track.details.abs + 1)) {
+          setPrevSlide(slide.track.details.abs + 1);
+        }
+      }
     },
   });
 
@@ -113,9 +140,9 @@ function Deck({ data, preview }) {
         instanceRef={instanceRef}
       />
 
-      {/* {fullpageApi && prevSlide && (
-        <BackButton fullpageApi={fullpageApi} moveTo={prevSlide} />
-      )} */}
+      {!isSpain && viaSpainLink && instanceRef && prevSlide && (
+        <BackButton instanceRef={instanceRef} moveTo={prevSlide} />
+      )}
 
       {deck?.slides ? (
         <div
@@ -130,7 +157,16 @@ function Deck({ data, preview }) {
                 activeIndex === index ? "active" : ""
               }`}
             >
-              {getSlide(slide, index, activeIndex, deck, client, preview)}
+              {getSlide(
+                slide,
+                index,
+                activeIndex,
+                setViaSpainLink,
+                instanceRef,
+                deck,
+                client,
+                preview
+              )}
             </div>
           ))}
 

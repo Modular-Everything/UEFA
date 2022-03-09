@@ -1,11 +1,11 @@
 import { Arrow } from "../../icons/Arrow";
 import * as S from "./BackButton.styles";
 
-export function BackButton({ fullpageApi, moveTo }) {
+export function BackButton({ instanceRef, moveTo }) {
   return (
     <S.BackButton
       type="button"
-      onClick={() => fullpageApi.moveTo(moveTo)}
+      onClick={() => instanceRef.current.moveToIdx(moveTo)}
       className="back"
       aria-label="Back to previous slide"
     >
