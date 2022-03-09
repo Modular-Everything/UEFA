@@ -35,6 +35,8 @@ export const Bars = styled.ul`
   .meta {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
     width: 100%;
     opacity: 1;
     transition: 450ms var(--animation-timing) opacity;
@@ -44,6 +46,7 @@ export const Bars = styled.ul`
       position: relative;
       z-index: 10;
       margin-top: 0.3rem;
+      font-size: clamp(1.6rem, 4vw, 1.8rem);
     }
 
     .value {
@@ -70,7 +73,7 @@ export const Bars = styled.ul`
     transition-delay: 450ms;
   }
 
-  @media not print {
+  @media (not print), (min-width: 771px) { {
     &.hidden {
       .progress {
         width: 0 !important;
