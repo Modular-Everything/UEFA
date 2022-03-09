@@ -141,7 +141,11 @@ function Deck({ data, preview }) {
       />
 
       {!isSpain && viaSpainLink && instanceRef && prevSlide && (
-        <BackButton instanceRef={instanceRef} moveTo={prevSlide} />
+        <BackButton
+          instanceRef={instanceRef}
+          moveTo={prevSlide}
+          setViaSpainLink={setViaSpainLink}
+        />
       )}
 
       {deck?.slides ? (
