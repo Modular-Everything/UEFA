@@ -27,6 +27,7 @@ export const Switzerland = styled.article`
     .meta {
       display: flex;
       flex-direction: column;
+      gap: 1.6rem;
 
       @media (min-width: 768px) {
         flex-direction: row;
