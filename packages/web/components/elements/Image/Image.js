@@ -33,7 +33,7 @@ export function Image({ src, saturate, layout, blur, ...rest }) {
         layout={layout}
         width={layout === "fill" ? null : width}
         height={layout === "fill" ? null : height}
-        loading="eager"
+        loading="lazy"
         {...rest}
       />
     </S.Image>
