@@ -4,6 +4,7 @@ import { useRef } from "react";
 
 import { useActiveSlide } from "../../../hooks/useActiveSlide";
 import { Content } from "../../elements/Content";
+import { Headline } from "../../elements/Headline";
 import { Image } from "../../elements/Image";
 import { SimpleCopy } from "../../elements/SimpleCopy";
 import * as S from "./France.styles";
@@ -21,6 +22,9 @@ export function France({ data, index, activeIndex }) {
       }}
     >
       <Content>
+        {data?.headline && (
+          <Headline data={{ headline: data.headline }} inView={inView} />
+        )}
         {data?.copy && (
           <SimpleCopy inView={inView}>
             <BlockContent blocks={data.copy} />

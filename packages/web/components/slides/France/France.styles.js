@@ -4,12 +4,12 @@ export const France = styled.article`
   height: 100%;
 
   .content {
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-start;
 
     @media (min-width: 640px) {
       justify-content: flex-start;
-      align-items: flex-end;
+      align-items: flex-start;
     }
 
     .simpleCopy {
