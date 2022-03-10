@@ -5,7 +5,7 @@ export const Headline = styled.h2`
 
   text-transform: uppercase;
   font-size: clamp(1.8rem, 4vw, 4.8rem);
-  line-height: 0.8;
+  line-height: 0.9;
   white-space: pre-line;
   hyphens: auto;
   letter-spacing: -0.1rem;
@@ -33,6 +33,7 @@ export const Headline = styled.h2`
   }
 
   @media (min-width: 1000px) {
+    line-height: 0.8;
     padding: 1.4rem 0;
     max-width: 45rem;
   }
