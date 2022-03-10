@@ -6,8 +6,16 @@ import iconsList from "./iconsList";
 export const headline = {
   name: "headline",
   title: "Headline",
-  type: "string",
-  description: "Automatically CAPITALISED",
+  type: "text",
+  description: (
+    <>
+      Automatically CAPITALISED.
+      <br />
+      <strong>NEW:</strong> You can line-break items to a new line to better
+      control word breaking.
+    </>
+  ),
+  rows: 1,
 };
 
 export const copy = {
