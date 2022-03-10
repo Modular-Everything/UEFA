@@ -86,7 +86,7 @@ function Deck({ data, preview }) {
       setActiveIndex(slide.track.details.abs);
 
       function isSpain(slideNumber) {
-        return slide.slides[slideNumber].children[0].className.includes(
+        return slide?.slides[slideNumber]?.children[0].className.includes(
           "Spain"
         );
       }
