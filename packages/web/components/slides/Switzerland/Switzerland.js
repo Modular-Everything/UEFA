@@ -42,6 +42,9 @@ export function Switzerland({ data, index, activeIndex }) {
         <div className={`media image ${inView ? "visible" : "hidden"}`}>
           <Image
             src={data?.image}
+            saturate={data?.image?.saturate}
+            blur={data?.image?.blur}
+            skrimOpacity={data?.image?.opacity}
             alt={data?.headline}
             layout="responsive"
             objectFit="cover"

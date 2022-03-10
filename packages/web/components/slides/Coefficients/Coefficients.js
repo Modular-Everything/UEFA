@@ -24,6 +24,9 @@ export function Coefficients({ data, index, activeIndex }) {
         <div className="flag__image">
           <Image
             src={data?.image}
+            saturate={data?.image?.saturate}
+            blur={data?.image?.blur}
+            skrimOpacity={data?.image?.opacity}
             alt=""
             layout="fill"
             objectFit="cover"

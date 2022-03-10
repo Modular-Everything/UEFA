@@ -30,6 +30,9 @@ export function Andorra({ data, index, activeIndex, fullpageApi }) {
       <div className={`image ${inView ? "visible" : "hidden"}`}>
         <Image
           src={data?.image}
+          saturate={data?.image?.saturate}
+          blur={data?.image?.blur}
+          skrimOpacity={data?.image?.opacity}
           quality={98}
           layout={data?.imageLayout === "cover" ? "fill" : "intrinsic"}
           objectFit={data?.imageLayout === "cover" ? "cover" : "contain"}

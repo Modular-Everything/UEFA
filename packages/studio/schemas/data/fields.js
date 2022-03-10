@@ -39,6 +39,29 @@ export const image = {
   name: "image",
   title: "Slide Image",
   type: "image",
+  fields: [
+    {
+      name: "saturate",
+      title: "Saturate Image?",
+      type: "boolean",
+      initialValue: true,
+    },
+    {
+      name: "blur",
+      title: "Blur Image?",
+      type: "boolean",
+      initialValue: false,
+    },
+    {
+      name: "opacity",
+      title: "Image Overlay Opacity",
+      description:
+        "Adds a dimming overlay to the image. 100 is completely opaque, and 0 is completely transparent.",
+      type: "number",
+      initialValue: 0,
+      validation: (Rule) => Rule.min(0).max(100).integer(),
+    },
+  ],
   description: (
     <span>
       Consider compressing your images before uploading them. We recommend{" "}

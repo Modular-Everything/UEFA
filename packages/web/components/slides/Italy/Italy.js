@@ -37,7 +37,14 @@ export function Italy({ data, index, activeIndex }) {
       </Content>
 
       <div className="image">
-        <Image src={data?.image} quality={95} className="Italy__image" />
+        <Image
+          src={data?.image}
+          saturate={data?.image?.saturate}
+          blur={data?.image?.blur}
+          skrimOpacity={data?.image?.opacity}
+          quality={95}
+          className="Italy__image"
+        />
       </div>
 
       <Pattern />

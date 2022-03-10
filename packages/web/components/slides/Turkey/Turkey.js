@@ -19,6 +19,9 @@ export function Turkey({ data, index, activeIndex }) {
       <div className="image">
         <Image
           src={data?.image}
+          saturate={data?.image?.saturate}
+          blur={data?.image?.blur}
+          skrimOpacity={data?.image?.opacity}
           alt=""
           layout="fill"
           objectFit="contain"

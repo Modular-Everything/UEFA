@@ -31,6 +31,9 @@ export function Denmark({ data, index, activeIndex }) {
       <div className={`image ${inView ? "visible" : "hidden"}`}>
         <Image
           src={data?.image}
+          saturate={data?.image?.saturate}
+          blur={data?.image?.blur}
+          skrimOpacity={data?.image?.opacity}
           quality={95}
           objectFit="contain"
           className="Denmark__image"

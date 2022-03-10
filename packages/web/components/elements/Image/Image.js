@@ -1,9 +1,10 @@
 import NextImage from "next/image";
+import PropTypes from "prop-types";
 
 import { getImgUrl } from "../../../helpers/getImgUrl";
 import * as S from "./Image.styles";
 
-export function Image({ src, saturate, layout, blur, ...rest }) {
+export function Image({ src, saturate, layout, blur, skrimOpacity, ...rest }) {
   if (!src || !src.asset) {
     return null;
   }
@@ -20,12 +21,15 @@ export function Image({ src, saturate, layout, blur, ...rest }) {
 
   return (
     <S.Image>
-      {saturate && (
-        <>
-          <div className="apply-skrim" />
-          <div className="apply-saturation" />
-        </>
+      {skrimOpacity && (
+        <div
+          className="apply-skrim"
+          style={{
+            opacity: skrimOpacity === null ? 0.9 : skrimOpacity / 100,
+          }}
+        />
       )}
+      {saturate && <div className="apply-saturation" />}
       <NextImage
         src={image.url()}
         placeholder="blur"
@@ -39,3 +43,19 @@ export function Image({ src, saturate, layout, blur, ...rest }) {
     </S.Image>
   );
 }
+
+Image.propTypes = {
+  src: PropTypes.object,
+  layout: PropTypes.string,
+  saturate: PropTypes.bool,
+  blur: PropTypes.bool,
+  skrimOpacity: PropTypes.number,
+};
+
+Image.defaultProps = {
+  src: null,
+  layout: null,
+  saturate: false,
+  blur: false,
+  skrimOpacity: null,
+};

@@ -54,6 +54,9 @@ export function Latvia({ data, index, activeIndex }) {
         <div className="bg">
           <Image
             src={data?.image}
+            saturate={data?.image?.saturate}
+            blur={data?.image?.blur}
+            skrimOpacity={data?.image?.opacity}
             alt={data?.headline}
             layout="fill"
             objectFit="cover"

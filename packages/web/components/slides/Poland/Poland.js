@@ -23,7 +23,10 @@ export function Poland({ data, index, activeIndex }) {
       {data?.image && (
         <div className="image">
           <Image
-            src={data.image}
+            src={data?.image}
+            saturate={data?.image?.saturate}
+            blur={data?.image?.blur}
+            skrimOpacity={data?.image?.opacity}
             alt={data?.headline}
             layout="fill"
             objectFit="contain"
@@ -44,8 +47,10 @@ export function Poland({ data, index, activeIndex }) {
       {data?.backgroundImage && (
         <div className="bg">
           <Image
-            src={data.backgroundImage}
-            blur
+            src={data?.image}
+            saturate={data?.image?.saturate}
+            blur={data?.image?.blur || true}
+            skrimOpacity={data?.image?.opacity}
             alt=""
             layout="fill"
             objectFit="cover"
