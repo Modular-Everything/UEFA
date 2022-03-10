@@ -4,7 +4,9 @@ export function useActiveSlide(activeIndex, index) {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    setIsActive(activeIndex === index);
+    setTimeout(() => {
+      setIsActive(activeIndex === index);
+    }, [250]);
   }, [activeIndex, index]);
 
   return isActive;
