@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PreviewMode = styled.div`
   a {
     position: fixed;
-    bottom: 1.6rem;
+    top: 1.6rem;
     right: 1.6rem;
     background: var(--white);
     border: 1px solid var(--uefa-lt-blue);
