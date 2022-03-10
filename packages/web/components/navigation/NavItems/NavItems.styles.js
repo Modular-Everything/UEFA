@@ -20,6 +20,14 @@ export const NavItems = styled.div`
       width: 7.2rem !important;
       height: 4rem;
 
+      &.empty button {
+        background: transparent;
+        color: var(--white);
+        border: 1px solid var(--uefa-lt-black);
+        border-radius: 0.4rem;
+        cursor: pointer;
+      }
+
       button {
         cursor: pointer;
         border-radius: 0.4rem;

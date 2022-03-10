@@ -121,7 +121,9 @@ export function NavItems({ navOpen, slides, instanceRef }) {
               </li>
             );
           })}
-          <li className="keen-slider__slide" />
+          <li className="keen-slider__slide empty">
+            <button type="button" aria-label="Print" />
+          </li>
         </ol>
       )}
     </S.NavItems>
