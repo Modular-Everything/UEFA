@@ -118,6 +118,17 @@ function Deck({ data, preview }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeIndex]);
 
+  useEffect(() => {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowUp") {
+        instanceRef.current.prev();
+      }
+      if (e.key === "ArrowDown") {
+        instanceRef.current.next();
+      }
+    });
+  }, [instanceRef]);
+
   const client = {
     title: data?.client?.title,
     slug: data?.client?.slug,
