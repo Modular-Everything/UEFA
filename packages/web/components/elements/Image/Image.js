@@ -37,7 +37,7 @@ export function Image({ src, saturate, layout, blur, skrimOpacity, ...rest }) {
         layout={layout}
         width={layout === "fill" ? null : width}
         height={layout === "fill" ? null : height}
-        loading="lazy"
+        loading="eager"
         {...rest}
       />
     </S.Image>
