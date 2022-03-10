@@ -121,10 +121,10 @@ function Deck({ data, preview }) {
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
       if (e.key === "ArrowUp") {
-        instanceRef.current.prev();
+        instanceRef?.current?.prev();
       }
       if (e.key === "ArrowDown") {
-        instanceRef.current.next();
+        instanceRef?.current?.next();
       }
     });
   }, [instanceRef]);
