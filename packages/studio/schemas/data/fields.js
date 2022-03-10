@@ -15,7 +15,7 @@ export const headline = {
       control word breaking.
     </>
   ),
-  rows: 1,
+  rows: 2,
 };
 
 export const copy = {
