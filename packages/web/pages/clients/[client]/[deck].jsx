@@ -10,6 +10,7 @@ import { PreviewMode } from "../../../components/elements/PreviewMode";
 import { BackButton } from "../../../components/navigation/BackButton";
 import { NavBar } from "../../../components/navigation/NavBar";
 import { DownloadPDF } from "../../../components/slides/DownloadPDF";
+import { WheelControls } from "../../../helpers/KeenWheelControls";
 import { getSlide } from "../../../helpers/getSlide";
 import { useWindowSize } from "../../../hooks/useWindowSize";
 import {
@@ -60,56 +61,60 @@ function Deck({ data, preview }) {
   const [isSpain, setSpain] = useState(false);
   const [viaSpainLink, setViaSpainLink] = useState(false);
 
-  const [sliderRef, instanceRef] = useKeenSlider({
-    loop: false,
-    breakpoints: {
-      "(max-width: 770px)": {
-        mode: "free",
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+      loop: false,
+      breakpoints: {
+        "(max-width: 770px)": {
+          mode: "free",
+        },
+      },
+      slides: {
+        origin: "center",
+        perView: 1,
+        spacing: 0,
+      },
+      rubberband: false,
+      vertical: true,
+      created(slide) {
+        if (!hasChanged) {
+          const matchedSlide = Number(
+            router.asPath.match(/#([a-z0-9]+)/giu)[0].replace("#", "")
+          );
+          slide.moveToIdx(matchedSlide - 1);
+        }
+      },
+      slideChanged(slide) {
+        setHasChanged(true);
+        setActiveIndex(slide.track.details.abs);
+
+        function isSpain(slideNumber) {
+          return slide?.slides[slideNumber]?.children[0].className.includes(
+            "Spain"
+          );
+        }
+
+        const velocity = Math.sign(slide.track.velocity());
+
+        if (isSpain(slide.track.details.abs)) {
+          setSpain(true);
+        } else {
+          setSpain(false);
+        }
+
+        if (velocity > 0) {
+          if (isSpain(slide.track.details.abs - 1)) {
+            setPrevSlide(slide.track.details.abs - 1);
+          }
+        } else {
+          if (isSpain(slide.track.details.abs + 1)) {
+            setPrevSlide(slide.track.details.abs + 1);
+          }
+        }
       },
     },
-    slides: {
-      origin: "center",
-      perView: 1,
-      spacing: 0,
-    },
-    vertical: true,
-    created(slide) {
-      if (!hasChanged) {
-        const matchedSlide = Number(
-          router.asPath.match(/#([a-z0-9]+)/giu)[0].replace("#", "")
-        );
-        slide.moveToIdx(matchedSlide - 1);
-      }
-    },
-    slideChanged(slide) {
-      setHasChanged(true);
-      setActiveIndex(slide.track.details.abs);
-
-      function isSpain(slideNumber) {
-        return slide?.slides[slideNumber]?.children[0].className.includes(
-          "Spain"
-        );
-      }
-
-      const velocity = Math.sign(slide.track.velocity());
-
-      if (isSpain(slide.track.details.abs)) {
-        setSpain(true);
-      } else {
-        setSpain(false);
-      }
-
-      if (velocity > 0) {
-        if (isSpain(slide.track.details.abs - 1)) {
-          setPrevSlide(slide.track.details.abs - 1);
-        }
-      } else {
-        if (isSpain(slide.track.details.abs + 1)) {
-          setPrevSlide(slide.track.details.abs + 1);
-        }
-      }
-    },
-  });
+    [WheelControls]
+  );
 
   useEffect(() => {
     if (activeIndex !== undefined) {
@@ -127,7 +132,7 @@ function Deck({ data, preview }) {
         instanceRef?.current?.next();
       }
     });
-  }, [instanceRef]);
+  }, [sliderRef, instanceRef]);
 
   const client = {
     title: data?.client?.title,
