@@ -120,7 +120,8 @@ function Deck({ data, preview }) {
 
   useEffect(() => {
     setLoading(false);
-  }, []);
+    instanceRef?.current?.update();
+  }, [instanceRef]);
 
   useEffect(() => {
     if (activeIndex !== undefined) {
