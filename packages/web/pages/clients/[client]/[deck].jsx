@@ -10,6 +10,7 @@ import { PreviewMode } from "../../../components/elements/PreviewMode";
 import { BackButton } from "../../../components/navigation/BackButton";
 import { NavBar } from "../../../components/navigation/NavBar";
 import { DownloadPDF } from "../../../components/slides/DownloadPDF";
+import { ResizePlugin } from "../../../helpers/KeenResizeObserver";
 import { WheelControls } from "../../../helpers/KeenWheelControls";
 import { getSlide } from "../../../helpers/getSlide";
 import { useWindowSize } from "../../../hooks/useWindowSize";
@@ -113,7 +114,7 @@ function Deck({ data, preview }) {
         }
       },
     },
-    [WheelControls]
+    [WheelControls, ResizePlugin]
   );
 
   useEffect(() => {
