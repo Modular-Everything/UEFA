@@ -56,6 +56,7 @@ function Deck({ data, preview }) {
   const router = useRouter();
   const { height: windowHeight } = useWindowSize();
 
+  const [loading, setLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const [prevSlide, setPrevSlide] = useState(null);
   const [hasChanged, setHasChanged] = useState(false);
@@ -118,6 +119,10 @@ function Deck({ data, preview }) {
   );
 
   useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
     if (activeIndex !== undefined) {
       router.push(`#${activeIndex + 1}`);
     }
@@ -150,6 +155,8 @@ function Deck({ data, preview }) {
       </Head>
 
       <PreviewMode preview={preview} />
+
+      {loading && <Loading />}
 
       <NavBar
         returnTo={client.slug}
