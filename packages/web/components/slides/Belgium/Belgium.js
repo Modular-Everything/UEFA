@@ -48,7 +48,7 @@ export function Belgium({ data, index, activeIndex }) {
       <div className="image">
         <Image
           src={data?.image}
-          saturate={data?.image?.saturate || true}
+          saturate={!!data?.image?.saturate}
           blur={data?.image?.blur}
           skrimOpacity={data?.image?.opacity || 90}
           alt=""
