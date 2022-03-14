@@ -119,8 +119,10 @@ function Deck({ data, preview }) {
   );
 
   useEffect(() => {
-    setLoading(false);
-    instanceRef?.current?.update();
+    if (instanceRef) {
+      setLoading(false);
+      instanceRef?.current?.update();
+    }
   }, [instanceRef]);
 
   useEffect(() => {
