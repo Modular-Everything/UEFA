@@ -10,6 +10,7 @@ import { PreviewMode } from "../../../components/elements/PreviewMode";
 import { BackButton } from "../../../components/navigation/BackButton";
 import { NavBar } from "../../../components/navigation/NavBar";
 import { DownloadPDF } from "../../../components/slides/DownloadPDF";
+import { MutationPlugin } from "../../../helpers/KeenMutationObserver";
 import { ResizePlugin } from "../../../helpers/KeenResizeObserver";
 import { WheelControls } from "../../../helpers/KeenWheelControls";
 import { getSlide } from "../../../helpers/getSlide";
@@ -56,7 +57,7 @@ function Deck({ data, preview }) {
   const router = useRouter();
   const { height: windowHeight } = useWindowSize();
 
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const [prevSlide, setPrevSlide] = useState(null);
   const [hasChanged, setHasChanged] = useState(false);
@@ -115,15 +116,12 @@ function Deck({ data, preview }) {
         }
       },
     },
-    [WheelControls, ResizePlugin]
+    [WheelControls, ResizePlugin, MutationPlugin]
   );
 
-  useEffect(() => {
-    if (instanceRef) {
-      setLoading(false);
-      instanceRef?.current?.update();
-    }
-  }, [instanceRef]);
+  // useEffect(() => {
+  //   setLoading(false);
+  // }, []);
 
   useEffect(() => {
     if (activeIndex !== undefined) {
@@ -159,7 +157,7 @@ function Deck({ data, preview }) {
 
       <PreviewMode preview={preview} />
 
-      {loading && <Loading />}
+      {/* {loading && <Loading />} */}
 
       <NavBar
         returnTo={client.slug}
